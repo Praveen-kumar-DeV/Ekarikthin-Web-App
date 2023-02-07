@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    
+    #mylist {
+      
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #070707;
+      margin-bottom: 12px;
+    }
+    
+    #myTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 2px solid #d91515;
+      font-size: 18px;
+    }
+    
+    #myTable th, #myTable td {
+      text-align: left;
+      padding: 12px;
+    }
+    
+    #myTable tr {
+      border-bottom: 1px solid #1c0505;
+    }
+    
+    #myTable tr.header, #myTable tr:hover {
+      background-color: #f1f1f1;
+    }
+    table{
+      border: 3px #070707;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <h2>My Customers</h2>
+    <select id="mylist" onchange="myFunction()" class='form-control'>
+   
+    </select>
+    
+    
+    
+    
+    <table>
+      <thead><tr>
+        <th><span id="name" class="w3-button table-column">Name <i class="caret"></i></span></th>
+        <th><span id="quantity" class="w3-button table-column">Event<i class="caret"></i></span></th>
+        <th><span id="price" class="w3-button table-column"> Email<i class="caret"></i></span></th>
+        <th><span id="expiry" class="w3-button table-column" >TokenID <i class="caret"></i></span></th>
+        <th><span id="paid" class="w3-button table-column">Payment Status <i class="caret"></i></span></th>
+        <th><span id="phone" class="w3-button table-column">Phone <i class="caret"></i></span></th>
+      </tr></thead>
+      <tbody id="mytable" style="border: 2px #070707;"></tbody>
+    </table>
+
+
+
+
+
+
+    <script>
+    var example_array = {
+      Ritzy : 'Ritzy',
+        DOTA : 'DOTA',
+        Sunil : 'Cosplay - Solo'
+    };
+    
+    var select = document.getElementById("mylist");
+    for(index in example_array) {
+        select.options[select.options.length] = new Option(example_array[index], example_array[index]);
+    }
+    var ch=localStorage.getItem('user');
+const user= JSON.parse(ch);
+/*const user={
+token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDNhODE1YjRhNmJmOTk2MGJiNGQ3YSIsImlhdCI6MTY3NTYxMTE1NywiZXhwIjoxNjg1NjExMTU3fQ.-Q72-O-YL97DwJFltksSlL-m3wq8LfKSS2ceXAkurRs"
+,role:"admin"};*/
+    they(user);
+    
+  async function they(user){
+const data = await axios.get('/admin/data', {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },body:{
+            eventCode:user.role,
+          }
+        }) .then((response) => {       
+        console.log(response.data.result);
+        allregis=response.data.result;
+        
+        populateTable(allregis);
+
+        });
+    }
+
+
+    
+    function myFunction() {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("mylist");
+      filter = input.value;
+      console.log(filter);
+      table = document.getElementById("mytable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        console.log(tr.length);
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+
+
+    //-----------------------------------------------------------------------
+
+
+
+    function populateTable(tableData) {
+      var table = document.getElementById('mytable');
+   table.innerHTML = '';
+   for (let data of tableData) {
+     let row = table.insertRow(-1);
+     let name = row.insertCell(0);
+     name.innerHTML = data.event;
+ 
+     let quantity = row.insertCell(1);
+     quantity.innerHTML = data.name;
+ 
+     let price = row.insertCell(2);
+     price.innerHTML = data.email;
+ 
+     let expiry = row.insertCell(3);
+     expiry.innerHTML = data.tokenId;
+
+
+     let paid = row.insertCell(4);
+     paid.innerHTML = data.paid;
+
+
+     let phone = row.insertCell(5);
+     phone.innerHTML = data.phone;
+   }
+  }
+
+
+
+
+
+    //44================================================================================
+    </script>
+    
+    </body>
+</html>

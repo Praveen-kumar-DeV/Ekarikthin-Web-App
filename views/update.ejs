@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+    <title>Update</title>
+    <style>
+
+input[type=text]{
+  float: left;
+  padding: 6px;
+  border: 1px solid black;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+
+
+/* Set a style for all buttons */ 
+button {
+   
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+   display: inline-block;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+   input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid black;
+  }
+   input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+    </style>
+</head>
+<body>
+<div id="status"></div>
+    <h4>Enter the TOKEN ID to UPDATE THE PAYMENT STATUS</h4>
+    <input id="passId" type="text" name="tokenId" placeholder="Enter TokenId......">
+    <button onclick="myfunc()">Update</button>
+    
+
+
+    
+</body>
+
+<script>
+
+    
+   // const user ={token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDNhODE1YjRhNmJmOTk2MGJiNGQ3YSIsImlhdCI6MTY3NTYxMTE1NywiZXhwIjoxNjg1NjExMTU3fQ.-Q72-O-YL97DwJFltksSlL-m3wq8LfKSS2ceXAkurRs"};
+
+    var ch=localStorage.getItem('user');
+const user= JSON.parse(ch);
+
+    async function myfunc(){
+        try {
+           
+            var token = document.getElementById("passId").value;
+      const { data } = await axios.get(`/admin/pay?tokenId=${token}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      }).then((response) => {       
+        console.log(response,"response....");
+        var meg=response.data.message;
+      Toastify({
+  text:meg,
+  duration: 3000,
+  
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "right", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right, 3FCE06, #ff4122)",
+  },
+  onClick: function(){
+    var st=document.getElementById('status');
+    st.innerHTML='Updated Successfully...'
+  } // Callback after click
+}).showToast();
+
+      
+      });
+
+     
+      
+    } catch (response) {
+     console.log(response);
+      var meg=response.response.data.message;
+      Toastify({
+  text:meg,
+  duration: 3000,
+  
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "right", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right, #D22B2B, #ff4122)",
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
+    
+      
+    }
+  
+       
+    }
+</script>
+
+</html>

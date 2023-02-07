@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.0/axios.min.js" 
+    integrity="sha512-A6BG70odTHAJYENyMrDN6Rq+Zezdk+dFiFFN6jH1sB+uJT3SYMV4zDSVR+7VawJzvq7/IrT/2K3YWVKRqOyN0Q=="
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+     <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 5px;
+      }
+      th {
+        text-align: left;
+      }
+      </style>
+
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Admin</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+          <form  >
+            
+            <div class="step step-1 active">
+                <legend>Admin Login</legend>
+              <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" id="username" name="username" value="" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="" autocomplete="off">
+              </div>
+             
+              <button type="submit" class="submit-btn">Log In</button>
+            </div>
+      
+          </form>
+        </div>
+      </section>
+     
+      <div id="result"></div>
+</body>
+<script>
+  let allregis;
+  $(document).ready(function() {
+    $('form').submit(async function(event) {
+        event.preventDefault();
+let username = $('#username').val();
+let password=$('#password').val();
+    
+  const regForm={username:username,password:password};
+
+  const { data } = await axios.post("/admin/login", regForm)
+  
+
+const token =data.token;
+ if (data.success) {
+        const userDetails = {
+         ...data.user,
+           token:data.token,
+        };
+        localStorage.setItem("user", JSON.stringify(userDetails));
+       
+
+      console.log("test token...",userDetails);
+      window.location.href = '/admin/see';
+      
+      
+     
+}
+ 
+
+    });
+  });
+
+//-------------search part-------------------=
+</script>
+
+
+</html>

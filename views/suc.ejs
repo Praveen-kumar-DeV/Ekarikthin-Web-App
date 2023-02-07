@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  width: 40%;
+  text-align: center;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+}
+
+table {
+  margin: 20px 0;
+  width: 100%;
+}
+
+td, th {
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+  </style>
+  <body>
+    <header>
+      <h1>Ekarikthin College Festival</h1>
+    </header>
+    <main>
+      <h2>Registration Successful</h2>
+      <div class="card">
+        <h3 style="font-size: 25px;">Dear <span id="name"></span>,</h3>
+        <p style="font-size: 25px;">Thank you for registering for the Ekarikthin College Festival!</p>
+        <table>
+            <tr>
+                <td>Name:<%= data.name%></td>
+                <td id="name"></td>
+              </tr>
+          <tr>
+            <td>Event:<%= data.event%></td>
+            <td id="event"></td>
+          </tr>
+          <tr>
+            <td>Event Code:<%= data.eventCode%></td>
+            <td id="eventCode"></td>
+          </tr>
+          <tr>
+            <td>Category:<%= data.category%></td>
+            <td id="category"></td>
+          </tr>
+          <tr>
+            <td style="color:red">Token ID<%= data.tokenId%>:</td>
+            <td id="tokenId"></td>
+          </tr>
+          <tr>
+            <td>Payment Mode:<%= data.paymentMode%></td>
+            <td id="paymentMode"></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Ekarikthin College Festival</p>
+    </footer>
+  </body>
+</html>

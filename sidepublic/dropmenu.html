@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        </head>
+
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <label class="page1">Country</label>
+    <div class="tooltips" title="Please select the country that the customer will primarily be served from">
+
+
+
+        <select id="category" name="category" >
+            <option value="" selected >Please select category</option>
+             </select>
+
+
+</div>
+<br />
+<br />
+<label class="page1">Location</label>
+
+<div class="tooltips" title="Please select the city that the customer is primarily to be served from.">
+
+    <select id="event" name="event">
+        <option value="" selected >Please select event</option>
+    </select>
+
+
+    <select hidden id="code" name="eventCode" >
+        <option value="" selected >Please select code</option>
+    </select>
+
+
+
+
+    </div>
+
+    <script>
+
+       
+  
+const stateObject = {
+  cultural: {
+    "Cosplay - Solo": "CULT_CS",
+    "Cosplay - Duo": "CULT_CD",
+    "Cosplay - Trio": "CULT_CT",
+    "Cosplay - Group": "CULT_CG",
+    Ritzy: "CULT_RITZY",
+    Rockville: "CULT_RV",
+    "Voice of Ekarikthin": "CULT_VOE",
+    "Dance - Solo": "CULT_DTGS",
+    "Dance - Crew": "CULT_DTGC",
+    "Dance Battle": "CULT_DB",
+  },
+  technical: {
+    "Mud Race": "TEC_MR",
+    "Pick N Place": "TEC_PNP",
+    CodeCast: "TEC_CC",
+    "Web Design": "TEC_WD",
+    "Logo Designing": "TEC_LD",
+    "CIVIL WITH CIVICUS": "TEC_CWC",
+    Stockraze: "TEC_STK",
+    Virgowords: "TEC_VIR",
+    "Quiz Buzz": "TEC_QB",
+  },
+  esports: {
+    COD: "ESP_COD",
+    BGMI: "ESP_BGMI",
+    CSGO: "ESP_CSGO",
+    "DOTA 2": "ESP_DOTA",
+    "Mobile legends": "ESP_ML",
+  },
+  sports: {
+    "Table Tennis": "SPT_TT",
+    Volleyball: "SPT_VOL",
+    Roadies: "SPT_RDS",
+    "Gully Cricket": "SPT_GC",
+    Chess: "SPT_CH",
+    Futsal: "SPT_FTSL",
+    Badminton: "SPT_BD",
+    "Mountain Biking": "SPT_MB",
+  },
+  "mini events": {
+    "Treasure Hunt": "MNE_TH",
+    "Wall Painting": "MNE_WP",
+    "PIC Of the Day": "MNE_PIC",
+    EDM: "MNE_EDM",
+    "Rangoli Competition": "MNE_RG",
+    Shipwreck: "MNE_SW",
+    "Face Painting": "MNE_FP",
+    "Short Film Contest": "MNE_SFC",
+    "Arm Wrestling": "MNE_AW",
+    "Kavi Sammelan": "MNE_KS",
+    "Instagram Photo Likes Contest": "MNE_IGLC",
+  },
+};
+
+window.onload = function () {
+    var stateSel = document.getElementById("category"),
+        countySel = document.getElementById("event"),
+        citySel = document.getElementById("code");
+    for (var state in stateObject) {
+        stateSel.options[stateSel.options.length] = new Option(state, state);
+    }
+    stateSel.onchange = function () {
+      if(countySel.length) 
+          countySel.length = 1; // remove all options bar first
+        //citySel.length = 1; // remove all options bar first
+        if (this.selectedIndex < 1) {
+          countySel.options[0].text = "Please select category first"
+          citySel.options[0].text = "Please select event first"
+          return; // done   
+        }  
+        countySel.options[0].text = "Please select event"
+        for (var county in stateObject[this.value]) {
+            countySel.options[countySel.options.length] = new Option(county, county);
+        }
+        if (countySel.options.length==2) {
+          countySel.selectedIndex=1;
+          countySel.onchange();
+        }  
+        
+    }
+    stateSel.onchange(); // reset in case page is reloaded
+    countySel.onchange = function () {
+        citySel.length = 1; // remove all options bar first
+        if (this.selectedIndex < 1) {
+          citySel.options[0].text = "Please select  first"
+          return; // done   
+        }  
+        citySel.options[0].text = "Please select city"
+        
+        var cities = stateObject[stateSel.value][this.value];
+
+        console.log("value :",cities);
+        for (var i = 0; i < 1; i++) {
+            citySel.options[citySel.options.length] = new Option(cities);
+        }
+        if (citySel.options.length==2) {
+          citySel.selectedIndex=1;
+          //citySel.onchange();
+        }  
+        
+    }
+}
+    </script>
+    
+</body>
+</html>

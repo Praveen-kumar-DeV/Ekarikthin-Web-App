@@ -13,12 +13,26 @@ var state=0;
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
      
-   var c=  validate();
-   
+   var c=  validate(),k;
+  
   if(c){
-
+    if(state<1){
     changeStep("next");
     ++state;}
+    else{
+      k=vali2date();
+      if(k){
+        console.log("stage 2")
+        changeStep("next");
+        state=0;
+      }
+     
+
+    }
+  
+  }
+
+ 
     
   });
 });
@@ -136,62 +150,6 @@ async function Sendata(){
 
       
        
-       
-          /*  const temp=`
-            <div class="note"><div class="cards">
-             YOUR TOKEN ID WITH YOU FOR THE CONFORMATION OF YOUR PAYMENT
-            CLICK ON HOME TO RETURN TO HOME PAGE OR PAGE WILL AUTOMATICALLY REDIRECTED TO HOME PAGE WITH IN 30 SECONDS
-        </div></div>
-            <div class="container">
-            <div class="card" >
-        
-                <p ">NAME : ${user.name}</p>
-                <p>EVENT : ${user.event}</p>
-                <p style="color:red;">TOKEN ID : ${user.tokenId}</p>
-                <p>EMAIL : ${user.email}</p>
-                <p>CATEGORY : ${user.category}</p>
-                <p>COST : ${user.cost}</p>
-                <p>PAYMENT MODE : ${user.paymentMode}</p>
-            </div>
-            <div id='Paycontainer'>
-                <img src="./pay.jpeg">
-        </div>
-        </div>
-        
-        <p id = "result"><b> The page will redirect  to HOME PAGE after delay of <span id="counter">30 </span>seconds</b></p>
-           <button class="btn" onclick = "window.location.href ='/'; ">Click to Redirect to Tutorials Point</button>
-          
-        
-        `;
-        
-        const res=document.getElementById('confirm');
-        //document.body.style.backgroundImage=imageUrl ;
-        const non=document.getElementById('background');
-        non.style.display='none';
-        res.innerHTML=temp;
-        redirect();
-        
-        
-        
-        
-                 
-                 function redirect () {
-                  setInterval(myURL, 1000);
-                  var result = document.getElementById("result");
-                 // result.innerHTML = "";
-               }
-         
-               function myURL() {
-                var div = document.querySelector("#counter");
-                    var count = div.textContent * 1 - 1;
-                    div.textContent = count;
-                    if (count <= 0) {
-                        //window.location.replace("https://example.com");
-                        document.location.href = '/';
-                    }
-                 
-               }
-        */
         
   
        
@@ -237,32 +195,69 @@ function validate(){
  return false;
 
 }
+
+function vali2date(){
+  let id = (id) => document.getElementById(id);
+  
+  let category= id("category"),
+  event = id("Event"),
+  cost = id("cost"),
+  paymode = id("paymode");
+  
+  if( engine(category, 3, "Category cannot be blank")&&engine(event, 4, "Event cannot be blank")&&engine(cost, 5, "Select the Event again")&&engine(paymode, 6, "Select the Event again"))
+  { 
+    return true;
+  }
+ return false;
+
+}
+
+
 let engine = (id, serial, message) => {
 
   let classes = (classes) => document.getElementsByClassName(classes);
   let errorMsg = classes("error");
-  var phoneno = /^\d{10}$/;
+  var phoneno = /^[6789][0-9]{9}$/;
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var nameformat=/^[A-Za-z_\s]{3,30}$/;
   if (id.value.trim() ==="")
       { 
   
     errorMsg[serial].innerHTML = message;
-    //id.style.border = "2px solid red";
+   
     return false;
     
       }
-      else if (id.name==="email")
-      {  if (!(id.value.match(mailformat)))
+
+      else if (id.name==="name")
+      {  if (!(id.value.match(nameformat)))
         {
         console.log(id.name);
-          errorMsg[serial].innerHTML = 'INVALID EMAIL ADDRESS';
-      //  id.style.border = "2px solid red";
+          errorMsg[serial].innerHTML = 'INVALID NAME';
+     
  return false;
  
         }
        else {
  errorMsg[serial].innerHTML = "";
- //id.style.border = "2px solid green";
+ 
+  return true;
+ 
+ 
+ }
+ }
+      else if (id.name==="email")
+      {  if (!(id.value.match(mailformat)))
+        {
+        console.log(id.name);
+          errorMsg[serial].innerHTML = 'INVALID EMAIL ADDRESS';
+     
+ return false;
+ 
+        }
+       else {
+ errorMsg[serial].innerHTML = "";
+ 
   return true;
  
  
@@ -301,46 +296,3 @@ else {
 
 
 
-
-window.location.href ='/admin/ot?tokenId='+user.tokenId;
-/* const res=document.getElementById('confirm');
-
- const temp=`<div id="container">
- <div id="card" >
-
-     <p ">NAME : ${user.name}</p>
-     <p>EVENT : ${user.event}</p>
-     <p>TOKEN ID : ${user.tokenId}</p>
-     <p>EMAIL : ${user.email}</p>
-     <p>CATEGORY : ${user.category}</p>
-     <p>COST : ${user.cost}</p>
-     <p>PAYMENT MODE : ${user.paymentMode}</p>
- </div>
-</div>
-
-<p id = "result"></p>
-<button class="btn" onclick = "window.location.href ='/'">Click to Redirect to Home Page</button>
-
-`;
- const non=document.getElementById('background');
- non.style.display='none';
-    res.innerHTML=temp;
-    
-    redirect();
-    function redirect () {
-     setTimeout(myURL, 5000);
-     var result = document.getElementById("result");
-     result.innerHTML = "<b> The page will redirect  to HOME PAGE after delay of 30 seconds";
-  }
-
-  function myURL() {
-   var div = document.querySelector("#counter");
-   var count = div.textContent * 1 - 1;
-   div.textContent = count;
-   if (count <= 0) {
-       document.location.href = '/';
-   }
-
-  }
-
-*/

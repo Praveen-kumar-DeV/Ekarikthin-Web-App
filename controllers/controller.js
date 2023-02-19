@@ -73,7 +73,7 @@ exports.register = async (req, res) => {
     eventCode,
     email,
   });
-    //console.log("reg check.....",isReg)
+    
   if (isReg) { 
     return res.status(400).json({
       success: false,
@@ -113,38 +113,28 @@ exports.register = async (req, res) => {
 
          console.log(" saving.......");
           const mailOptions = mailOptionsFunc(
-                 				  name,
-          				          category,
-           					  event,
-           					 eventCode,
-       						 newEventReg.tokenId,
-         					paymentMode,
-                   email
+           name,
+           category,
+           event,
+           cost,
+       		 newEventReg.tokenId,
+         	 paymentMode,
+           email
   					  );
 
     sendMail(mailOptions);
     console.log(data,"is it ok");
     
-   /*if(paymentMode ==="Online"){
-    console.log("online payment..");
-  res.status(201).render('pay',{status:"successful",data:data});
-  
-  res.status(201).json({
-    success: false,
-    code: "SUCCESS",
-    message: "REGISTERED SUCCESSFULLY",
-    data,
-  });*/
   
    
  
     
- // res.status(201).render('suc',{data:data});
+ 
  res.status(201).json({
   success:true,
   data
  });
-     // sendMail(mailOptions);
+     
 
       }
     
@@ -265,7 +255,7 @@ exports.sendOtp = async (req, res,next) => {
       <p style="font-size:0.9em;">Regards,<br />Team Ekarikthin</p>
       <hr style="border:none;border-top:1px solid #eee" />
       <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
-        <p>Ekarikthin</p>
+        <p>Team Ekarikthin</p>
         <p>NIT NAGALAND</p>
         <p>Dimapur</p>
       </div>

@@ -24,7 +24,7 @@ const mailOptionsFunc = (
   name,
   category,
   event,
-  eventCode,
+  cost,
   token,
   payMode,
   email
@@ -33,38 +33,42 @@ const mailOptionsFunc = (
     from: `Ekarikthin - NITN <${process.env.GMAIL_USERNAME}>`,
     to: email,
     subject: "Ekarikthin '23'   Registration",
-    html:` >
-<body>
-      <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
-    <div style="margin:0px auto;width:70%;padding:20px 0">
-      
-          <div class="mailtitle" >
-           
-          <div  class="maillogotext">
-          <p id="title" style="color: #FF0000;margin-bottom:0px;">Ekarikthin '23</p>
-          </div>  
-          </div>
-<div style="font-family: Helvetica,Arial,sans-serif;"><h2 style="margin-top:0px;">Thank you for registering for Ekarikthin'22</h2>
-      <b>Your registration is confirmed. Please find the details below:</b>
-       </div>
-      </div>
+    html:` <body>
+    <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
+      <div style="margin:50px auto;width:70%;padding:20px 0">
+        <a  href="index.html" style="text-decoration: none;">
+            <div class="mailtitle">
+             
+            <div  class="maillogotext">
+            <p style="color: #000;">Ekarikthin'23</p>
+            </div>  
+            </div>
+                 
+        </a>
+        <p style="font-size:1.1em">Hi,</p>
+        <p>Thank you for your interest in Ekarikthin'23. Produce the following DETAILS at helpdesk to receive your receipt. Without a receipt, you will not be able to participate in the event.</p>
+        <div id="box">
+        <p ><span>Name: </span>${name}</p>
+  
+        <p><span>Category:</span>${category}</p>
+        <p><span>Event:</span> ${event}</p>
+        <p><span>Cost:</span> ${cost}</p>
+        <p><span>Token ID: <b style="color: red;"></span>${token}</b></p>
+        <p><span>Payment Mode: </span>${payMode}</p>
+        </div>
+        <p style="font-size:0.9em;">Regards,<br />Team Ekarikthin</p>
+        <hr style="border:none;border-top:1px solid #eee" />
+        <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
+          <p>Team Ekarikthin</p>
+          <p>NIT NAGALAND</p>
+          <p>Dimapur</p>
+        </div>
+      </div>
+    </div>
+   
+  </body>
 
-    
-  <div style="justify-content:center; align-item:center;display:flex;width:100%;">
-      <div id="box" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-      <p ><span>Name: </span>${name}</p>
-
-      <p><span>Category:</span>${category}</p>
-      <p><span>Event:</span> ${event}</p>
-      <p><span>Event Code:</span> ${eventCode}</p>
-      <p><span>Token ID: <b style="color: red;"></span>${token}</b></p>
-      <p><span>Payment Mode: </span>${payMode}</p>
-      </div>
-  </div>
-      <b style="color: red;">Please keep this token ID for future reference.</b>
-</div>
- 
-</body>`,
+`,
     auth: {
       type: "Bearer",
       user: process.env.GMAIL_USERNAME,

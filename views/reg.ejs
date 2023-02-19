@@ -80,7 +80,7 @@
         </div>
         <div class="form-group">
       
-          <input  type="college" id="college" placeholder="&nbsp;" autocomplete="off" name="college" required>
+          <input  type="college" id="college" placeholder="&nbsp;" autocomplete="off" name="college" >
           <span class="floating-label">College</span>
         </div>
         <div class="form-group">
@@ -104,6 +104,7 @@
               <option>Sports</option>
               <option>MiniEvents </option>
                </select> 
+               <div class="error"></div>
           </div>
           <div class="form-group">
             <label for="Event">Event</label>
@@ -111,6 +112,7 @@
               <option value="" selected >Please select category first</option>
               
           </select>
+          <div class="error"></div>
           <input hidden id="code" name="eventCode" >
            
         
@@ -118,6 +120,7 @@
           <div class="form-group">
             <label for="Cost">Cost</label>
             <input  id="cost" name="cost"  >
+            <div class="error"></div>
           </div>
           <div class="form-group" style="margin-bottom: 50px;">
             <label for="Category">Payment Mode</label>
@@ -125,6 +128,7 @@
                 <option value="AtVenue">At Venue</option>
                 <option value="Online"> Online</option>
             </select> 
+            <div class="error"></div>
           </div>
           <button type="button" class="previous-btn">Prev</button>
           <button type="button" class="next-btn">Next</button>

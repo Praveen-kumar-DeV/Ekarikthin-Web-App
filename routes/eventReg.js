@@ -69,7 +69,7 @@ router.route('/onlinePayment').get(async(req,res)=>{
   const { tokenId}=req.query;
  
   const user = await eventReg.findOne({tokenId});
-  console.log(user);
+ 
   if(user.paymentMode==="AtVenue"){
     res.render('suc',{user:user});
   }

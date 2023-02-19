@@ -200,15 +200,8 @@ input[type=number]::-webkit-outer-spin-button {
 @media screen and (max-width:1060px)
 {
   main {
-    background-image: url('./DSC_0662.jpg');
+    background:linear-gradient(to bottom right,#333333,#121212);
     background-size: cover;
    }
 }
 
-@media screen and (max-width:500px) {
-
- main {
-  background-image: url('./DSC_0078.JPG');
-  background-size: cover;
- }
-}

@@ -123,11 +123,12 @@ exports.register = async (req, res) => {
   					  );
 
     sendMail(mailOptions);
-    console.log(data);
-   if(paymentMode ==="Online"){
+    console.log(data,"is it ok");
+    
+   /*if(paymentMode ==="Online"){
     console.log("online payment..");
   res.status(201).render('pay',{status:"successful",data:data});
-  /*
+  
   res.status(201).json({
     success: false,
     code: "SUCCESS",
@@ -135,16 +136,16 @@ exports.register = async (req, res) => {
     data,
   });*/
   
-   }
-  else{
+   
+ 
     
  // res.status(201).render('suc',{data:data});
  res.status(201).json({
   success:true,
   data
  });
-      sendMail(mailOptions);
-}
+     // sendMail(mailOptions);
+
       }
     
    catch (err)
@@ -222,9 +223,7 @@ exports.sendOtp = async (req, res,next) => {
 
   
 }
-.mailtitle .mailtitlepos img{
-  width: 100%;
-}
+
 .mailtitle .mailtitlepos
 {
   position: absolute;
@@ -234,7 +233,7 @@ exports.sendOtp = async (req, res,next) => {
 }
 .mailtitle .maillogotext  p
 {
-  margin-left: 20px;
+  
   font-size: 30px;
   color: white;
   font-family: 'Outfit', sans-serif;
@@ -253,11 +252,9 @@ exports.sendOtp = async (req, res,next) => {
     <div style="margin:50px auto;width:70%;padding:20px 0">
       <a  href="index.html" style="text-decoration: none;">
           <div class="mailtitle">
-            <div class="mailtitlepos">
-              <img src="https://i.ibb.co/6H2nmQ2/favicon.jpg" alt="your-image-description" >
-          </div>
+           
           <div  class="maillogotext">
-          <p style="color: #000;">karikthin</p>
+          <p style="color: #000;">Ekarikthin'23</p>
           </div>  
           </div>
                
@@ -292,3 +289,83 @@ exports.sendOtp = async (req, res,next) => {
   next();
 };
 
+
+exports.offregister = async (req, res) => {
+  const {
+    name,
+    email,
+    college,
+    phone,
+    category,
+    event,
+    eventCode,
+    cost,
+    paymentMode,
+    paid,
+    otp,
+    
+    
+  } = req.body;
+  console.log(req)
+  console.log(req.body,"start of register..");
+
+
+  const isReg = await eventReg.findOne({
+    eventCode,
+    email,
+  });
+    //console.log("reg check.....",isReg)
+  if (isReg) { 
+    return res.status(400).json({
+      success: false,
+      code: "REG_EXISTS",
+      message: "You are already registered for this event",
+    });
+  }
+
+
+  const newEventReg = new eventReg({
+    name,
+    category,
+    event,
+    email,
+    phone,
+    college,
+    eventCode,
+    tokenId: genToken(),
+    paid,
+    cost,
+    paymentMode,
+  });
+  
+  try {
+        const data =await newEventReg.save();
+
+         console.log(" saving.......");
+          const mailOptions = mailOptionsFunc(
+                 				  name,
+          				          category,
+           					  event,
+           					 eventCode,
+       						 newEventReg.tokenId,
+         					paymentMode,
+                   email
+  					  );
+
+ 
+ res.status(201).json({
+  success:true,
+   message:"Registered Successfully"
+ });
+    
+
+      }
+    
+   catch (err)
+    {
+    res.status(400).json({
+      success: false,
+      message: err,
+    });
+  }
+};

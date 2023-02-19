@@ -4,8 +4,9 @@ const router=express.Router();
 const cors=require('cors');
 const controller=require('../controllers/controller');
 const bodyparser=require('body-parser');
-const paycon=require('../controllers/payController');
+
 const eventReg = require("../models/registermodel");
+const { isLoggedIn } = require('../middlewares/user');
 
 
 
@@ -14,7 +15,7 @@ router.use(cors());
 router.use(bodyparser.urlencoded({extended : true}));
 router.use(bodyparser.json());
 
-router.use(express.static("public"));
+//router.use(express.static(path.join(__dirname, 'public')));
 router.route('/register').post(controller.register).get((req,res)=>{
     res.render('reg');
 });
@@ -57,12 +58,27 @@ const data={
 
 res.render('pay',{status:"success",data:data});
 });
+router.route('/offregister').post(isLoggedIn,controller.offregister);
 
-router.route('/order').post(paycon.orderCreate);
-//router.route('/verify').post(controller.verify);
-router.route('/paystat').post(paycon.paystat);
+
+
 router.route('/details').get((req,res)=>{
   res.sendFile('details.html' , { root : __dirname});
 })
+router.route('/onlinePayment').get(async(req,res)=>{
+  const { tokenId}=req.query;
+ 
+  const user = await eventReg.findOne({tokenId});
+  console.log(user);
+  if(user.paymentMode==="AtVenue"){
+    res.render('suc',{user:user});
+  }
+  else{
+  res.render('onlinepay',{user:user});
+  }
+});
+
+
 
 module.exports= router;
+

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const connectDb = require("./config/database");
 const dotenv = require("dotenv");  //require dotenv package
-dotenv.config({ path: "./config.env" }); //import config.env file
+dotenv.config({ path: "../.env" }); //import config.env file
 const path=require('path');
 const bodyparser=require('body-parser');
 const admin = require('./routes/admin');
@@ -13,9 +13,12 @@ const event = require('./routes/eventReg');
 app.use(express.urlencoded({
   extended: true
 }));
+app.use(express.static('public/src'));
 app.set('view engine','ejs');
+
+
 app.use(cors());
-app.use(express.static("public"));
+
 app.use('/',event);
 app.use('/admin', admin);
 
@@ -35,21 +38,18 @@ connectDb();
 app.use(bodyparser.urlencoded({extended : false}));   
 app.use(bodyparser.json());
 
-
-
-//app.get("/",register);
-//app.get('/',(req,res)=>{
- // res.sendFile(__dirname+"/public/index.html");
-//});
-
+app.get('/',(req,res)=>{
+  res.render('reg');
+})
 
 
 
 if (process.env.NODE_ENV === "PRODUCTION") {
-  app.use(express.static(path.join(__dirname, "./public")));
+  console.log(process.env.NODE_ENV)
+  app.use(express.static(path.join(__dirname+"../public/src")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./public/index.html"));
+    res.sendFile(path.resolve(__dirname, "../public/src/index.html"));
   });
 }
 

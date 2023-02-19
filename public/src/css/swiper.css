@@ -1,0 +1,279 @@
+.mySwiper  .swiper-slide{
+    overflow: hidden;
+    border-radius: .5rem;
+    height: 27rem;
+    width: 20rem;
+}
+
+.mySwiper .swiper-slide img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.mySwiper2  .swiper-slide{
+    overflow: hidden;
+    border-radius: .5rem;
+    height: 27rem;
+    width: 20rem;
+}
+
+.mySwiper2 .swiper-slide img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.unorder1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.unorder1 .list1{
+    list-style: none;
+    background: #eee;
+    padding: 10px 20px;
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.unorder1 .list1.active{
+    background: #03a9f4;
+    color:#fff;
+
+}
+
+.unorder2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.unorder2 .list2{
+    list-style: none;
+    background: #eee;
+    padding: 12px 20px;
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.unorder2 .list2.active{
+    background: #03a9f4;
+    color:#fff;
+
+}
+
+.unorder3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.unorder3 .list3{
+    list-style: none;
+    background: #eee;
+    padding: 12px 20px;
+    margin:5px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.unorder3 .list3.active{
+    background: #03a9f4;
+    color:#fff;
+
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+.posterTag{
+    font-family:monospace;
+    position:fixed;
+    bottom: -5px;
+    right: 10px;
+    color:whitesmoke;
+    font-size: 25px;
+    background-color: black;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.event{
+    text-align: center;
+    font-family: Impact;
+}
+
+@media(max-width:650px){
+    .mySwiper .swiper-slide{
+        height: 20rem;
+        width: 13rem;
+    }
+
+    .mySwiper2 .swiper-slide{
+        height: 20rem;
+        width: 13rem;
+    }
+
+    .unorder1 .list1{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .unorder2 .list2{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .unorder3 .list3{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .posterTag{
+        font-size: 17px;
+    }
+
+    .event{
+        font-size: 30px;
+    }
+}
+
+/*Cards*/
+.modal {
+    text-align: center;
+}
+
+.block{
+    display:block;
+    box-shadow: 0px 0px 20px lightgray;
+    border-radius: 10px;
+    margin-top: 35px;  
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.poster{
+    height:100%;
+    width:100%;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.posterHeader{
+    margin-top: 60px;
+}
+
+.exit1{
+    position:fixed; 
+    right:20px;
+    top:20px;
+    font-size: 30px;
+    color:rgba(0, 0, 0, 1);
+}
+
+.exit2{
+    margin-top: 20px;
+    margin-right:20px;
+    font-size: 30px;
+    color:rgba(0, 0, 0, 1);
+}
+
+.posterContainer{
+    width: 400px;
+    height: 650px;
+
+}
+
+.modal-content{
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    width: 450px;
+    height: 650px;
+    }
+
+.modal-dialog{
+        margin-top: 90px;
+        position: fixed;
+        margin-left: 35%;
+}
+
+@media(max-width:650px){
+    .posterContainer{
+        height:520px;
+    }
+
+    .block{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+    .posterHeader{
+        font-size:20px;
+        margin-top: 30px;
+    }
+    .text{
+        font-size: 13px;
+    }
+
+    .exit1{
+        position:fixed; 
+        right:10px;
+        top:5px;
+    }
+
+    .exit2{
+        margin-top: 5px;
+        margin-right:10px;
+    }
+
+    .swiper-pagination{
+        margin-bottom: 10px;
+    }
+
+    .header4{
+        font-size: 15px;
+    }
+
+    .modal-content{
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-top: 10px;
+        width: 340px;
+        height: 520px;
+        }
+    
+    .modal-dialog{
+            margin-top: 90px;
+            position: fixed;
+            margin-left: 3%;
+    }
+   
+}
+

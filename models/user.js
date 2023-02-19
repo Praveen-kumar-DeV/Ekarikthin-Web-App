@@ -12,14 +12,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
   },
+  event:{
+    type: String,
+    required: [true, "Event  is required"],
+  },
   role:{
     type: String,
     default:"user",
   },
-  eventCode:{
-    type: String,
-    required: [true, "Event Code is required"],
-  }
+  
 });
 
 userSchema.pre("save", async function (next) {

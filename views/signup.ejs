@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Admin</title>
 </head>
 <body>
     <section>
         <div class="container">
-          <form method="post" action="/admin/signup">
+          <form >
             
             <div class="step step-1 active">
                 <legend>Admin Sign Up</legend>
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="username" name="username" autocomplete="off">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" autocomplete="off">
               </div>
               <div class="form-group">
-                <label for="password">Confirm Password</label>
-                <input type="password" id="Cpassword" name="Cpassword">
+                <label for="event">Event</label>
+                <input type="text" id="event" name="event">
               </div>
-              <div class="form-group">
-                <label for="eventCode">Event Code</label>
-                <input type="text" id="EventCode" name="eventCode">
-              </div>
+             
               <div class="form-group">
                 <label for="role">Role</label>
                 <input type="text" id="role" name="role">
               </div>
               
-              <button type="submit" class="submit-btn">Log In</button>
+              <button type="submit" class="submit-btn">Sign Up</button>
             </div>
       
           </form>
@@ -43,4 +45,85 @@
       </section>
     
 </body>
+<script>
+    $(document).ready(function() {
+    $('form').submit(async function(event) {
+        event.preventDefault();
+let username = $('#username').val();
+let password=$('#password').val();
+let Event=$('#event').val();
+let role=$('#role').val();
+    
+  const regForm={username:username,password:password,event:Event,role:role};
+  
+  var ch=localStorage.getItem('user');
+let details= JSON.parse(ch);
+
+
+try{
+
+  const { data } = await axios.post("/admin/signup", regForm,{
+    headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${details.token}`,
+        }
+      }
+    );
+  
+ 
+    if(data.success){
+      Toastify({
+          text:'Account Created...',
+          duration: 3000,
+          
+          newWindow: true,
+          close: true,
+          gravity: "top", 
+          position: "right", 
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #ff0000, #ff4122)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+    }
+    else{
+      Toastify({
+          text:'Something went wrong',
+          duration: 3000,
+          
+          newWindow: true,
+          close: true,
+          gravity: "top", 
+          position: "right", 
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #ff0000, #ff4122)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+    }
+
+  }
+  catch(err){
+    Toastify({
+          text:'Something went wrong',
+          duration: 3000,
+          
+          newWindow: true,
+          close: true,
+          gravity: "top", 
+          position: "right", 
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #ff0000, #ff4122)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+  }
+
+    });
+  });
+
+</script>
 </html>

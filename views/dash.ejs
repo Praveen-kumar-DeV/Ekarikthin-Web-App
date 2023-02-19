@@ -33,9 +33,7 @@ th,td {
  tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
- th #expiry{
-  color: red;
-}
+ 
 input[type=text] {
   float: left;
   padding: 6px;
@@ -57,6 +55,23 @@ button{
   font-size: 17px;
   box-shadow: blueviolet;
 }
+#mytable tr td:nth-child(4) {
+color: red;
+font-weight:bold ;
+}
+
+
+
+#mytable td[data-value="true"]:before {
+  content: attr(data-value);
+}
+
+#mytable tr:nth-child(3) td:nth-child(5)[data-value="true"] {
+  color: green;
+}
+
+
+
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
    input[type=text] {
@@ -75,26 +90,39 @@ button{
 
 
   </style>
+  
 </head>
 <body>
 
 <div class="sidebar">
-  <a class="active" href="#home">Admin Dashboard</a>
-  <a href="/admin/update ">Edit</a>
-  <a href="/admin/exporttocsv">Download</a>
+  <a class="active" href="#home"  id="myLink">Admin Dashboard</a>
+  <a href="/admin/offlineRegister">Register</a>
+  <a href="/admin/update ">Update</a>
+  <a href="/admin/receipt">Receipt</a>
+
   <a href="/admin/alldata">Details</a>
-  <a href="/admin/logout">Logout</a>
+  <a onclick="erase()" href="/admin/logout">Logout</a>
   
 </div>
+<script>
+  var ch=localStorage.getItem('user');
+    const usr= JSON.parse(ch);
 
+    const myLink = document.getElementById('myLink');
+
+myLink.addEventListener('click', function(event) {
+  event.preventDefault(); 
+  myLink.href = '/admin/DashBoard?valid='+usr.token; 
+});
+</script>
 <div class="content">
-  <h2>REGISTRATION LIST..</h2>
+  <h2>REGISTRATION </h2>
  
   
 
   
   <div>
-    <h2>Product Table</h2>
+    <h2>Registration Table</h2>
     <p>Key in your input to filter the table:</p>
 
     <input type="text" id="myinput" placeholder="Search..." title="Type in something">
@@ -105,11 +133,12 @@ button{
 
     <table>
       <thead><tr>
+        <th><span id="name" class="w3-button table-column">S.NO <i class="caret"></i></span></th>
         <th><span id="name" class="w3-button table-column">Name <i class="caret"></i></span></th>
         <th><span id="quantity" class="w3-button table-column">Event<i class="caret"></i></span></th>
-        <th><span id="price" class="w3-button table-column"> Email<i class="caret"></i></span></th>
-        <th><span id="expiry" class="w3-button table-column" >TokenID <i class="caret"></i></span></th>
-        <th><span id="paid" class="w3-button table-column">Payment Status <i class="caret"></i></span></th>
+        <th><span id="price" class="w3-button table-column">TokenID<i class="caret"></i></span></th>
+        <th><span id="expiry" class="w3-button table-column" >Payment Status <i class="caret"></i></span></th>
+        <th><span id="paid" class="w3-button table-column">Pay Mode <i class="caret"></i></span></th>
         <th><span id="phone" class="w3-button table-column">Phone <i class="caret"></i></span></th>
       </tr></thead>
       <tbody id="mytable"></tbody>
@@ -128,18 +157,20 @@ button{
   let allregis;
   var ch=localStorage.getItem('user');
 const user= JSON.parse(ch);
-console.log(user);
+
 they(user);
   async function they(user){
-const data = await axios.get('/admin/data', {
+    console.log(user);
+const data = await axios.get('/admin/data',{
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,
-          },
+          }, 
+          
         }) .then((response) => {       
-        console.log(response.data.result);
+        
         allregis=response.data.result;
-        console.log("jauhua",allregis);
+       
 
 //---------------------------------------------------
 
@@ -152,7 +183,7 @@ var table = document.getElementById('mytable');
  var tableData=allregis
  
  
- console.log(allregis);
+
  
  var caretUpClassName = 'fa fa-caret-up';
  var caretDownClassName = 'fa fa-caret-down';
@@ -211,27 +242,30 @@ var table = document.getElementById('mytable');
  
  
  function populateTable() {
+  var i=0;
    table.innerHTML = '';
    for (let data of tableData) {
      let row = table.insertRow(-1);
-     let name = row.insertCell(0);
+     let sno = row.insertCell(0);
+     sno.innerHTML = ++i;
+     let name = row.insertCell(1);
      name.innerHTML = data.name;
  
-     let quantity = row.insertCell(1);
+     let quantity = row.insertCell(2);
      quantity.innerHTML = data.event;
  
-     let price = row.insertCell(2);
-     price.innerHTML = data.email;
+     let price = row.insertCell(3);
+     price.innerHTML = data.tokenId;
  
-     let expiry = row.insertCell(3);
-     expiry.innerHTML = data.tokenId;
+     let expiry = row.insertCell(4);
+     expiry.innerHTML = data.paid;
 
 
-     let paid = row.insertCell(4);
-     paid.innerHTML = data.paid;
+     let paid = row.insertCell(5);
+     paid.innerHTML = data.paymentMode;
 
 
-     let phone = row.insertCell(5);
+     let phone = row.insertCell(6);
      phone.innerHTML = data.phone;
    }
  
@@ -298,6 +332,9 @@ var table = document.getElementById('mytable');
 
       });}
      
+    function erase(){
+      window.localStorage.removeItem('user');
+    }
 
   
  </script>

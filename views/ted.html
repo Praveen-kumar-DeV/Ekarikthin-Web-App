@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        div{
+            margin-left: 10%;
+        }
+        img{
+  height: 50%;
+  width: 30%;
+}
+
+.watermark{
+  position: fixed;
+  top: 0; right: 0;
+  bottom: 0;
+  right: 0;        
+  user-select: none; /* Non-prefixed version for chorme, opera and*/
+  -ms-user-select: none; /* Internet Explorer, Edge */
+  -moz-user-select: none; /* Firefox */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+}
+
+html{
+  height: 100%;
+}
+body{
+  position: relative;
+  height: 100%;
+}
+
+body:before{
+  content: ' ';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:  url('/public/NIT.png');
+  background-position: center;  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.2;
+}
+    </style>
+  </head>
+  
+  <body>
+    <div class="watermark">Watermark text</div>
+    <header>
+      <h1>Ekarikthin College Festival</h1>
+    </header>
+    <main>
+      <h2>Registration Successful</h2>
+      <div class="card">
+        <h3 style="font-size: 25px;">Dear <span id="name"></span>,</h3>
+        
+        <div> <img src="/views/pay.jpeg" alt="" srcset=""></div>
+       
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Ekarikthin College Festival</p>
+    </footer>
+  </body>
+</html>

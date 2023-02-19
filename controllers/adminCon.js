@@ -1,13 +1,11 @@
 const cookieToken = require("../config/cookie-token");
 const User = require("../models/user");
 const eventReg = require("../models/registermodel.js");
-
+const count=require('../models/count');
 exports.login = async (req, res) => {
     const { username, password } = req.body;
     
-    console.log(req.body,"nothing..");
-    
-  
+ 
     if (!(username && password)) {
       return res.status(400).json({
         success: false,
@@ -30,17 +28,17 @@ exports.login = async (req, res) => {
         message: "Invalid username or password",
       });
     }
-     console.log("logged in ...");
+    
     cookieToken(user, res);
-   //.redirect('/admin/data?valid='+token);
-    console.log("here..!");
+  
+   
     
   };
   
 
 exports.signup = async (req, res) => {
-  console.log("sign up route...!");
-  const { username, password ,eventCode ,role} = req.body;
+ 
+  const { username, password ,event ,role} = req.body;
   console.log(req.body);
   if (!(username && password)) {
     return res.status(400).json({
@@ -51,12 +49,12 @@ exports.signup = async (req, res) => {
     const user = await User.create({
       username,
       password,
-      eventCode,
+      event,
       role,
     });
     console.log(" account ceated...!");
     cookieToken(user, res, 201);
-   // res.status(201).send("success...");
+   
   } catch (err) {
     return res.status(400).json({
       success: false,
@@ -70,14 +68,14 @@ exports.logout = async (req, res) => {
     expires: new Date(Date.now()),
     httpOnly: true,
   });
-  //localStorage.removeItem("user");
+ 
   res.status(200).redirect('/admin/login'
   );
 };
 
 exports.getRegDetails = async (req, res) => {
   const { tokenId } = req.query;
-  console.log("in datails...!")
+  console.log("in details...!")
   if (!tokenId) {
     return res.status(400).json({
       success: false,
@@ -109,8 +107,9 @@ exports.getRegDetails = async (req, res) => {
 };
 
 exports.updatePay = async (req, res) => {
+  
   const { tokenId } = req.query;
-  console.log('hello there...! pay')
+  console.log('hello there...! pay',req.user);
   if (!tokenId) {
     return res.status(400).json({
       success: false,
@@ -142,11 +141,12 @@ exports.updatePay = async (req, res) => {
       name: req.user.username,
       time: new Date().getTime(),
     });
-    await details.save();
-
+    const result=await details.save();
+       console.log(result);
     res.status(200).json({
       success: true,
       message: "Updated successfully",
+      data:result,
     });
   } catch (err) {
     return res.status(400).json({
@@ -158,8 +158,16 @@ exports.updatePay = async (req, res) => {
 
 
 exports.getAllRegistrations = async (req, res) => {
+  var eve=req.query;
+  if(!eve){
+  eve='Gully Cricket';}
+    
+
   try {
-    const allRegs = await eventReg.find({});
+    
+
+    const allRegs = await eventReg.find({event:eve.eve});
+    
     res.status(200).json({
       success: true,
       allRegs,
@@ -167,7 +175,94 @@ exports.getAllRegistrations = async (req, res) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Something went wrong",
+      message: "Something went wrong....",
     });
   }
 };
+
+exports.print=async (req,res)=>{
+
+   
+  const { tokenId } = req.body;
+ 
+  if (!tokenId) {
+    return res.status(400).json({
+      success: false,
+      message: "Please provide tokenId",
+    });
+  }
+ 
+
+  try {
+    const details = await eventReg.findOne({ tokenId });
+    let ser=await count.findOne({ serial:"InvoiceNumber" });
+    if (!details) {
+      return res.status(400).json({
+        success: false,
+        code: "INVALID_TOKEN",
+        message: "Invalid token",
+      });
+    }
+   if(!ser){
+   ser= await Hit.create({ serial:"InvoiceNumber" });
+
+   }
+   else{
+   await count.findOneAndUpdate({serial:"InvoiceNumber"}, { $inc: { count: 1 } });}
+
+          details.ino=ser.count;
+
+    res.render('receipt',{data:details});
+  } catch (err) {
+    return res.status(400).json({
+      success: false,
+      message: err.message,
+    });
+  }
+
+};
+
+exports.dashData= async(req,res)=>{
+  const user=req.user;
+  
+  let result;
+   if(user.role==='admin'||user.role==='head'){
+   result = await eventReg.find({},{
+       createdAt:false,
+       updatedAt:false,
+       _id:false,
+  });}
+  else{
+       result = await eventReg.find({event:user.event},{
+          createdAt:false,
+          updatedAt:false,
+          _id:false,
+     });
+
+  }
+ 
+ 
+ res.status(201).json({
+ 
+  result,
+ })
+}
+exports.CSVdownload=async(req, res) =>{
+  const event=req.body;
+ console.log(event)
+  var filename   =JSON.stringify(event.event);
+
+
+ 
+ filename+=".csv";
+  
+ 
+  eventReg.find(event).lean().exec({}, function(err, Registrations) {
+      if (err) res.send(err);
+      
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader("Content-Disposition", 'attachment; filename='+filename);
+      res.csv(Registrations, true);
+  });
+}

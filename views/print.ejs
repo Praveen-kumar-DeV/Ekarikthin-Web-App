@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="adminstyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+    <title>Update</title>
+    <style>
+
+input[type=text]{
+  padding: 6px;
+  border: 1px solid black;
+  margin-top: 8px;
+  font-size: 21px;
+  height: 26px;
+  border-radius: 3px;
+
+}
+#contain
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+} 
+@media screen and (max-width:600px) {
+button
+{
+  display: block;
+  margin-top: 20px;
+}
+input
+{
+  margin-left: 15px;
+  margin-right: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 80%;
+}
+  
+}
+
+/* Set a style for all buttons */ 
+button {
+   
+  background-color: #04AA6D;
+  color: white;
+  padding: 13px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+   display: inline-block;
+   border-radius: 5px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+#container{
+     display: flex;
+     justify-content: center;
+     align-items:center ;
+     margin-top: 40px;
+
+    
+  }
+  #card{
+      border-radius: 10px;
+      padding-left: 20px;
+      width: 300px;
+      line-height: 30px;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a class="active" href="/admin/DashBoard">Admin Dashboard</a>
+  <a href="/admin/update ">Update</a>
+  <a href="/admin/receipt">Receipt</a>
+  <a href="/admin/alldata">Details</a>
+  <a onclick="erase()" href="/admin/logout">Logout</a>
+  
+</div>
+
+  
+
+    <h4 style="text-align: center;">Enter the TOKEN ID to PRINT THE RECEIPT</h4>
+
+    <div id="contain" style="text-align: center;">
+        <form action="/admin/print" method="post" id="myForm">
+        <input id="passId" type="text" name="tokenId" placeholder="Enter TokenId......">
+        <input id="token" type="hidden" name="token">
+        <button onclick="myfunc()">PRINT</button>
+  
+    </form>
+  </div>
+<script>
+
+
+
+  const myInput = document.getElementById('token');
+const myForm = document.getElementById('myForm');
+
+const show =document.getElementById('updated');
+    
+    var ch=localStorage.getItem('user');
+let details= JSON.parse(ch);
+if(!details){
+  details={token:'Nothing'}
+}
+
+// Set the input value before the form is submitted
+myForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // prevent the form from submitting normally
+  myInput.value = details.token; // set the input value
+  myForm.submit(); // submit the form
+});
+</script>
+    <div id="updated"></div>
+</body>
+
+</html>

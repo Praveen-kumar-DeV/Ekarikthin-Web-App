@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+       #container{
+    
+   display:flex;
+    justify-content: center;
+        width: 100%;
+      
+      
+
+ }
+ #card{
+     border-radius: 10px;
+     width: 300px;
+     line-height: 30px;
+     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+ }
+ p{
+     color:black;
+     display: block;
+     text-align: center;
+
+ }
+
+
+
+
+.btn {
+ background: #d97b34;
+ background-image: -webkit-linear-gradient(top, #d97b34, #b82f2b);
+ background-image: -moz-linear-gradient(top, #d97b34, #b82f2b);
+ background-image: -ms-linear-gradient(top, #d97b34, #b82f2b);
+ background-image: -o-linear-gradient(top, #d97b34, #b82f2b);
+ background-image: linear-gradient(to bottom, #d97b34, #b82f2b);
+ -webkit-border-radius: 26;
+ -moz-border-radius: 26;
+ border-radius: 26px;
+ font-family: Georgia;
+ color: #ffffff;
+ font-size: 18px;
+ padding: 9px 20px 10px 20px;
+ text-decoration: none;
+}
+
+.btn:hover {
+ background: #3cb0fd;
+ background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+ background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+ background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+ background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+ background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+ text-decoration: none;
+}
+
+
+#Paycontainer
+      {
+      width: 300px;
+      height: 450px;
+      }
+      img{
+       width: 300px;
+      height: 450px;
+
+      }
+      .note{
+       margin-top: 50px;
+       margin-bottom: 50px;
+       height: 20%;
+       width: 90%;
+      }
+      .cards{
+       box-shadow: rgba(237, 233, 233, 0.07) 0px 1px 2px, rgba(245, 242, 242, 0.07) 0px 2px 4px, rgba(249, 249, 249, 0.07) 0px 4px 8px, rgba(255, 255, 255, 0.07) 0px 8px 16px, rgba(239, 236, 236, 0.07) 0px 16px 32px, rgba(247, 246, 246, 0.07) 0px 32px 64px;
+       
+      }
+
+   
+
+    </style>
+  </head>
+  
+  <body>
+
+    <main>
+     
+      <div class="card">
+       
+        <p style="font-size: 25px;">Thank you for registering for the Ekarikthin College Festival!</p>
+        
+       
+      </div>
+      <div class="note"><div class="cards">
+        YOUR TOKEN ID WITH YOU FOR THE CONFORMATION OF YOUR PAYMENT
+       CLICK ON HOME TO RETURN TO HOME PAGE OR PAGE WILL AUTOMATICALLY REDIRECTED TO HOME PAGE WITH IN 30 SECONDS
+    </div></div>
+      
+     <div id="container">
+        <div id="card" >
+       
+            <p >NAME : <%=user.name%></p>
+            <p>EVENT : <%=user.event%></p>
+            <p>TOKEN ID : <%=user.tokenId%></p>
+            <p>EMAIL : <%=user.email%></p>
+            <p>CATEGORY : <%=user.category%></p>
+            <p>COST : <%=user.cost%></p>
+            <p>PAYMENT MODE : <%=user.paymentMode%></p>
+        </div>
+      
+        <div id='Paycontainer'>
+            <img src="/pay.jpeg">
+     </div>
+      <div style="width: 100%;">
+        <button class="btn" onclick = "window.location.href ='/'">Click to Redirect to Home Page</button></div>
+      </div>
+       
+    </main>
+
+  </body>
+</html>
+

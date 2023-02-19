@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adminstyle.css">
+    <title>Document</title>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css" rel="stylesheet">
+
+<style>
+
+h2 {
+  margin-bottom: 50px;
+}
+
+.container {
+  text-align: center;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container table {
+  width: 100%;
+}
+
+.container td, .container th {
+  padding: 10px;
+}
+
+.container td:first-child, .container th:first-child {
+  padding-left: 20px;
+}
+
+.container td:last-child, .container th:last-child {
+  padding-right: 20px;
+}
+
+.container th {
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+
+</style>
+
+
+
+
+
+
+    </head>
+    <body>
+      <div class="sidebar">
+        <a class="active" onclick= "history.go(-1);">Admin Dashboard</a>
+     
+        <a href="">Details</a>
+        <a onclick="erase()" href="/admin/logout">Logout</a>
+        
+      </div>
+    
+    
+    
+
+    <section class="container">
+
+        <h2>REGISTRATION LIST</h2>
+    
+       
+      
+      
+      <select type="search" class="select-table-filter" data-table="order-table" oninput="they(this.value)" id="filter" onchange="down(this.value)">
+        <option value="">Reset</option>  
+        <option value="Doe">Doe</option>  
+        <option value="Gully Cricket">Gully Cricket</option> 
+        <option value="Voice of Ekarikthin">Voice of Ekarikthin</option>  
+        <option value="BGMI">BGMI</option>   
+      <select>
+    
+        <form id="myForm" action="/admin/exporttocsv" method="post">
+          <input type="hidden" name="event" >
+          <button>Download</button>
+      </form>
+        <table class="order-table">
+            <thead><tr>
+                <th><span id="sno" class="w3-button table-column">S.NO</span></th>
+                <th><span id="name" class="w3-button table-column">Name </span></th>
+                <th><span id="quantity" class="w3-button table-column">Event</span></th>
+                <th><span id="price" class="w3-button table-column"> Email</span></th>
+                <th><span id="expiry" class="w3-button table-column" >TokenID </span></th>
+                <th><span id="paid" class="w3-button table-column">Payment Status </span></th>
+                <th><span id="phone" class="w3-button table-column">Phone </span></th>
+              </tr></thead>
+              <tbody id="mytable" style="width: 100%"  border="1"></tbody>
+           
+        </table>
+    
+    </section>
+
+
+    <script>
+
+function down(val){
+  const Down=document.getElementById('filter');
+  console.log(Down.value,"llll")
+ 
+  document.getElementById("myForm").elements[0].value=val;
+  console.log(document.getElementById("myForm").elements[0].value)
+}
+
+
+
+    var example_array = {
+   
+    "Cosplay - Solo": "Cosplay - Solo",
+    "Cosplay - Duo": "Cosplay - Duo",
+    "Cosplay - Trio": "Cosplay - Trio",
+    "Cosplay - Group":"Cosplay - Group",
+     "Ritzy": "Ritzy",
+    "Rockville":  "Rockville",
+    "Voice of Ekarikthin": "Voice of Ekarikthin",
+    "Dance - Solo": "Dance - Solo",
+    "Dance - Crew": "Dance - Crew",
+    "Beatbox":"Beatbox",
+  
+    "Robo Race":  "Robo Race",
+     "Typing Master": "Typing Master",
+    "CodeCast": "CodeCast",
+    "Web Design": "Web Design",
+   "Agile Ideas":"Agile Ideas",
+    
+    
+    "Virgowords": "Virgowords",
+    "Quiz Buzz": "Quiz Buzz",
+  
+
+   
+    "BGMI": "BGMI",
+    "CSGO": "CSGO",
+    
+    "Mobile legends": "Mobile legends",
+
+ 
+    "Table Tennis": "Table Tennis",
+     "Volleyball": "Volleyball",
+   "Penalty Shoot out":"Penalty Shoot out",
+    "Gully Cricket": "Gully Cricket",
+    "Badminton": "Badminton",
+    "Mountain Biking": "Mountain Biking",
+ 
+ 
+    "Treasure Hunt": "Treasure Hunt",
+    "Wall Painting": "Wall Painting",
+    "Rangoli Competition": "Rangoli Competition",
+    "Survivo":"Survivo",
+    "Instagram Photo Likes Contest":"Instagram Photo Likes Contest",
+  
+    };
+    
+    var select = document.getElementById("filter");
+    for(index in example_array) {
+        select.options[select.options.length] = new Option(example_array[index], example_array[index]);
+    }
+
+    
+    var ch=localStorage.getItem('user');
+    const user= JSON.parse(ch);
+
+
+    
+  
+  
+  async function they(eve){
+
+ 
+
+const data = await axios.get('/admin/details',{
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+          params: {
+    eve
+  }
+        },eve) .then((response) => {       
+       
+        allregis=response.data.allRegs;
+
+          populateTable(allregis);
+       
+
+        });
+    }
+
+
+
+    function populateTable(tableData) {
+      var table = document.getElementById('mytable');
+   table.innerHTML = '';
+   var i=0;
+   for (let data of tableData) {
+     let row = table.insertRow(-1);
+     
+     let sno = row.insertCell(0);
+     sno.innerHTML = ++i;
+     let name = row.insertCell(1);
+     name.innerHTML = data.event;
+ 
+     let quantity = row.insertCell(2);
+     quantity.innerHTML = data.name;
+ 
+     let price = row.insertCell(3);
+     price.innerHTML = data.email;
+ 
+     let expiry = row.insertCell(4);
+     expiry.innerHTML = data.tokenId;
+
+
+     let paid = row.insertCell(5);
+     paid.innerHTML = data.paid;
+
+
+     let phone = row.insertCell(6);
+     phone.innerHTML = data.phone;
+   }
+  }
+
+
+    </script>
+   
+    
+    </body>
+</html>

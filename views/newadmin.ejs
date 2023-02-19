@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">                
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/templatemo-festava-live.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">   
+
+
+<!-- ... --->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <title>Admin</title>
+<style>
+  .error
+   {
+  font-size: 14.5px;
+  margin-top: 5px;
+  background:transparent;
+
+  font-weight: 500;
+    color: rgb(246, 14, 14);
+    text-shadow:
+    -1px -1px 3px #000,
+    1px -1px 3px #000,
+    -1px 1px 3px #000,
+    1px 1px 3px #000;
+}
+
+</style>
+</head>
+<body>
+  
+    <div id="loader">
+        <div class="con">           
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>
+                <div class="wave" ></div>         
+        </div>
+          <div style="color:white;text-align:center;margin-top:-200px;font-size:30px;">
+            Loading...
+         </div>         
+    </div>
+    <div id="app-header">
+
+    </div>
+ <main>
+   
+    <section>
+        <div class="container">
+          <form  >
+            
+            <div class="step step-1 active">
+                <legend>Admin Login</legend>
+              <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" id="username" name="username" value="" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="" autocomplete="off">
+              </div>
+             
+              <button type="submit" class="submit-btn">Log In</button>
+            </div>
+      
+          </form>
+        </div>
+      </section>
+     
+ </main>
+ <div id="app-footer">
+
+ </div>
+     
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<script src="/js/custom.js"></script>
+
+
+<script>
+
+
+    let allregis;
+    $(document).ready(function() {
+      $('form').submit(async function(event) {
+          event.preventDefault();
+    let username = $('#username').val();
+    let password=$('#password').val();
+      
+    const regForm={username:username,password:password};
+    try{
+    const { data } = await axios.post("/admin/login", regForm);
+    
+    
+    const token =data.token;
+    if (data.success) {
+          const userDetails = {
+           ...data.user,
+             token:data.token,
+          };
+          localStorage.setItem("user", JSON.stringify(userDetails));
+         
+    
+        console.log("test token...",userDetails.role);
+        if(userDetails.role==='admin'){
+          console.log(userDetails.role);
+        window.location.href = '/admin/DashBoard?valid='+userDetails.token;
+        }
+        else if(userDetails.role==='head')
+        {
+          window.location.href = '/admin/headUserDash?valid='+userDetails.token;
+        }
+        else 
+        {
+          window.location.href = '/admin/UserDash?valid='+userDetails.token;
+        }
+        
+        
+       
+    }
+    }
+    catch(err){
+    console.log(err.response.data.message);
+    Toastify({
+            text:err.response.data.message,
+            duration: 3000,
+            
+            newWindow: true,
+            close: true,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #ff0000, #ff4122)",
+            },
+            onClick: function(){} 
+          }).showToast();
+    }
+    
+      });
+    });
+    
+    
+    </script>
+     
+
+
+</html>

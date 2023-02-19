@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");  //require dotenv package
-dotenv.config({ path: "./config.env" }); //import config.env file
+dotenv.config({ path: "./.env" }); //import config.env file
 
 const DB = process.env.DATABASE;  
 

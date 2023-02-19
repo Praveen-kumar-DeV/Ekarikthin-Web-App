@@ -9,7 +9,7 @@ const cookieToken = (user, res, statusCode = 200) => {
     };
   
     user.password = undefined;
-    //console.log(user.password);
+    
     res.status(statusCode).cookie("token", token, options).json({
       success: true,
       token,

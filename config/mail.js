@@ -32,16 +32,39 @@ const mailOptionsFunc = (
   return {
     from: `Ekarikthin - NITN <${process.env.GMAIL_USERNAME}>`,
     to: email,
-    subject: "Ekarikthin'   Registration",
-    html: `<h1>Thank you for registering for Ekarikthin'22</h1>
+    subject: "Ekarikthin '23'   Registration",
+    html:` >
+<body>
+      <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
+    <div style="margin:0px auto;width:70%;padding:20px 0">
+      
+          <div class="mailtitle" >
+           
+          <div  class="maillogotext">
+          <p id="title" style="color: #FF0000;margin-bottom:0px;">Ekarikthin '23</p>
+          </div>  
+          </div>
+<div style="font-family: Helvetica,Arial,sans-serif;"><h2 style="margin-top:0px;">Thank you for registering for Ekarikthin'22</h2>
       <b>Your registration is confirmed. Please find the details below:</b>
-      <p>Name: ${name}</p>
-      <p>Category: ${category}</p>
-      <p>Event: ${event}</p>
-      <p>Event Code: ${eventCode}</p>
-      <p>Token ID: <b style="color: blue;">${token}</b></p>
-      <p>Payment Mode: ${payMode}</p>
-      <b style="color: red;">Please keep this token ID for future reference.</b>`,
+       </div>
+      </div>
+
+    
+  <div style="justify-content:center; align-item:center;display:flex;width:100%;">
+      <div id="box" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+      <p ><span>Name: </span>${name}</p>
+
+      <p><span>Category:</span>${category}</p>
+      <p><span>Event:</span> ${event}</p>
+      <p><span>Event Code:</span> ${eventCode}</p>
+      <p><span>Token ID: <b style="color: red;"></span>${token}</b></p>
+      <p><span>Payment Mode: </span>${payMode}</p>
+      </div>
+  </div>
+      <b style="color: red;">Please keep this token ID for future reference.</b>
+</div>
+ 
+</body>`,
     auth: {
       type: "Bearer",
       user: process.env.GMAIL_USERNAME,

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/index",
-    "dev": "SET NODE_ENV=DEVELOPMENT & nodemon backend/index",
-    "prod": "SET NODE_ENV=PRODUCTION & nodemon backend/index"
+    "start": "node Backend/index",
+    "dev": "set NODE_ENV=DEVELOPMENT & nodemon Backend/index",
+    "prod": "set NODE_ENV=PRODUCTION & nodemon Backend/index"
   },
   "author": "",
   "license": "ISC",
@@ -20,14 +20,10 @@
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "express-formidable": "^1.2.0",
-    "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.2",
-    "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.8.0",
-    "rand-token": "^1.0.1",
-    "razorpay": "^2.8.4"
+    "rand-token": "^1.0.1"
   }
 }

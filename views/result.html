@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+     
+        .container{
+           display: flex;
+           justify-content: space-between;
+         
+         width: 100%;
+         height: 450px;
+         column-gap: 4em;
+            
+        }
+        .card{
+            
+            
+            border-radius: 10px;
+            width: 300px;
+            line-height: 30px;
+            box-shadow: rgba(237, 233, 233, 0.07) 0px 1px 2px, rgba(245, 242, 242, 0.07) 0px 2px 4px, rgba(249, 249, 249, 0.07) 0px 4px 8px, rgba(255, 255, 255, 0.07) 0px 8px 16px, rgba(239, 236, 236, 0.07) 0px 16px 32px, rgba(247, 246, 246, 0.07) 0px 32px 64px;
+        }
+        p{
+            color:rgb(11, 5, 5);
+            display: block;
+            text-align: center;
+
+        }
+        #cov{
+            background-image: url("../public/bro.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+           background-size: cover;
+           filter: blur(8px);
+           -webkit-filter: blur(8px);
+        }
+        #res
+        {
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left:50%;
+           
+        }
+       #Paycontainer
+       {
+       width: 300px;
+       height: 450px;
+       }
+       img{
+        width: 300px;
+       height: 450px;
+
+       }
+       .note{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        height: 20%;
+        width: 90%;
+       }
+       .cards{
+        box-shadow: rgba(237, 233, 233, 0.07) 0px 1px 2px, rgba(245, 242, 242, 0.07) 0px 2px 4px, rgba(249, 249, 249, 0.07) 0px 4px 8px, rgba(255, 255, 255, 0.07) 0px 8px 16px, rgba(239, 236, 236, 0.07) 0px 16px 32px, rgba(247, 246, 246, 0.07) 0px 32px 64px;
+        
+       }
+
+       .btn {
+  background: #d97b34;
+  background-image: -webkit-linear-gradient(top, #d97b34, #b82f2b);
+  background-image: -moz-linear-gradient(top, #d97b34, #b82f2b);
+  background-image: -ms-linear-gradient(top, #d97b34, #b82f2b);
+  background-image: -o-linear-gradient(top, #d97b34, #b82f2b);
+  background-image: linear-gradient(to bottom, #d97b34, #b82f2b);
+  -webkit-border-radius: 26;
+  -moz-border-radius: 26;
+  border-radius: 26px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 9px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div id="cov"></div>
+    <div id="res"></div>
+   
+    <button onclick="myfun()">Details</button>
+    <button onclick="funny()">Render</button>
+
+</body>
+<script>
+    function myfun(){
+        var imageUrl= "/home/praveen/Documents/TECHNO/Ekarkthin/public/neo.jpg";
+
+    const user={
+
+  name: 'PraveenKumar',
+  category: 'Mini Events',
+  event: 'Wall Painting',
+  email: 'Praveenhere333@gmail.com',
+  phone: 8743923093,
+  college: 'NIT NAGALAND',
+  eventCode: 'MNE_WP',
+  tokenId: 'EKbtrvSv23',
+  paid: false,
+  paymentMode: 'At venue',
+  cost: 50,
+ 
+ 
+    };
+    const temp=`
+    <div class="note"><div class="cards">
+     YOUR TOKEN ID WITH YOU FOR THE CONFORMATION OF YOUR PAYMENT
+    CLICK ON HOME TO RETURN TO HOME PAGE OR PAGE WILL AUTOMATICALLY REDIRECTED TO HOME PAGE WITH IN 30 SECONDS
+</div></div>
+    <div class="container">
+    <div class="card" >
+
+        <p ">NAME : ${user.name}</p>
+        <p>EVENT : ${user.event}</p>
+        <p style="color:red;">TOKEN ID : ${user.tokenId}</p>
+        <p>EMAIL : ${user.email}</p>
+        <p>CATEGORY : ${user.category}</p>
+        <p>COST : ${user.cost}</p>
+        <p>PAYMENT MODE : ${user.paymentMode}</p>
+    </div>
+    <div id='Paycontainer'>
+        <img src="./pay.jpeg">
+</div>
+</div>
+
+<p id = "result"><b> The page will redirect  to HOME PAGE after delay of <span id="counter">30 </span>seconds</b></p>
+   <button class="btn" onclick = "window.location.href ='/'; ">Click to Redirect to Tutorials Point</button>
+  
+
+`;
+
+const result = document.getElementById('res');
+//document.body.style.backgroundImage=imageUrl ;
+result.innerHTML=temp;
+redirect();
+}
+
+
+
+         
+         function redirect () {
+          setInterval(myURL, 1000);
+          var result = document.getElementById("result");
+         // result.innerHTML = "";
+       }
+ 
+       function myURL() {
+        var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                //window.location.replace("https://example.com");
+                document.location.href = '/';
+            }
+         
+       }
+
+
+
+function funny(){
+    //axios.get('')
+  window.location.href ='http://localhost:3000/admin/update';
+}
+</script>
+</html>
+

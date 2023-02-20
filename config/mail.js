@@ -48,13 +48,13 @@ const mailOptionsFunc = (
         <p style="font-size:1.1em">Hi,</p>
         <p>Thank you for your interest in Ekarikthin'23. Produce the following DETAILS at helpdesk to receive your receipt. Without a receipt, you will not be able to participate in the event.</p>
         <div id="box">
-        <p ><span>Name: </span>${name}</p>
+        <p style="font-weight:bold;"><span>Name: </span>${name}</p>
   
-        <p><span>Category:</span>${category}</p>
-        <p><span>Event:</span> ${event}</p>
-        <p><span>Cost:</span> ${cost}</p>
-        <p><span>Token ID: <b style="color: red;"></span>${token}</b></p>
-        <p><span>Payment Mode: </span>${payMode}</p>
+        <p style="font-weight:bold;"><span>Category:</span>${category}</p>
+        <p style="font-weight:bold;"><span>Event:</span> ${event}</p>
+        <p style="font-weight:bold;"><span>Cost:</span> ${cost}</p>
+        <p style="font-weight:bold;"><span>Token ID:</span> <b style="color:red;">${token}</b></p>
+        <p style="font-weight:bold;"><span>Payment Mode: </span>${payMode}</p>
         </div>
         <p style="font-size:0.9em;">Regards,<br />Team Ekarikthin</p>
         <hr style="border:none;border-top:1px solid #eee" />

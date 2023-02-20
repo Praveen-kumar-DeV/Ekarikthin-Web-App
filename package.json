@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node Backend/index",
-    "dev": "set NODE_ENV=DEVELOPMENT & nodemon Backend/index",
-    "prod": "set NODE_ENV=PRODUCTION & nodemon Backend/index"
+    "dev": " export NODE_ENV=DEVELOPMENT& nodemon index",
+    "prod": "export NODE_ENV=PRODUCTION& nodemon index"
   },
   "author": "",
   "license": "ISC",

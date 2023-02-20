@@ -1,129 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #fff;
+        background-size: cover;
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+      }
+      main {
+        margin-top: 60px;
+
+        background-size: cover;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+      }
+      section {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0px 0px 30px #fff;
+        background-color: rgba(247, 243, 243, 0.376);
+        padding-bottom: 40px;
+        background-size: cover;
+      }
+      .form-group label {
+        color: #080808;
+        font-size: 20px;
+        font-weight: 200;
+        display: block;
+      }
+      .form-group input {
+        width: 100%;
+        border: none;
+        box-shadow: 0px 10px 10px -7px #000000;
+        border-radius: 3px;
+        outline: none;
+        height: 30px;
+        background: transparent;
+        color: #121212;
+        font-size: 20px;
+        transition: all 0.15s ease;
+      }
+
+      button.submit-btn {
+        float: right;
+        margin-top: 20px;
+        padding: 10px 30px;
+
+        font-size: 18px;
+        cursor: pointer;
+        /* text-align: right; */
+      }
+
+      button.submit-btn {
+        color: #fff;
+        background: #000;
+        border-radius: 7px;
+      }
+      button.submit-btn:hover {
+        background-color: #fefdfe;
+        color: #050801;
+        font-weight: 400;
+        box-shadow: 0px 0px 5px #fff, 0px 0px 25px #fff, 0px 0px 50px #fff,
+          0px 0px 0px #fff;
+      }
+
+      .floating-label {
+        font-size: 20px;
+        color: #111111;
+        position: absolute;
+        pointer-events: none;
+        background: transparent;
+        left: 0px;
+        transition: 0.2s ease all;
+        top: 4px;
+        transform-origin: 0 0;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .form-group input:not(:-moz-placeholder-shown) + .floating-label {
+        color: rgb(9, 8, 8);
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+      .form-group input:not(:-ms-input-placeholder) + .floating-label {
+        color: #0a0a0a;
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+      .form-group input:not(:placeholder-shown) + .floating-label {
+        color: #040404;
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+      .form-group input:focus {
+        color: rgb(5, 5, 5);
+        outline: none;
+      }
+      .form-group input:focus + .floating-label {
+        color: rgb(2, 2, 2);
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+    </style>
     <title>Admin</title>
-</head>
-<body>
-    <section>
+  </head>
+  <body>
+    <main>
+      <section>
         <div class="container">
-          <form >
-            
+          <form>
             <div class="step step-1 active">
-                <legend>Admin Sign Up</legend>
+              <legend>Admin Sign Up</legend>
+              <br />
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" autocomplete="off">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  autocomplete="off"
+                />
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" autocomplete="off">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  autocomplete="off"
+                />
               </div>
               <div class="form-group">
                 <label for="event">Event</label>
-                <input type="text" id="event" name="event">
+                <input type="text" id="event" name="event" />
               </div>
-             
+
               <div class="form-group">
                 <label for="role">Role</label>
-                <input type="text" id="role" name="role">
+                <input type="text" id="role" name="role" />
               </div>
-              
+
               <button type="submit" class="submit-btn">Sign Up</button>
             </div>
-      
           </form>
         </div>
       </section>
-    
-</body>
-<script>
-    $(document).ready(function() {
-    $('form').submit(async function(event) {
+    </main>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("form").submit(async function (event) {
         event.preventDefault();
-let username = $('#username').val();
-let password=$('#password').val();
-let Event=$('#event').val();
-let role=$('#role').val();
-    
-  const regForm={username:username,password:password,event:Event,role:role};
-  
-  var ch=localStorage.getItem('user');
-let details= JSON.parse(ch);
+        let username = $("#username").val();
+        let password = $("#password").val();
+        let Event = $("#event").val();
+        let role = $("#role").val();
 
+        const regForm = {
+          username: username,
+          password: password,
+          event: Event,
+          role: role,
+        };
 
-try{
+        var ch = localStorage.getItem("user");
+        let details = JSON.parse(ch);
 
-  const { data } = await axios.post("/admin/signup", regForm,{
-    headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${details.token}`,
+        try {
+          const { data } = await axios.post("/admin/signup", regForm, {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${details.token}`,
+            },
+          });
+
+          if (data.success) {
+            Toastify({
+              text: "Account Created",
+              duration: 3000,
+
+              newWindow: true,
+              close: true,
+              gravity: "top",
+              position: "right",
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to right, #0000FF, #ff4122)",
+              },
+              onClick: function () {}, // Callback after click
+            }).showToast();
+          } else {
+            console.log(data);
+            Toastify({
+              text: data.message,
+              duration: 3000,
+
+              newWindow: true,
+              close: true,
+              gravity: "top",
+              position: "right",
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to right, #ff0000, #ff4122)",
+              },
+              onClick: function () {}, // Callback after click
+            }).showToast();
+          }
+        } catch (err) {
+          console.log(err);
+          Toastify({
+            text: "UNAUTHORIZED",
+            duration: 3000,
+
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #ff0000, #ff4122)",
+            },
+            onClick: function () {}, // Callback after click
+          }).showToast();
         }
-      }
-    );
-  
- 
-    if(data.success){
-      Toastify({
-          text:'Account Created...',
-          duration: 3000,
-          
-          newWindow: true,
-          close: true,
-          gravity: "top", 
-          position: "right", 
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "linear-gradient(to right, #ff0000, #ff4122)",
-          },
-          onClick: function(){} // Callback after click
-        }).showToast();
-    }
-    else{
-      Toastify({
-          text:'Something went wrong',
-          duration: 3000,
-          
-          newWindow: true,
-          close: true,
-          gravity: "top", 
-          position: "right", 
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "linear-gradient(to right, #ff0000, #ff4122)",
-          },
-          onClick: function(){} // Callback after click
-        }).showToast();
-    }
-
-  }
-  catch(err){
-    Toastify({
-          text:'Something went wrong',
-          duration: 3000,
-          
-          newWindow: true,
-          close: true,
-          gravity: "top", 
-          position: "right", 
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "linear-gradient(to right, #ff0000, #ff4122)",
-          },
-          onClick: function(){} // Callback after click
-        }).showToast();
-  }
-
+      });
     });
-  });
-
-</script>
+  </script>
 </html>

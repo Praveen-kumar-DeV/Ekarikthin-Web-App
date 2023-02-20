@@ -34,7 +34,7 @@ let appHeader = `
   <header >
   <nav class="navbar navbar-expand-lg" style="background:black;">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <div class="titlenav">
                             <div class="titlepos">
                                 <img src="/favicon.ico" alt="your-image-description" class="titlelogo">
@@ -51,22 +51,22 @@ let appHeader = `
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav align-items-lg-center ms-auto me-lg-4">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="events.html">Events</a>
+                                <a class="nav-link " href="/Events">Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="gallerypage.html">Gallery</a>
+                                <a class="nav-link " href="/Gallery">Gallery</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="practice.html">Organizers</a>
+                                <a class="nav-link" href="/Organisers">Organizers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Magazine.pdf" download>E-magazine</a>
                             </li>
                             <li class="nav-item">
-                                <a href="reg.html" class=" nav-link">Register</a>
+                                <a href="/register" class=" nav-link">Register</a>
                             </li>
                         </ul>
 
@@ -90,22 +90,22 @@ let appFooter = `
   
               <ul class="site-footer-links">
                   <li>
-                      <a href="events.html" class="site-footer-link">Events</a>
+                      <a href="/Events" class="site-footer-link">Events</a>
                   </li>
                   <li >
-                      <a href="gallerypage.html" class="site-footer-link">Gallery</a>
+                      <a href="/Gallery" class="site-footer-link">Gallery</a>
                   </li>
                   <li >
-                      <a href="practice.html" class="site-footer-link">Organizers</a>
+                      <a href="/Organisers" class="site-footer-link">Organizers</a>
                   </li>
                   <li >
                       <a class="site-footer-link" href="Magazine.pdf" download>E-magazine</a>
                   </li>
                   <li>
-                      <a href="reg.html" class="site-footer-link">Register</a>
+                      <a href="/register" class="site-footer-link">Register</a>
                   </li>
                   <li>
-                      <a href="admin.html" class="site-footer-link">Admin Login</a>
+                      <a href="/admin/login" class="site-footer-link">Admin Login</a>
                   </li>
               </ul>
           </div>

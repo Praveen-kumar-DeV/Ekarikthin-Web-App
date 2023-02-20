@@ -11,57 +11,12 @@
   
 
 
-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-th,td {
-    padding: 12px 15px;
-}
- tr {
-  border-bottom: 1px solid #dddddd;
-}
-
- tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
- tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
- th #expiry{
-  color: red;
-}
-input[type=text] {
-  float: left;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
-}
-button{
-  width: auto;
-  float: right;
-  padding: 6px;
-  color: #dddddd;;
-  border: 1px white solid;
-  background-color: rgb(3, 152, 88);
-  border-radius: 8px;
-  margin-top: 8px;
-  margin-right: 130px;
-  font-size: 17px;
-  box-shadow: blueviolet;
-}
 
 #mytable tr td:nth-child(4) {
 color: red;
 font-weight:bold ;
 }
+
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
@@ -91,29 +46,33 @@ font-weight:bold ;
 </div>
 
 <div class="content">
-  <h2>REGISTRATION LIST..</h2>
+  <div class="details-table">
+  <h2>REGISTRATION DASHBOARD</h2>
  
-  
 
-  
-  <div>
-    <h2>Product Table</h2>
     <p>Key in your input to filter the table:</p>
 
     <input type="text" id="myinput" placeholder="Search..." title="Type in something">
-    <button onClick="history.go(0);" style="display: flex;">Refresh Page</button>
+    <button onClick="history.go(0);"style="float:right; padding: 6px;
+    border: 2px solid #04AA6D;;
+    background-color: #04AA6D;;
+    border-radius: 5px;
+    box-shadow: 0px 0px #000;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;">Refresh Page</button>
     <br>
 
-   
+  </div>
 
     <table>
       <thead><tr>
         <th><span id="name" class="w3-button table-column">S.NO <i class="caret"></i></span></th>
         <th><span id="name" class="w3-button table-column">Name <i class="caret"></i></span></th>
         <th><span id="quantity" class="w3-button table-column">Event<i class="caret"></i></span></th>
-        <th><span id="price" class="w3-button table-column"> Email<i class="caret"></i></span></th>
-        <th><span id="expiry" class="w3-button table-column" >TokenID <i class="caret"></i></span></th>
-        <th><span id="paid" class="w3-button table-column">Payment Status <i class="caret"></i></span></th>
+        <th><span id="price" class="w3-button table-column">TokenID<i class="caret"></i></span></th>
+        <th><span id="expiry" class="w3-button table-column" >Payment Status <i class="caret"></i></span></th>
+        <th><span id="paid" class="w3-button table-column">Pay Mode<i class="caret"></i></span></th>
         <th><span id="phone" class="w3-button table-column">Phone <i class="caret"></i></span></th>
       </tr></thead>
       <tbody id="mytable"></tbody>
@@ -121,10 +80,6 @@ font-weight:bold ;
   </div>
   
 
-  
-
- 
-</div>
 
 </body>
 
@@ -230,14 +185,14 @@ var table = document.getElementById('mytable');
      quantity.innerHTML = data.event;
  
      let price = row.insertCell(3);
-     price.innerHTML = data.email;
+     price.innerHTML = data.tokenId;
  
      let expiry = row.insertCell(4);
-     expiry.innerHTML = data.tokenId;
+     expiry.innerHTML = data.paid;
 
 
      let paid = row.insertCell(5);
-     paid.innerHTML = data.paid;
+     paid.innerHTML = data.paymentMode;
 
 
      let phone = row.insertCell(6);

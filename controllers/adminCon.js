@@ -4,7 +4,7 @@ const eventReg = require("../models/registermodel.js");
 const count=require('../models/count');
 exports.login = async (req, res) => {
     const { username, password } = req.body;
-    
+   
  
     if (!(username && password)) {
       return res.status(400).json({

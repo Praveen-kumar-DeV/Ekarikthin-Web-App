@@ -8,19 +8,6 @@ const csv   = require('csv-express');
 const bodyParser = require("body-parser");
 
 
-const cors=require('cors');
-router.use(cors());
-
-
-
-router.use(bodyParser.json()); 
-router.use(bodyParser.urlencoded({
-    extended: false
-}));
-
-router.use(express.static("public"));
-
-
 router.route('/update').get((req,res,next)=>{
     res.render('update');
     next();
@@ -30,10 +17,10 @@ router.route('/alldata').get( (req,res,next)=>{
     next();
 });
 
-router.route('/receipt').get( (req,res,next)=>{
+router.route('/receipt').get( (req,res)=>{
    
     res.render('print');
-    next();
+    
 });
 
 router.route("/logout").get(controller.logout);

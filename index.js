@@ -9,18 +9,25 @@ const admin = require('./routes/admin');
 const PORT = process.env.PORT;
 const cors = require('cors');
 const event = require('./routes/eventReg');
-
+app.use(cors());
 app.use(express.urlencoded({
   extended: true
 }));
 app.use(express.static('public/src'));
 app.set('view engine','ejs');
 
+app.use(bodyparser.urlencoded({extended : false}));   
+app.use(bodyparser.json());
 
-app.use(cors());
+
+connectDb();
+
+//route handlers
 
 app.use('/',event);
 app.use('/admin', admin);
+
+
 
 // Error handling...
 process.on("uncaughtException", (err) => {
@@ -34,22 +41,28 @@ process.on("uncaughtException", (err) => {
 
 // MAIN PROGRAM.........
 
-connectDb();
-app.use(bodyparser.urlencoded({extended : false}));   
-app.use(bodyparser.json());
 
-app.get('/',(req,res)=>{
-  res.render('reg');
-})
+
 
 
 
 if (process.env.NODE_ENV === "PRODUCTION") {
   console.log(process.env.NODE_ENV)
-  app.use(express.static(path.join(__dirname+"../public/src")));
+  app.use(express.static(path.join(__dirname+"/public/src")));
+
+  app.get("/Events", (req, res) => {
+    res.sendFile(path.resolve(__dirname+"/public/src/events.html"));
+  });
+  app.get("/Organisers", (req, res) => {
+    res.sendFile(path.resolve(__dirname+"/public/src/organisers.html"));
+  });
+  app.get("/Gallery", (req, res) => {
+    res.sendFile(path.resolve(__dirname+"/public/src/gallery.html"));
+  });
+
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../public/src/index.html"));
+    res.sendFile(path.resolve(__dirname+"/public/src/index.html"));
   });
 }
 

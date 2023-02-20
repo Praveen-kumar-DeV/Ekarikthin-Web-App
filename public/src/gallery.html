@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/templatemo-festava-live.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    ::selection {
+      color: #fff;
+      background: #007bff;
+    }
+
+    .wrapper {
+      margin: 100px auto;
+      max-width: 1100px;
+    }
+    .wrapper nav {
+      display: flex;
+      justify-content: center;
+    }
+    .wrapper .items {
+      display: flex;
+      max-width: 720px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .items span {
+      padding: 7px 25px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      color: #007bff;
+      border-radius: 50px;
+      border: 2px solid #007bff;
+      transition: all 0.3s ease;
+    }
+    .items span.active,
+    .items span:hover {
+      color: #fff;
+      background: #007bff;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .gallery .clock {
+      width: calc(100% / 3);
+      padding: 7px;
+    }
+    .gallery .clock span {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+    }
+    .gallery .clock img {
+      width: 100%;
+      height: 280px;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      object-fit: cover;
+    }
+    .gallery .clock:hover img {
+      transform: scale(1.2);
+    }
+    .gallery .clock.hide {
+      display: none;
+    }
+    .gallery .clock.show {
+      animation: animate 0.4s ease;
+    }
+    @keyframes animate {
+      0% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .preview-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: #fff;
+      max-width: 700px;
+      width: 100%;
+      z-index: 50000000;
+      opacity: 0;
+      pointer-events: none;
+      border-radius: 3px;
+      padding: 0 5px 5px 5px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    }
+    .preview-box.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 0.3s ease;
+    }
+    .preview-box .details {
+      padding: 13px 15px 13px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .details .title {
+      display: flex;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .details .title p {
+      font-weight: 500;
+      margin-left: 5px;
+    }
+    .details .icon {
+      color: #007bff;
+      font-style: 22px;
+      cursor: pointer;
+    }
+    .preview-box .clock-box {
+      width: 100%;
+      display: flex;
+      max-height: 600px;
+    }
+    .clock-box img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0 0 3px 3px;
+    }
+    .shadow {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      display: none;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .shadow.show {
+      display: block;
+    }
+
+    .sponsor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-family: Copperplate, Copperplate Gothic Light, fantasy;
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 1000px) {
+      .gallery .clock {
+        width: calc(100% / 3);
+      }
+    }
+    @media (max-width: 800px) {
+      .gallery .clock {
+        width: calc(100% / 2);
+      }
+    }
+    @media (max-width: 700px) {
+      .wrapper nav .items {
+        max-width: 600px;
+      }
+      nav .items span {
+        padding: 7px 15px;
+      }
+    }
+    @media (max-width: 600px) {
+      .wrapper {
+        margin: 100px auto;
+      }
+      .wrapper nav .items {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav .items span {
+        margin: 5px;
+      }
+      .gallery .clock {
+        width: 100%;
+      }
+    }
+  </style>
+  <body>
+    <div id="loader">
+      <div class="con">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <div
+        style="
+          color: white;
+          text-align: center;
+          margin-top: -200px;
+          font-size: 30px;
+        "
+      >
+        Loading...
+      </div>
+    </div>
+    <div id="app-header"></div>
+    <div class="wrapper">
+      <!-- filter Items -->
+      <div class="sponsor">Gallery</div>
+      <nav>
+        <div class="items">
+          <span class="item active" data-name="all">All</span>
+          <span class="item" data-name="cosplay">Cosplay</span>
+          <span class="item" data-name="ritzy">Ritzy</span>
+          <span class="item" data-name="technical">Technical</span>
+          <span class="item" data-name="sports">Sports</span>
+          <span class="item" data-name="esports">Esports</span>
+        </div>
+      </nav>
+      <!-- filter clocks -->
+      <div class="gallery">
+        <div class="clock" data-name="cosplay">
+          <span><img src="images\DSC_0606.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_8587.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_8619.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span><img src="images\DSC_0646.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_8709.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_8519.webp" alt="" /></span>
+        </div>
+
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_1308.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_8446.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_8448.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_8585.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="esports">
+          <span><img src="ekarithin23\IMG_8711.webp" alt="" /></span>
+        </div>
+
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_0264.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_1285.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_1287.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_1373.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_1383.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_1388.webp" alt="" /></span>
+        </div>
+
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_8515.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_8530.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_8555.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_8634.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23\IMG_1463.webp" alt="" /></span>
+        </div>
+
+        <div class="clock" data-name="cosplay">
+          <span><img src="ekarithin23/IMG_0666.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span><img src="" alt="" /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/iQU9no5EBLE3Ww1SkPpUk71MsnVvAjNxCaVH9ZV9iIdWjytqBM6LRP2dnAEk6Gjui6m9hMs534iU1L_5dc2u5GqNSXHnul7IgaL4MQbeUEB1SQgEIhwb6-5D2m0L00xINEcTXnP-=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/5AbavdVfC7rzjhlV9wzNu5lE5ei1EldsPamu4o2mZ6iBV-EdkJAKx2YXUb6TD1Y2jkpERT8QreIhyBgNAArA-dfr3Jc5f8qYRCcj5bq7vBp95y02Yvs65X_nXpN0QQ85LZ6-NoS3=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span><img src="ekarithin23/DSC_0144.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/KOkqk4i8KBpZJg9EcstfQajXLfI0r6YyRLgeiU1xGVo4Azz6WKXBdQiv8H65HGKUuVmRZQZc-JHqj_fl1-rQgGpDl8ArlIdynZjEmF9KEEgsOEZFUH7Spaa0d402tgMgfUdeprD5=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/w2eFk-pI1tqews3wiqctQlAEC5O8F_ZOMxEqYgmzHTknq4GPItn94Jongsvv4s1gqXZIHCZHdJ9RM25pWKU7jxnbPhznHCG1TdejDF3zBwA7XimFCttwcSM_iGwrMLzJ4vPB0sKb=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="cosplay">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/C1oIXjek9Pjbcemc2V3uDRVmmA3mTdguhHP5t_ik8Ke0hv6QuMvcsDaF6NQhIsdUKiWdqK7ILgODjrKgyAw5VpMhLUmWm-qHGED-9UDXGFG4pxoaYq8dKGyzPehaYtrPv_kwvggZ=w2400"
+              alt=""
+          /></span>
+        </div>
+
+        <div class="clock" data-name="technical">
+          <span><img src="ekarithin23/DSC_0221.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="technical">
+          <span><img src="ekarithin23/DSC_0224.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="technical">
+          <span><img src="ekarithin23/DSC_0252.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="technical">
+          <span><img src="ekarithin23/DSC_0318.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="technical">
+          <span><img src="ekarithin23/DSC_0737.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="technical">
+          <span><img src="ekarithin23/IMG_0738.webp" alt="" /></span>
+        </div>
+
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/IMG_8649.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/IMG_3745.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/IMG_8174.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/IMG_1839.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/IMG_1701.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/IMG_1657.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23/IMG_1415.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/DSC_0350.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="">
+          <span><img src="ekarithin23/_MG_9014.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="sports">
+          <span><img src="ekarithin23/IMG_8634.webp" alt="" /></span>
+        </div>
+
+        <div class="clock" data-name="ritzy">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/5Phk1DPEaFbrDYi2JU9IrhFiCoYLblNy9aeNyzcitL4gxgoZPP3jMZ8UHO4AEht5aQXwOpdVuI_wbuol6LPeS4amK0F3IjNwH1u_Q1nqgWDH4anYg0XFgnpwdIhzltHnED4ywct7=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/ZIs971Nk_xJFJbxs5HmzY9-RtjK3T-ARA0Mc-vY6UnWp87yZSTtmjTfclQ61MEYcQtM9Ahl2Ta9rGUWZwVSFv8blBtmln1G5W777Q4T1quttREJHdRZoeF3WegCm6tBrllgMAPmDiA=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/5Phk1DPEaFbrDYi2JU9IrhFiCoYLblNy9aeNyzcitL4gxgoZPP3jMZ8UHO4AEht5aQXwOpdVuI_wbuol6LPeS4amK0F3IjNwH1u_Q1nqgWDH4anYg0XFgnpwdIhzltHnED4ywct7=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0582.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0600.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0644.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0698.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0722.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0737.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0866.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0898.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0950.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/DSC_0961.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span
+            ><img
+              src="https://lh3.googleusercontent.com/CVY6FqG4NQDylfKwtAj2Gpg61eqNytp1T3bEJRQXLtskHus9POCBO6OrzEqUQ_8t-4gQjk1pOWTD8MUabiVlAezvJoIDAepOev5gEMoIWhsAZ9rKL8kNbQXyp8Os2gup2gCscPPt=w2400"
+              alt=""
+          /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/IMG_1275.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/IMG_1300.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/IMG_9343.webp" alt="" /></span>
+        </div>
+        <div class="clock" data-name="ritzy">
+          <span><img src="ekarithin23/IMG_9533.webp" alt="" /></span>
+        </div>
+      </div>
+    </div>
+    <!-- fullscreen img preview box -->
+    <div class="preview-box">
+      <div class="details">
+        <span class="title"
+          >Event:
+          <p></p
+        ></span>
+        <span class="icon fas fa-times"></span>
+      </div>
+      <div class="clock-box"><img src="" alt="" /></div>
+    </div>
+    <div class="shadow"></div>
+    <div id="app-footer"></div>
+    <script>
+      //selecting all required elements
+      const filterItem = document.querySelector(".items");
+      const filterImg = document.querySelectorAll(".gallery .clock");
+
+      window.onload = () => {
+        //after window loaded
+        filterItem.onclick = (selectedItem) => {
+          //if user click on filterItem div
+          if (selectedItem.target.classList.contains("item")) {
+            //if user selected item has .item class
+            filterItem.querySelector(".active").classList.remove("active"); //remove the active class which is in first item
+            selectedItem.target.classList.add("active"); //add that active class on user selected item
+            let filterName = selectedItem.target.getAttribute("data-name"); //getting data-name value of user selected item and store in a filtername variable
+            filterImg.forEach((clock) => {
+              let filterImges = clock.getAttribute("data-name"); //getting clock data-name value
+              //if user selected item data-name value is equal to clocks data-name value
+              //or user selected item data-name value is equal to "all"
+              if (filterImges == filterName || filterName == "all") {
+                clock.classList.remove("hide"); //first remove the hide class from the clock
+                clock.classList.add("show"); //add show class in clock
+              } else {
+                clock.classList.add("hide"); //add hide class in clock
+                clock.classList.remove("show"); //remove show class from the clock
+              }
+            });
+          }
+        };
+        for (let i = 0; i < filterImg.length; i++) {
+          filterImg[i].setAttribute("onclick", "preview(this)"); //adding onclick attribute in all available clocks
+        }
+      };
+
+      //fullscreen clock preview function
+      //selecting all required elements
+      const previewBox = document.querySelector(".preview-box"),
+        categoryName = previewBox.querySelector(".title p"),
+        previewImg = previewBox.querySelector("img"),
+        closeIcon = previewBox.querySelector(".icon"),
+        shadow = document.querySelector(".shadow");
+
+      function preview(element) {
+        //once user click on any clock then remove the scroll bar of the body, so user cant scroll up or down
+        document.querySelector("body").style.overflow = "hidden";
+        let selectedPrevImg = element.querySelector("img").src; //getting user clicked clock source link and stored in a variable
+        let selectedImgCategory = element.getAttribute("data-name"); //getting user clicked clock data-name value
+        previewImg.src = selectedPrevImg; //passing the user clicked clock source in preview clock source
+        categoryName.textContent = selectedImgCategory; //passing user clicked data-name value in category name
+        previewBox.classList.add("show"); //show the preview clock box
+        shadow.classList.add("show"); //show the light grey background
+        closeIcon.onclick = () => {
+          //if user click on close icon of preview box
+          previewBox.classList.remove("show"); //hide the preview box
+          shadow.classList.remove("show"); //hide the light grey background
+          document.querySelector("body").style.overflow = "auto"; //show the scroll bar on body
+        };
+      }
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

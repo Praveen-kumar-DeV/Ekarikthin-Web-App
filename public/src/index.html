@@ -14,7 +14,28 @@
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/templatemo-festava-live.css" rel="stylesheet">
         
-
+        <script>
+            document.onreadystatechange = function() {
+                if (document.readyState !== "complete") {
+                    document.querySelector("body").style.visibility = "hidden";
+                    $("body").css({
+                        "overflow": "hidden",
+                        "margin": "0",
+                        "padding": "0"
+                        });
+                    document.querySelector("#loader").style.visibility = "visible";
+                } 
+                else {
+                    document.querySelector("#loader").style.display = "none";
+                    $("body").css({
+                    "overflow": "auto",
+                    "margin": "",
+                    "padding": ""
+                        });
+                document.querySelector("body").style.visibility = "visible";
+                }
+            };
+        </script>
         <style>
           
 #loader{
@@ -264,7 +285,7 @@ animation: wave 1s linear infinite,rain 2s infinite ease-in-out;
 
                         <div class="col-lg-6 col-12">
                             <div class="video-container">
-                                <iframe class="video" src="https://www.youtube.com/embed/5cCXHA30CIE" title="Ekarikthin" allowfullscreen></iframe>
+                                <iframe class="video" src="https://www.youtube.com/embed/km9r-HWgMkA" title="Ekarikthin" allowfullscreen></iframe>
                             </div>   
                         </div>
 
@@ -415,8 +436,6 @@ animation: wave 1s linear infinite,rain 2s infinite ease-in-out;
                             <div class="services-info">
                                 <h2 class="text-white mb-4">NIT NAGALAND</h2>
 
-                                <p class="text-white">The location provides easy access to other parts of Nagaland, as well as neighboring states such as Assam and Manipur. The city of Dimapur is surrounded by lush green hills and valleys, offering a peaceful and scenic environment for students to study and grow. Overall, the location of NIT Nagaland provides a perfect balance between academic and natural beauty, making it an ideal destination for students from all over the country.</p>
-                           
                                 <h5 class="text-white mb-4">Location </h5>
                                 
                                 
@@ -521,38 +540,7 @@ animation: wave 1s linear infinite,rain 2s infinite ease-in-out;
         <script src="js/custom.js"></script>
 
     </body>
-    <script>
-        document.onreadystatechange = function() {
-            if (document.readyState !== "complete") {
-                document.querySelector("body").style.visibility = "hidden";
-                $("body").css({
-                    "overflow": "hidden",
-                    "margin": "0",
-                    "padding": "0"
-                    });
-                document.querySelector("#loader").style.visibility = "visible";
-            } 
-            else {
-                document.querySelector("#loader").style.display = "none";
-                $("body").css({
-                "overflow": "auto",
-                "margin": "",
-                "padding": ""
-                    });
-            document.querySelector("body").style.visibility = "visible";
-            }
-        };
-        // Set the target date (YYYY-MM-DD format)
-var targetDate = '2023-02-14';
-
-// Get the current date
-var currentDate = new Date();
-
-// If the current date is after the target date, modify the link
-if (currentDate >= new Date(targetDate)) {
-  document.getElementById('change-link').href = 'closed.html';
-}
-
-
-    </script>
+   
 </html>
+
+

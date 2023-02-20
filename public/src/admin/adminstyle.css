@@ -32,9 +32,9 @@ body {
 }
 
 div.content {
-  margin-left: 200px;
+  margin-left: 120px;
   padding: 1px 16px;
-  height: 1000px;
+  height: 100%;
   
 }
  
@@ -44,6 +44,10 @@ div.content {
     height: auto;
     position: relative;
   }
+  .details-table
+  {
+    margin: 20px 10px;
+  }
   .sidebar a {float: left;}
   div.content {margin-left: 0;}
 }
@@ -52,7 +56,18 @@ div.content {
   .sidebar a {
     text-align: center;
     float: none;
+    display: flexbox;
+ width: 100%;
+
   }
+  .sidebar
+  {
+    width:100%;
+    height: auto;
+    position: relative;
+  }
+
+
 }
 
 #cap{

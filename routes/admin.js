@@ -8,13 +8,13 @@ const csv   = require('csv-express');
 const bodyParser = require("body-parser");
 
 
-router.route('/update').get((req,res,next)=>{
+router.route('/update').get((req,res)=>{
     res.render('update');
-    next();
+    
 });
-router.route('/alldata').get( (req,res,next)=>{
+router.route('/alldata').get( (req,res)=>{
     res.render('details');
-    next();
+   
 });
 
 router.route('/receipt').get( (req,res)=>{
@@ -35,14 +35,14 @@ router.route('/userDash').get(async(req,res)=>{
 router.route('/DashBoard').get(async(req,res)=>{
    res.render('dash');
 });
-router.route('/headUserDash').get(async(req,res,next)=>{
+router.route('/headUserDash').get(async(req,res)=>{
 
     res.render('headdash');
-    next();
+   
 });
-router.route('/headData').get( (req,res,next)=>{
+router.route('/headData').get( (req,res)=>{
     res.render('alldata');
-    next();
+   
 });
 
 router.route('/login').post(controller.login).get((req,res)=>{

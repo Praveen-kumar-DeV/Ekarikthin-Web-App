@@ -161,28 +161,7 @@ let appFooter = `
   
   `;
 document.getElementById("app-footer").innerHTML = appFooter;
-document.onreadystatechange = function() {
-    if (document.readyState !== "complete") {
-        document.querySelector(
-        "body").style.visibility = "hidden";
-        document.querySelector(
-        "#loader").style.visibility = "visible";
-    } else {
-        document.querySelector(
-        "#loader").style.display = "none";
-        document.querySelector(
-        "body").style.visibility = "visible";
-    }
-};
 
-// Set the target date (YYYY-MM-DD format)
-var targetDate = '2023-02-14';
 
-// Get the current date
-var currentDate = new Date();
 
-// If the current date is after the target date, modify the link
-if (currentDate >= new Date(targetDate)) {
-//  document.getElementById('change-link').href = 'closed.html';
-}
 

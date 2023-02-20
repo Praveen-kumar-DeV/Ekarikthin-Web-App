@@ -1,505 +1,973 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>organisers page</title>       
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500" rel="stylesheet">                
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">                
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/templatemo-festava-live.css" rel="stylesheet">
-	<style>
-		
-	</style>
-</head>
-<body style="background:linear-gradient(to bottom right,#f2f0f1,#655a5a);">
-	<div id="loader">
-		<div class="con">           
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>
-				<div class="wave" ></div>         
-		</div>
-		  <div style="color:white;text-align:center;margin-top:-200px;font-size:30px;">
-			Loading...
-		 </div>         
-	</div>
-      <div id="app-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>organisers page</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/templatemo-festava-live.css" rel="stylesheet" />
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          $("body").css({
+            overflow: "hidden",
+            margin: "0",
+            padding: "0",
+          });
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          $("body").css({
+            overflow: "auto",
+            margin: "",
+            padding: "",
+          });
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
+    <style></style>
+  </head>
+  <body style="background: linear-gradient(to bottom right, #f2f0f1, #655a5a)">
+    <div id="loader">
+      <div class="con">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <div
+        style="
+          color: white;
+          text-align: center;
+          margin-top: -200px;
+          font-size: 30px;
+        "
+      >
+        Loading...
+      </div>
+    </div>
+    <div id="app-header"></div>
 
-	  </div>
-	 
-		<div class="contain">
-			<div style="width:100%;text-align: center;font-size: 40px;font-weight: bold;margin-right: 25px;">
-				ORGANISERS OF EKARITKTHIN'23
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/convenor1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Lohit Jayadam</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Convenor</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Lohit Jayadam <br><span>Convenor</span></h2>
-				   <ul class="social_ic">
-						<li><a href="mailto: jayadamlohith132@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-						<li><a href="tel:+916305418022"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-						<li><a href="https://instagram.com/lohith_jayadam?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\convenor2.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Zayiechutuo Lohe</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Convenor</p>
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Zayiechutuo Lohe<br><span>Convenor</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto: zayielohe2@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+91879812538"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/zayiechutuo?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/convenor3.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Longdichem Sangtam</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Convenor</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Longdichem<br><span>Convenor</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:chemzlendir2@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+917005661018"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/just_achem_it_is?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\cultural1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Sako T Pongen </p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Cultural Head </p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Sako T Pongen<br><span>Cultural Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:Sakopongen0904@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+918731807457"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/sako_pongen?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\technical1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Longlise T Sangtam </p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Technical Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Longlise T Sangtam <br><span>Technical Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:longlidhongru@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+916009394881"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/longli_thongru?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/technical2.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Rushitha Nandini</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Technical Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Rushitha Nandini<br><span>Technical Head</span></h2>
-				   <ul class="social_ic">
-						<li><a href="mailto:rushithanandini@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-						<li><a href="tel:+918985621631"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-						<li><a href="https://instagram.com/rushitha_kota?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/finance1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Vishnu Vardhan</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Finance Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Vishnu Vardhan<br><span>Finance Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:vishnuvardhan.mcv@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919704501824"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/vishnu_vardhan_l?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/finance2.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Marnungla</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Finance Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Marnungla<br><span>Finance Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:marnungla17@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+916909145050"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/our_diary.20?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\sports1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Nounelhuto Vupru</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Sports Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Nounelhuto Vupru<br><span>Sports Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:nounevupru13@gmail.com "><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+916009335209"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/e_on_a_noun?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/sports2.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Mallikarjuna Reddy </p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Sports Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Mallikarjuna Reddy <br><span>Sports Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:kamini6300014732@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+916300014733"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/gabbar_fan_malli?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\esports1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Siddardha Reddy</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">ESports Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Siddardha Reddy<br><span>ESports Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:sidcapreddy@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919014326757"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/siddardha.reddy777?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\esports2.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">T Khampei</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">ESports Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>T Khampei<br><span>ESports</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:Khampeichinglei@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+918132821050"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/khampei_konyak?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\hospitality1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Murari</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Web Team & Coding Club</p>
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Murari<br><span>Web Team & Coding Club</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:kakiletimurari@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919014958058"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/kakileti_murari?igshid=ZDdkNTZiNTM="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\hospitality1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Praveen Kumar</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Web Team</p>
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Praveen Kuamr<br><span>Web Team</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:praveenkumarpatini@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919381241925"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/praveenkumarpatini?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\hospitality1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Shokumbah</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Hospitality head</p>
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Shokumbah<br><span>Hospitality head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:shokumbagunner123@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919863313987"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/shokumbah_?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/hospitality2.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Mhalevino </p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Hospitality head</p>
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Mhalevino<br><span>Hospitality head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:mhalevinomera15@gmail.comm"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+918732871563"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/mhale15_?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\sponsor1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Miihiechutho</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Sponsorship Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Miihiechutho<br><span>Sponsorship Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:miihienyuthe2000@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+918787850016"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/miihienyuthe?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images\photoandritzy1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Chapichuto B Meyase</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Photography and Ritzy</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Chapichuto B Meyase<br><span>Photography and Ritzy</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:chapichutomeyase@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+918416091898"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/mr_meyase?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
+    <div class="contain">
+      <div
+        style="
+          width: 100%;
+          text-align: center;
+          font-size: 40px;
+          font-weight: bold;
+          margin-right: 25px;
+        "
+      >
+        ORGANISERS OF EKARITKTHIN'23
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/convenor1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Lohit Jayadam</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Convenor</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Lohit Jayadam <br /><span>Convenor</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto: jayadamlohith132@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+916305418022"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/lohith_jayadam?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\convenor2.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Zayiechutuo Lohe</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Convenor</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Zayiechutuo Lohe<br /><span>Convenor</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto: zayielohe2@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+91879812538"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/zayiechutuo?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/convenor3.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Longdichem Sangtam</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Convenor</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Longdichem<br /><span>Convenor</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:chemzlendir2@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+917005661018"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/just_achem_it_is?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\cultural1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Sako T Pongen</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Cultural Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Sako T Pongen<br /><span>Cultural Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:Sakopongen0904@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+918731807457"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/sako_pongen?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\technical1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Longlise T Sangtam</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Technical Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Longlise T Sangtam <br /><span>Technical Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:longlidhongru@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+916009394881"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/longli_thongru?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/technical2.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Rushitha Nandini</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Technical Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Rushitha Nandini<br /><span>Technical Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:rushithanandini@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+918985621631"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/rushitha_kota?igshid=YmMyMTA2M2Y="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/finance1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Vishnu Vardhan</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Finance Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Vishnu Vardhan<br /><span>Finance Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:vishnuvardhan.mcv@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919704501824"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/vishnu_vardhan_l?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/finance2.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Marnungla</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Finance Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Marnungla<br /><span>Finance Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:marnungla17@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+916909145050"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/our_diary.20?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\sports1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Nounelhuto Vupru</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Sports Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Nounelhuto Vupru<br /><span>Sports Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:nounevupru13@gmail.com "
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+916009335209"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/e_on_a_noun?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/sports2.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Mallikarjuna Reddy</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Sports Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Mallikarjuna Reddy <br /><span>Sports Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:kamini6300014732@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+916300014733"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/gabbar_fan_malli?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\esports1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Siddardha Reddy</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">ESports Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Siddardha Reddy<br /><span>ESports Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:sidcapreddy@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919014326757"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/siddardha.reddy777?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\esports2.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">T Khampei</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">ESports Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>T Khampei<br /><span>ESports</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:Khampeichinglei@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+918132821050"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/khampei_konyak?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\hospitality1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Murari</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Web Team & Coding Club</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Murari<br /><span>Web Team & Coding Club</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:kakiletimurari@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919014958058"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/kakileti_murari?igshid=ZDdkNTZiNTM="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\hospitality1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Praveen Kumar</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Web Team</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Praveen Kuamr<br /><span>Web Team</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:praveenkumarpatini@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919381241925"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/praveenkumarpatini?igshid=YmMyMTA2M2Y="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\hospitality1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Shokumbah</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Hospitality head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Shokumbah<br /><span>Hospitality head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:shokumbagunner123@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919863313987"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/shokumbah_?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/hospitality2.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Mhalevino</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Hospitality head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Mhalevino<br /><span>Hospitality head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:mhalevinomera15@gmail.comm"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+918732871563"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/mhale15_?igshid=YmMyMTA2M2Y="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\sponsor1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Miihiechutho</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Sponsorship Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Miihiechutho<br /><span>Sponsorship Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:miihienyuthe2000@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+918787850016"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/miihienyuthe?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images\photoandritzy1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Chapichuto B Meyase</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Photography and Ritzy</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Chapichuto B Meyase<br /><span>Photography and Ritzy</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:chapichutomeyase@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+918416091898"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/mr_meyase?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/publicity1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Vipeni</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Publicity Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Vipeni <br /><span>Publicity Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:Vipeniwotsa24@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919615858849"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/vipeni_?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/security1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">kevisekho Kikhi</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Security Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>kevisekho Kikhi<br /><span>Security Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:kevisekhokikhi@gmail.com"
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919077392292"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/ohkesivek?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/publicity1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Vipeni </p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Publicity Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Vipeni <br><span>Publicity Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:Vipeniwotsa24@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919615858849"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/vipeni_?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
+      <div class="profile">
+        <div class="imgbx">
+          <img src="images/publication1.webp" alt="" />
+        </div>
+        <div class="name">
+          <p class="o_name">Aditya Gupta</p>
+          <div
+            style="
+              background-color: rgb(234, 96, 62);
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+            "
+          >
+            <hr />
+          </div>
+          <p class="role">Publication Head</p>
+        </div>
+        <div class="content">
+          <div class="details">
+            <h2>Aditya Gupta<br /><span>Publication Head</span></h2>
+            <ul class="social_ic">
+              <li>
+                <a href="mailto:adityakarnal20@gmail.com "
+                  ><i class="fa fa-envelope-o" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+919306516118"
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://instagram.com/aditya_30_01?igshid=Yzg5MTU1MDY="
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/security1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">kevisekho Kikhi</p>
-					<div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Security Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>kevisekho Kikhi<br><span>Security Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:kevisekhokikhi@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919077392292"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/ohkesivek?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-
-			<div class="profile" >
-				<div class="imgbx">
-					<img src="images/publication1.webp" alt="">
-				
-				</div>
-				<div class="name">
-					<p class="o_name">Aditya Gupta</p>
-				    <div style="background-color: rgb(234, 96, 62);width: 70%;margin: auto;border-radius: 10px;"><hr></div>
-					<p class="role">Publication Head</p>	
-				</div>
-				<div class="content">
-				 <div class="details">
-				   <h2>Aditya Gupta<br><span>Publication Head</span></h2>
-				   <ul class="social_ic">
-					<li><a href="mailto:adityakarnal20@gmail.com "><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-					<li><a href="tel:+919306516118"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="https://instagram.com/aditya_30_01?igshid=Yzg5MTU1MDY="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-				   </ul>
-				 </div>
-				</div>
-			</div>
-
-	  </div>
-
-    <div id="app-footer">
-
-	</div>
-	<script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
-</body>
+    <div id="app-footer"></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
 </html>

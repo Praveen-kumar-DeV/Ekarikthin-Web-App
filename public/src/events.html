@@ -25,6 +25,27 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/templatemo-festava-live.css" rel="stylesheet" />
     <link href="css/swiper.css" rel="stylesheet" />
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          $("body").css({
+            overflow: "hidden",
+            margin: "0",
+            padding: "0",
+          });
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          $("body").css({
+            overflow: "auto",
+            margin: "",
+            padding: "",
+          });
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
     <style>
       #loader {
         margin: 0;
@@ -2960,16 +2981,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-      document.onreadystatechange = function () {
-        if (document.readyState !== "complete") {
-          document.querySelector("body").style.visibility = "hidden";
-          document.querySelector("#loader").style.visibility = "visible";
-        } else {
-          document.querySelector("#loader").style.display = "none";
-          document.querySelector("body").style.visibility = "visible";
-        }
-      };
-    </script>
   </body>
 </html>

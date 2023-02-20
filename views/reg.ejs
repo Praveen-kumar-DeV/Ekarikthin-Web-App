@@ -1,169 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">                
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/templatemo-festava-live.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/templatemo-festava-live.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-
-<!-- ... --->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- ... --->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
     <title>Register</title>
-<style>
-  .error
-   {
-  font-size: 14.5px;
-  margin-top: 5px;
-  background:transparent;
+    <style>
+      .error {
+        font-size: 14.5px;
+        margin-top: 5px;
+        background: transparent;
 
-  font-weight: 500;
-    color: rgb(246, 14, 14);
-    text-shadow:
-    -1px -1px 3px #000,
-    1px -1px 3px #000,
-    -1px 1px 3px #000,
-    1px 1px 3px #000;
-}
+        font-weight: 500;
+        color: rgb(246, 14, 14);
+        text-shadow: -1px -1px 3px #000, 1px -1px 3px #000, -1px 1px 3px #000,
+          1px 1px 3px #000;
+      }
 
-</style>
-</head>
-<body>
-  <div id="loader">
-    <div class="con">           
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>
-            <div class="wave" ></div>         
-    </div>
-      <div style="color:white;text-align:center;margin-top:-200px;font-size:30px;">
-        Loading...
-     </div>         
-</div>
-    <div id="app-header">
+      .example1 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        height: 50px;
+        overflow: hidden;
+        position: relative;
+      }
+      .example1 h3 {
+        font-size: 1.5em;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-weight: 400;
+        color: rgb(246, 14, 14);
+        text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000,
+          1px 1px 2px #000;
 
-    </div>
- <main>
-    <div class="reg-container" id="blur">
-        <section id="background" >
-      <form action="/register" method="post">
-        
-        <div class="step step-1 active">
-          <legend  style="margin-top:10px;margin-bottom: 40px;">Personal Details</legend>
-        <div class="form-group">
-          
-          <input type="text" id="name" placeholder="&nbsp;" autocomplete="off" name="name" required>
-          <span class="floating-label">Name</span>
-          <div class="error"></div>
-        </div>
-        <div class="form-group">
-          
-          <input   type="email" id="email" placeholder="&nbsp;" autocomplete="off" name="email" required>
-          <span class="floating-label">Email</span>
-          <div class="error"></div>
-        </div>
-        <div class="form-group">
-      
-          <input  type="college" id="college" placeholder="&nbsp;" autocomplete="off" name="college" >
-          <span class="floating-label">College</span>
-        </div>
-        <div class="form-group">
-          
-          <input  type="tel" id="phone" placeholder="&nbsp;" minlength="10" maxlength="10" autocomplete="off" name="phone" required>
-          <span class="floating-label">Phone Number</span>
-          <div class="error"></div>
-        </div>
-        <button type="button" class="next-btn">Next</button>
+        text-align: center;
+
+        transform: translateX(50%);
+
+        animation: example1 15s linear infinite;
+      }
+      @media screen and (max-width: 417px) {
+        .example1 h3 {
+          font-size: 1.2em;
+        }
+      }
+
+      @keyframes example1 {
+        0% {
+          transform: translateX(50%);
+        }
+        100% {
+          transform: translateX(-60%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="con">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
       </div>
-  
-        <div class="step step-2">
-            <legend>Event Details</legend>
-          <div class="form-group">
-            <label for="Category">Category</label>
-            <select type="text" id="category" name="category" >
-              <option value="" selected >Please select category</option>
-              <option>Cultural</option>
-              <option>Technical</option>
-              <option>Esports</option>
-              <option>Sports</option>
-              <option>MiniEvents </option>
-               </select> 
-               <div class="error"></div>
-          </div>
-          <div class="form-group">
-            <label for="Event">Event</label>
-            <select id="Event" name="event">
-              <option value="" selected >Please select category first</option>
-              
-          </select>
-          <div class="error"></div>
-          <input hidden id="code" name="eventCode" >
-           
-        
-          </div>
-          <div class="form-group">
-            <label for="Cost">Cost</label>
-            <input  id="cost" name="cost"  >
-            <div class="error"></div>
-          </div>
-          <div class="form-group" style="margin-bottom: 50px;">
-            <label for="Category">Payment Mode</label>
-            <select type="text" id="paymode" name="paymode">
-                <option value="AtVenue">At Venue</option>
-                <option value="Online"> Online</option>
-            </select> 
-            <div class="error"></div>
-          </div>
-          <button type="button" class="previous-btn">Prev</button>
-          <button type="button" class="next-btn">Next</button>
-          
-          
-        </div>
-
-        
-  
-        <div class="step step-3">
-            <legend id="motp" style="margin-top: 10px;"></legend>
-          <div class="form-group" style="margin-bottom: 30px;">
-            <label for="postCode">OTP</label>
-            <input type="number" id="otp" name="otp">
-          </div>
-         <!-- <button type="button" class="previous-btn">Prev</button>-->
-          <button type="submit" class="submit-btn">Submit</button>
-        </div>
-  
-      </form>
-    </section>
+      <div
+        style="
+          color: white;
+          text-align: center;
+          margin-top: -200px;
+          font-size: 30px;
+        "
+      >
+        Loading...
+      </div>
     </div>
-  
- </main>
- <div id="app-footer">
+    <div id="app-header"></div>
 
- </div>
-     
-</body>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/custom.js"></script>
+    <div class="register-back">
+      <div class="example1">
+        <h3>Registration will be closed on 8th March</h3>
+      </div>
 
-<script type="module" src="js/main.js" ></script>
-<script src="js/drop.js" type="module" async></script>
+      <main>
+        <div class="reg-container" id="blur">
+          <section id="background">
+            <form action="/register" method="post">
+              <div class="step step-1 active">
+                <legend style="margin-top: 10px; margin-bottom: 40px">
+                  Personal Details
+                </legend>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="&nbsp;"
+                    autocomplete="off"
+                    name="name"
+                    required
+                  />
+                  <span class="floating-label">Name</span>
+                  <div class="error"></div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="&nbsp;"
+                    autocomplete="off"
+                    name="email"
+                    required
+                  />
+                  <span class="floating-label">Email</span>
+                  <div class="error"></div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="college"
+                    id="college"
+                    placeholder="&nbsp;"
+                    autocomplete="off"
+                    name="college"
+                  />
+                  <span class="floating-label">College</span>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="&nbsp;"
+                    minlength="10"
+                    maxlength="10"
+                    autocomplete="off"
+                    name="phone"
+                    required
+                  />
+                  <span class="floating-label">Phone Number</span>
+                  <div class="error"></div>
+                </div>
+                <button type="button" class="next-btn">Next</button>
+              </div>
 
+              <div class="step step-2">
+                <legend>Event Details</legend>
+                <div class="form-group">
+                  <label for="Category">Category</label>
+                  <select type="text" id="category" name="category">
+                    <option value="" selected>Please select category</option>
+                    <option>Cultural</option>
+                    <option>Technical</option>
+                    <option>Esports</option>
+                    <option>Sports</option>
+                    <option>MiniEvents</option>
+                  </select>
+                  <div class="error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="Event">Event</label>
+                  <select id="Event" name="event">
+                    <option value="" selected>
+                      Please select category first
+                    </option>
+                  </select>
+                  <div class="error"></div>
+                  <input hidden id="code" name="eventCode" />
+                </div>
+                <div class="form-group">
+                  <label for="Cost">Cost</label>
+                  <input id="cost" name="cost" />
+                  <div class="error"></div>
+                </div>
+                <div class="form-group" style="margin-bottom: 50px">
+                  <label for="Category">Payment Mode</label>
+                  <select type="text" id="paymode" name="paymode">
+                    <option value="AtVenue">At Venue</option>
+                    <option value="Online">Online</option>
+                  </select>
+                  <div class="error"></div>
+                </div>
+                <button type="button" class="previous-btn">Prev</button>
+                <button type="button" class="next-btn">Next</button>
+              </div>
+
+              <div class="step step-3">
+                <legend id="motp" style="margin-top: 10px"></legend>
+                <div class="form-group" style="margin-bottom: 30px">
+                  <label for="postCode">OTP</label>
+                  <input type="number" id="otp" name="otp" />
+                </div>
+                <!-- <button type="button" class="previous-btn">Prev</button>-->
+                <button type="submit" class="submit-btn">Submit</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div id="app-footer"></div>
+  </body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script type="module" src="js/main.js"></script>
+  <script src="js/drop.js" type="module" async></script>
 </html>

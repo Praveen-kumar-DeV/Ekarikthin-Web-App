@@ -8,19 +8,20 @@
     background-color: #fff;
     background-size: cover;
   }
-  main{
-
-    margin-top: 60px;
+  .register-back
+  {
     background-image: url('./reg1.jpg');
     background-size: cover;
     min-height: 100vh;
     width: 100%;
+    padding-top: 50px;
+  }
+  main{
+
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
-  
-   
   }
   section {
     max-width: 400px;
@@ -199,9 +200,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media screen and (max-width:1060px)
 {
-  main {
+  
+   .register-back
+  {
+    background-image: none;
     background:linear-gradient(to bottom right,#333333,#121212);
-    background-size: cover;
-   }
+    
+  }
 }
 

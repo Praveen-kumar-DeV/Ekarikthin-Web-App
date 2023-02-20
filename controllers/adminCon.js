@@ -195,7 +195,7 @@ exports.print=async (req,res)=>{
 
   try {
     const details = await eventReg.findOne({ tokenId });
-    let ser=await count.findOne({ serial:"InvoiceNumber" });
+    let ser=await count.findOne({ serial:"InvoiceNumber" },{paid:true});
     if (!details) {
       return res.status(400).json({
         success: false,

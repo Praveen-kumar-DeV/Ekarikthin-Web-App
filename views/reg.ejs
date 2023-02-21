@@ -28,6 +28,28 @@
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
 
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          $("body").css({
+            overflow: "hidden",
+            margin: "0",
+            padding: "0",
+          });
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          $("body").css({
+            overflow: "auto",
+            margin: "",
+            padding: "",
+          });
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
+
     <title>Register</title>
     <style>
       .error {

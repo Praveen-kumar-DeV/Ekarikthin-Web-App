@@ -2,52 +2,7 @@
 
 window.onload = function menu () {
 
-   /* const stateObject = {
-    cultural: {
-      "Cosplay - Solo": "CULT_CS",
-      "Cosplay - Duo": "CULT_CD",
-      "Cosplay - Trio": "CULT_CT",
-      "Cosplay - Group": "CULT_CG",
-      Ritzy: "CULT_RITZY",
-      Rockville: "CULT_RV",
-      "Voice of Ekarikthin": "CULT_VOE",
-      "Dance - Solo": "CULT_DTGS",
-      "Dance - Crew": "CULT_DTGC",
-      
-    },
-    technical: [
-      "Mud Race",
-      
-      "CodeCast",
-      "Web Design",
-
-      "Spell Bee",
-      "Quiz Buzz",
-  ],
-    esports: [
-     
-      "BGMI",
-      "CSGO",
-      "Mobile legends",
-    ],
-    sports: [
-      "Table Tennis",
-      "Volleyball",
-      "Gully Cricket",
-      "Chess",
-      "Futsal",
-      "Badminton",
-      "Mountain Biking",
-    ],
-    MiniEvents: [
-      "Treasure Hunt",
-      "Wall Painting",
-      "Rangoli Competition",
-      "Survivo",
-      "Instagram Photo Likes Contest",
-    ],
-  };
-  */
+ 
   //--------------------drop down------------------
   const eventCodes = {
     cultural: {
@@ -90,7 +45,7 @@ window.onload = function menu () {
     },
     minievents: {
       "Treasure Hunt": "MNE_TH",
-      "Wall Painting": "MNE_WP",
+      "Painting": "MNE_WP",
       "Rangoli Competition": "MNE_RG",
       "Survivo": "MNE_SV",
       "Instagram Photo Likes Contest": "MNE_IGLC",
@@ -188,7 +143,7 @@ window.onload = function menu () {
     MiniEvents: [
       "Select Event",
       "Treasure Hunt",
-      "Wall Painting",
+      "Painting",
       "Survivo",
       "Rangoli Competition",
       "Instagram Photo Likes Contest",

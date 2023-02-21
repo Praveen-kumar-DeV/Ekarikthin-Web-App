@@ -35,12 +35,12 @@ const sendMail = (mailOptions) => {
 };
 
 const verifyOtp = async (otp, email) => {
-    console.log(email);
+   
   const user = await Otp.findOne({ email });
   if (user) {
-    console.log("-----",user.otp,otp);
+  
     if (user.otp === Number(otp)) {
-        console.log(Number(new Date().getTime()));
+        
       return user.expireTime >= Number(new Date().getTime());
     }
     return false;
@@ -66,7 +66,7 @@ exports.register = async (req, res) => {
     
     
   } = req.body;
-  console.log(req.body,"start of register..");
+
 // -----------------checking for duplicate content-------------
 
   const isReg = await eventReg.findOne({
@@ -83,7 +83,7 @@ exports.register = async (req, res) => {
   }
 //------------------otp verification---------------------------------
   const isValid = await verifyOtp(otp, email);
-  console.log(isValid);
+  
   if (!isValid) {
     return res.status(400).json({
       success: false,
@@ -111,7 +111,7 @@ exports.register = async (req, res) => {
   try {
         const data =await newEventReg.save();
 
-         console.log(" saving.......");
+        
           const mailOptions = mailOptionsFunc(
            name,
            category,
@@ -123,7 +123,7 @@ exports.register = async (req, res) => {
   					  );
 
     sendMail(mailOptions);
-    console.log(data,"is it ok");
+   
     
   
    

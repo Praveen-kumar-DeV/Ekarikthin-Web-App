@@ -119,19 +119,19 @@ let appFooter = `
               </p>
               <ul class="social-icon d-flex align-items-center justify-content-flex-start">
               <li class="social-icon-item">
-                  <a href="#" class="social-icon-link">
+                  <a href="https://www.facebook.com/profile.php?id=100079674564881" class="social-icon-link">
                       <span class="bi-facebook"></span>
                   </a>
               </li>
 
               <li class="social-icon-item">
-                  <a href="#" class="social-icon-link">
-                      <span class="bi-twitter"></span>
+                  <a href="https://youtube.com/@Ekarikthin" class="social-icon-link">
+                      <span class="bi-youtube"></span>
                   </a>
               </li>
 
               <li class="social-icon-item">
-                  <a href="#" class="social-icon-link">
+                  <a href="https://instagram.com/ekarikthin_?igshid=ZDdkNTZiNTM=" class="social-icon-link">
                       <span class="bi-instagram"></span>
                   </a>
               </li>

@@ -6,7 +6,7 @@ dotenv.config({ path: "../.env" }); //import config.env file
 const path=require('path');
 const bodyparser=require('body-parser');
 const admin = require('./routes/admin');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT||8080;
 const cors = require('cors');
 const cloudinary = require("cloudinary").v2;
 const event = require('./routes/eventReg');

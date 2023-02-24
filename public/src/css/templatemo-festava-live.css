@@ -327,7 +327,7 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-  background-color: transparent;
+  background-color: var(--dark-color);
 }
 
 
@@ -471,11 +471,10 @@ strong {
 
 /* ***** ABOUT EKARITHIN ***** */
 .about-section {
-  
   background: #642B73;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: -webkit-linear-gradient(to right, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -551,7 +550,7 @@ background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, F
 
 
 .site-footer-bottom {
-  background: #07090f;
+  background: rgb(100, 13, 124);
   padding-bottom: 5px;
 }
 
@@ -674,9 +673,9 @@ figure {
 }
 hr {
 
-  border: 3px solid rgb(234, 96, 62);
+  border: 3px solid rgb(255,255,255);
   border-radius: 5px;
-  width: 70%; /* sets the width to 50% of its parent container */
+  width: 100%; /* sets the width to 50% of its parent container */
   margin: auto;/* creates rounded corners with a radius of 20px */
 }
 
@@ -702,14 +701,20 @@ hr {
 	position: relative;
 	width: 300px;
 	height: 400px;
-	background:url('Colorful\ Background_3_RF_RMPL-01.jpg');
+  background: url('/src/lines.svg');
   background-size: cover;
   background-repeat: no-repeat;
 	display: inline-block;
 	margin:auto;
 	flex-wrap: nowrap;
-	border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #e865d4,
+            0 0 0.8rem #d56ab8,
+            0 0 2.8rem #ef6dd5,
+            inset 0 0 0.3rem #ee59c4; 
 	overflow: hidden;
 }
 .contain .profile .imgbx
@@ -747,37 +752,42 @@ hr {
 }
 .contain .profile .name .o_name
 {
-  font-family: cursive;
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
   font-size: 25px;
   margin-bottom: 0px;
   font-weight: bold;
-  font-family:cursive;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0,0, 0.8), 0 0 30px rgba(0, 0,0, 0.8), 0 0 40px rgba(0, 0,0, 0.8), 0 0 50px rgba(0, 0,0, 0.8), 0 0 80px rgba(0, 0,0, 0.8);
   background:transparent;
     color: white;
-    text-shadow:
-        0 0 10px black;
 
 }
 .contain .profile .name .role
 {
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
   color:white;
   font-size:15px ;
   background:transparent;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0,0, 0.8), 0 0 30px rgba(0, 0,0, 0.8), 0 0 40px rgba(0, 0,0, 0.8), 0 0 50px rgba(0, 0,0, 0.8), 0 0 80px rgba(0, 0,0, 0.8);
+  background:transparent;
 }
+
 .contain .profile .name
 {
 	position: absolute;
 	right:0;
 	left:0;
-  font-family: cursive;
+  color: white;
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
   font-size: 30px;
   font-weight: bold;
-  font-family:cursive;
   bottom: 5px;
   border-radius: 10px;
   text-align: center;
 
+  background:transparent;
+
 }
+
 .contain .profile .content
 {
 	position: absolute;
@@ -819,7 +829,7 @@ hr {
  color: #fff;
  font-size: 1.3rem;
  font-weight: bold;
- font-family: cursive;
+ font-family: "Dosis", Helvetica, Arial, sans-serif;
  text-shadow:
      0 0 10px black;
 }
@@ -827,7 +837,7 @@ hr {
 {
  color: #fff;
  font-size: 0.8rem;
- font-family: cursive;
+ font-family: "Dosis", Helvetica, Arial, sans-serif;
  font-weight: 700;
  text-shadow:
      0 0 10px black;
@@ -1076,7 +1086,7 @@ font-size: 16px;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	align-items: center;
-  max-width: 900px;
+  max-width: 1200px;
   margin: auto;
   background: transparent;
   column-gap: 2em;
@@ -1087,10 +1097,11 @@ font-size: 16px;
 {
   font-size: 80%;
   margin: 1%;
-  min-width: 375px;
+  min-width: 350px;
   padding-top: 3rem;
   text-align: center;
   width: 22%;
+  position: relative;
 }
 .extra-container .item p{
   line-height: 125%;
@@ -1100,20 +1111,57 @@ font-size: 16px;
   font-size: 16px;
   font-weight: 500;
 }
-
-.extra-container .item h4
+.extra-container .item .circ p
 {
-  margin-top: 20px;
- font-size: 20px;
- margin-bottom: 30px;
-}
-.extra-container .item i{
+  margin-bottom: 2px;
+  font-weight: bold;
   color: #0d0d0d;
-  font-size: 300%;
-  margin-bottom: 20px;
+  font-family: 'Teko', sans-serif;
+  font-style: italic;
+  font-size: 25px;
+}
+.circ {
+  position: relative;
+  margin: 0.625em;
+  width:130px;
+  height: 130px;
+  border-radius: 50%;
+  padding-top: 15px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 7px #0d0c0c56;
+}
+.circ::after {
+  position: absolute;
+  top: -2em;
+  right: -2em;
+  bottom: -2em;
+  left: -2em;
+border-top:10px solid  rgb(252, 252, 252);
+border-left:10px solid transparent;
+border-bottom: 10px solid rgb(4, 6, 7);
+border-right: 10px solid transparent;
+animation-name:rotate;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+border-radius: 50%;
+
+  content: "";
+} 
+@keyframes rotate{
+  from{ transform: rotate(-360deg); }
+  to{ transform: rotate(360deg); }
 }
 
 /*responsive styles */
+@media screen and (min-width: 1202px) and (max-width:1600px)
+{
+  #special
+  {
+    margin-top: 180px;
+  }
+
+}
 @media screen and (max-width: 1220px)
 {
   .video
@@ -1175,7 +1223,13 @@ font-size: 16px;
   }
 
 }
-
+@media screen and (max-width: 375px)
+{
+  .extra-container .item
+  {
+    min-width: 300px;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .custom-btn {
@@ -1258,4 +1312,3 @@ font-size: 16px;
   transition: 0.5s;
   }
 }
-

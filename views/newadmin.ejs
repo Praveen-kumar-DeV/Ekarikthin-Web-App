@@ -1,272 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">                
-   <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link href="/css/bootstrap-icons.css" rel="stylesheet">
-    <link href="/css/templatemo-festava-live.css" rel="stylesheet">
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link href="/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/css/templatemo-festava-live.css" rel="stylesheet" />
 
-
-<!-- ... --->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+    <!-- ... --->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          $("body").css({
+            overflow: "hidden",
+            margin: "0",
+            padding: "0",
+          });
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          $("body").css({
+            overflow: "auto",
+            margin: "",
+            padding: "",
+          });
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
 
     <style>
-        * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  body
-  {
-    background-color: #fff;
-    background-size: cover;
-    background-color: #4158D0;
-background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #fff;
+        background-size: cover;
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+      }
+      main {
+        margin-top: 60px;
 
-  }
-  main{
+        background-size: cover;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+      }
+      section {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0px 0px 30px #fff;
+        background-color: rgba(247, 243, 243, 0.376);
+        padding-bottom: 40px;
+        background-size: cover;
+      }
+      .form-group label {
+        color: #080808;
+        font-size: 20px;
+        font-weight: 200;
+        display: block;
+      }
+      .form-group input {
+        width: 100%;
+        border: none;
+        box-shadow: 0px 10px 10px -7px #000000;
+        border-radius: 3px;
+        outline: none;
+        height: 30px;
+        background: transparent;
+        color: #121212;
+        font-size: 20px;
+        transition: all 0.15s ease;
+      }
 
-    margin-top: 60px;
-    
-    background-size: cover;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 50px;
-  
-   
-  }
-  section {
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
-    box-shadow: 0px 0px 30px #fff;
-    background-color: rgba(247, 243, 243, 0.376);
-    padding-bottom: 40px;
-    background-size: cover;
-    
-  }
-  .form-group label
-  {
-    color: #080808;
-    font-size: 20px;
-    font-weight: 200;
-    display: block;
-  }
-  .form-group input
-  {
-    width: 100%;
-    border: none;
-    box-shadow: 0px  10px 10px -7px  #000000;
-    border-radius: 3px;
-    outline: none;
-    height: 30px;
-    background: transparent;
-    color: #121212;
-    font-size: 20px;
-    transition: all 0.15s ease;
-  }
-  
-button.submit-btn {
-    float: right;
-    margin-top: 20px;
-    padding: 10px 30px;
-   
-    
-    font-size: 18px;
-    cursor: pointer;
-    /* text-align: right; */
-    
-  }
+      button.submit-btn {
+        float: right;
+        margin-top: 20px;
+        padding: 10px 30px;
 
-  button.submit-btn{
-    color: #fff;
-    background: #000;
-    border-radius: 7px;  
-  }
-  button.submit-btn:hover{
-    background-color: #fefdfe;
-    color: #050801;
-    font-weight: 400;
-    box-shadow: 0px 0px 5px #fff, 0px 0px 25px #fff, 0px 0px 50px #fff, 0px 0px 0px #fff;
-  }
+        font-size: 18px;
+        cursor: pointer;
+        /* text-align: right; */
+      }
 
-  .floating-label
-  {
-    font-size: 20px;
-    color:  #111111;
-    position: absolute;
-    pointer-events: none;
-    background: transparent;
-    left:0px;
-    transition: 0.2s ease all;
-    top: 4px;
-    transform-origin: 0 0;
-    transform: translate3d(0, 0, 0);
-  }
+      button.submit-btn {
+        color: #fff;
+        background: #000;
+        border-radius: 7px;
+      }
+      button.submit-btn:hover {
+        background-color: #fefdfe;
+        color: #050801;
+        font-weight: 400;
+        box-shadow: 0px 0px 5px #fff, 0px 0px 25px #fff, 0px 0px 50px #fff,
+          0px 0px 0px #fff;
+      }
 
+      .floating-label {
+        font-size: 20px;
+        color: #111111;
+        position: absolute;
+        pointer-events: none;
+        background: transparent;
+        left: 0px;
+        transition: 0.2s ease all;
+        top: 4px;
+        transform-origin: 0 0;
+        transform: translate3d(0, 0, 0);
+      }
 
-  .form-group input:not(:-moz-placeholder-shown) + .floating-label {
-    color:rgb(9, 8, 8);
-    transform: translate3d(0, -43px, 0) scale(1.2);
-    
-  }
-  .form-group input:not(:-ms-input-placeholder) + .floating-label {
-    color:#0a0a0a;
-    transform: translate3d(0, -43px, 0) scale(1.2);
-  }
-  .form-group input:not(:placeholder-shown) + .floating-label {
-    color:#040404;
-    transform: translate3d(0, -43px, 0) scale(1.2);
-  }
-  .form-group input:focus {
-    color: rgb(5, 5, 5);
-    outline: none;
-  }
-  .form-group input:focus + .floating-label {
-    color:rgb(2, 2, 2);
-    transform: translate3d(0, -43px, 0) scale(1.2);
-  }
+      .form-group input:not(:-moz-placeholder-shown) + .floating-label {
+        color: rgb(9, 8, 8);
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+      .form-group input:not(:-ms-input-placeholder) + .floating-label {
+        color: #0a0a0a;
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+      .form-group input:not(:placeholder-shown) + .floating-label {
+        color: #040404;
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
+      .form-group input:focus {
+        color: rgb(5, 5, 5);
+        outline: none;
+      }
+      .form-group input:focus + .floating-label {
+        color: rgb(2, 2, 2);
+        transform: translate3d(0, -43px, 0) scale(1.2);
+      }
     </style>
     <title>Admin</title>
-
-</head>
-<body>
-  
+  </head>
+  <body>
     <div id="loader">
-        <div class="con">           
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>
-                <div class="wave" ></div>         
-        </div>
-          <div style="color:white;text-align:center;margin-top:-200px;font-size:30px;">
-            Loading...
-         </div>         
+      <div class="con">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <div
+        style="
+          color: white;
+          text-align: center;
+          margin-top: -200px;
+          font-size: 30px;
+        "
+      >
+        Loading...
+      </div>
     </div>
-    <div id="app-header">
-
-    </div>
- <main>
-   
-    <section>
+    <div id="app-header"></div>
+    <main>
+      <section>
         <div class="container">
-          <form  >
-            
+          <form>
             <div class="step step-1 active">
-                <legend>Admin Login</legend>
+              <legend>Admin Login</legend>
               <div class="form-group">
                 <label for="username">username</label>
-                <input type="text" id="username" name="username" value="" autocomplete="off">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value=""
+                  autocomplete="off"
+                />
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" value="" autocomplete="off">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value=""
+                  autocomplete="off"
+                />
               </div>
-             
+
               <button type="submit" class="submit-btn">Log In</button>
             </div>
-      
           </form>
         </div>
       </section>
-     
- </main>
- <div id="app-footer">
+    </main>
+    <div id="app-footer"></div>
+  </body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.sticky.js"></script>
+  <script src="/js/custom.js"></script>
 
- </div>
-     
-</body>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.sticky.js"></script>
-<script src="/js/custom.js"></script>
-
-
-<script>
-
-
+  <script>
     let allregis;
-    $(document).ready(function() {
-      $('form').submit(async function(event) {
-          event.preventDefault();
-    let username = $('#username').val();
-    let password=$('#password').val();
-      
-    const regForm={username:username,password:password};
-    try{
-    const { data } = await axios.post("/admin/login", regForm);
-    
-    
-    const token =data.token;
-    if (data.success) {
-          const userDetails = {
-           ...data.user,
-             token:data.token,
-          };
-          localStorage.setItem("user", JSON.stringify(userDetails));
-         
-    
-        console.log("test token...",userDetails.role);
-        if(userDetails.role==='admin'){
-          console.log(userDetails.role);
-        window.location.href = '/admin/DashBoard?valid='+userDetails.token;
-        }
-        else if(userDetails.role==='head')
-        {
-          window.location.href = '/admin/headUserDash?valid='+userDetails.token;
-        }
-        else 
-        {
-          window.location.href = '/admin/UserDash?valid='+userDetails.token;
-        }
-        
-        
-       
-    }
-    }
-    catch(err){
-    console.log(err.response.data.message);
-    Toastify({
-            text:err.response.data.message,
+    $(document).ready(function () {
+      $("form").submit(async function (event) {
+        event.preventDefault();
+        let username = $("#username").val();
+        let password = $("#password").val();
+
+        const regForm = { username: username, password: password };
+        try {
+          const { data } = await axios.post("/admin/login", regForm);
+
+          const token = data.token;
+          if (data.success) {
+            const userDetails = {
+              ...data.user,
+              token: data.token,
+            };
+            localStorage.setItem("user", JSON.stringify(userDetails));
+
+            console.log("test token...", userDetails.role);
+            if (userDetails.role === "admin") {
+              console.log(userDetails.role);
+              window.location.href =
+                "/admin/DashBoard?valid=" + userDetails.token;
+            } else if (userDetails.role === "head") {
+              window.location.href =
+                "/admin/headUserDash?valid=" + userDetails.token;
+            } else {
+              window.location.href =
+                "/admin/UserDash?valid=" + userDetails.token;
+            }
+          }
+        } catch (err) {
+          console.log(err.response.data.message);
+          Toastify({
+            text: err.response.data.message,
             duration: 3000,
-            
+
             newWindow: true,
             close: true,
-            gravity: "top", 
-            position: "right", 
+            gravity: "top",
+            position: "right",
             stopOnFocus: true,
             style: {
               background: "linear-gradient(to right, #ff0000, #ff4122)",
             },
-            onClick: function(){} 
+            onClick: function () {},
           }).showToast();
-    }
-    
+        }
       });
     });
-    
-    
-    </script>
-     
-
-
+  </script>
 </html>

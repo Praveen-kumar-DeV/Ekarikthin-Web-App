@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.12.2/cloudinary-core-shrinkwrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+    <title>Gallery</title>
+    <style>
+      body {
+        padding: 2em;
+      }
+      .card {
+        border: none;
+        padding: 0px;
+      }
+
+      img,
+      .card-img-top {
+        border-radius: 0em;
+
+        max-width: 330px;
+      }
+      .card :hover img {
+        transform: scale(1.2);
+      }
+
+      @media (min-width: 576px) {
+        .card-columns {
+          column-count: 2;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .card-columns {
+          column-count: 3;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .card-columns {
+          column-count: 4;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .card-columns {
+          column-count: 5;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="images-container">
+      <div class="card-columns" id="baba"></div>
+    </div>
+  </body>
+  <script>
+    const imagesContainer = document.getElementById("baba");
+    // const inContainer = document.getElementsByClassName("card-columns");
+
+    fetch("http://localhost:3000/Gallery/gag")
+      .then((response) => response.json())
+      .then((imageUrls) => {
+        imageUrls.forEach((imageUrl) => {
+          const outElement = document.createElement("div");
+          outElement.classList.add("card");
+          const imgElement = document.createElement("img");
+          imgElement.classList.add("card-img-top");
+          imgElement.classList.add("lazyload"); // add lazyload class
+
+          imgElement.setAttribute("data-src", imageUrl); // set data-src attribute instead of src
+          outElement.appendChild(imgElement);
+
+          imagesContainer.appendChild(outElement);
+        });
+
+        // Tell lazysizes to process the newly added images
+        window.lazySizes && window.lazySizes.init();
+      })
+      .catch((error) => {
+        console.error(error);
+        imagesContainer.textContent = "Error fetching images";
+      });
+  </script>
+</html>

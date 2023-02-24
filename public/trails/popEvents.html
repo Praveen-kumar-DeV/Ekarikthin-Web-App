@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+
+      #backCard {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(
+          circle at 24.1% 68.8%,
+          rgb(50, 50, 50) 0%,
+          rgb(240, 238, 238) 99.4%
+        );
+
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+      }
+
+      .wrapper {
+        display: table;
+        height: 100%;
+        width: 100%;
+      }
+
+      .container-fostrap {"
+        display: table-cell;
+        padding: 1em;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .fostrap-logo {
+        width: 100px;
+        margin-bottom: 15px;
+      }
+      h1.heading {
+        color: #fff;
+        font-size: 1.15em;
+        font-weight: 900;
+        margin: 0 0 0.5em;
+        color: #505050;
+      }
+      @media (min-width: 450px) {
+        h1.heading {
+          font-size: 3.55em;
+        }
+      }
+      @media (min-width: 760px) {
+        h1.heading {
+          font-size: 3.05em;
+        }
+      }
+      @media (min-width: 900px) {
+        h1.heading {
+          font-size: 3.25em;
+          margin: 0 0 0.3em;
+        }
+      }
+      .card {
+        display: block;
+        margin-bottom: 20px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        transition: box-shadow 0.25s;
+      }
+      .card:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .img-card {
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        display: block;
+        overflow: hidden;
+      }
+      .img-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.25s ease;
+      }
+      .card-content {
+        padding: 15px;
+        text-align: left;
+        background: teal;
+      }
+      .card-title {
+        margin-top: 0px;
+        font-weight: 700;
+        font-size: 1.65em;
+      }
+      .card-title a {
+        color: #fcfcfc;
+        text-decoration: none !important;
+      }
+      .card-read-more {
+        background: rgb(9, 10, 10);
+        color: rgb(255, 255, 255);
+        padding: 0px;
+      }
+      .card-read-more a {
+        text-decoration: none !important;
+        padding: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      .datetime {
+        margin: 10px;
+        width: 1230px;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        position: absolute;
+        top: -15px;
+        left: 15px;
+        background-color: transparent;
+      }
+
+      .day {
+        font-size: 64px;
+      }
+    </style>
+    <title>Events</title>
+  </head>
+  <body>
+    <div >
+
+      
+      <section class="wrapper" id="backCard >
+        <div class="container-fostrap">
+          <h2>Popular <b>Events</b></h2>
+
+          <div class="content">
+            <div class="container">
+              <div class="row">
+                <!----------------------------------------------------------------->
+
+                <div class="col-xs-12 col-sm-4">
+                  <div class="card">
+                    <div class="datetime" style="color: rgb(243, 243, 243)">
+                      <div class="day">09</div>
+                      <div
+                        style="
+                          line-height: 20px;
+                          text-align: center;
+                          vertical-align: middle;
+                          padding-top: 25px;
+                        "
+                      >
+                        <div class="month" style="">Mar.</div>
+                        <div class="date">Friday</div>
+                      </div>
+                    </div>
+
+                    <img src="esoarts.webp" class="img-card" />
+
+                    <div class="card-content">
+                      <h4 style="color: #fffefe">E-Sports</h4>
+                      <h6
+                        style="font-size: 10px; color: #fffcfc"
+                        class="card-title"
+                      >
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        NIT Nagaland,Chumukedima
+                      </h6>
+
+                      <p class="" style="color: green"></p>
+                    </div>
+                    <div class="card-read-more">
+                      <a
+                        href="/Events"
+                        class="btn btn-link btn-block"
+                        style="float: left"
+                      >
+                        More Info
+                      </a>
+                      <a
+                        href="/register"
+                        class="btn btn-link btn-block"
+                        style="float: right"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-------------------------------------------------------------------->
+
+                <div class="col-xs-12 col-sm-4">
+                  <div class="card">
+                    <div class="datetime" style="color: rgb(243, 243, 243)">
+                      <div class="day">11</div>
+                      <div
+                        style="
+                          line-height: 20px;
+                          text-align: center;
+                          vertical-align: middle;
+                          padding-top: 25px;
+                        "
+                      >
+                        <div class="month" style="">Mar.</div>
+                        <div class="date">Saturday</div>
+                      </div>
+                    </div>
+                    <img class="img-card" src="./rockville.png" />
+
+                    <div class="card-content">
+                      <h4 style="color: #fffefe">Rockville</h4>
+                      <h6
+                        style="font-size: 10px; color: #fffcfc"
+                        class="card-title"
+                      >
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        NIT Nagaland,Chumukedima
+                      </h6>
+                    </div>
+                    <div class="card-read-more">
+                      <a
+                        href="/Events"
+                        class="btn btn-link btn-block"
+                        style="float: left"
+                      >
+                        More Info
+                      </a>
+                      <a
+                        href="/register"
+                        class="btn btn-link btn-block"
+                        style="float: right"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="card">
+                    <div class="datetime" style="color: rgb(243, 243, 243)">
+                      <div class="day">25</div>
+                      <div
+                        style="
+                          line-height: 20px;
+                          text-align: center;
+                          vertical-align: middle;
+                          padding-top: 25px;
+                        "
+                      >
+                        <div class="month" style="">Mar.</div>
+                        <div class="date">Friday</div>
+                      </div>
+                    </div>
+                    <img src="./ritzy.jpg" class="img-card" />
+
+                    <div class="card-content">
+                      <h4 style="color: #fffefe">Ritzy</h4>
+
+                      <h6
+                        style="font-size: 10px; color: #fffcfc"
+                        class="card-title"
+                      >
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        NIT Nagaland,Chumukedima
+                      </h6>
+                    </div>
+                    <div class="card-read-more">
+                      <a
+                        href="/Events"
+                        class="btn btn-link btn-block"
+                        style="float: left"
+                      >
+                        More Info
+                      </a>
+                      <a
+                        href="/register"
+                        class="btn btn-link btn-block"
+                        style="float: right"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!----------------------------------------------------------------->
+
+                <div class="col-xs-12 col-sm-4">
+                  <div class="card">
+                    <div class="datetime" style="color: rgb(243, 243, 243)">
+                      <div class="day">10</div>
+                      <div
+                        style="
+                          line-height: 20px;
+                          text-align: center;
+                          vertical-align: middle;
+                          padding-top: 25px;
+                        "
+                      >
+                        <div class="month" style="">Mar.</div>
+                        <div class="date">Friday</div>
+                      </div>
+                    </div>
+
+                    <img src="./cosplay.jpg" class="img-card" />
+
+                    <div class="card-content">
+                      <h4 style="color: #fffefe">Cosplay</h4>
+                      <h6
+                        style="font-size: 10px; color: #fffcfc"
+                        class="card-title"
+                      >
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        NIT Nagaland,Chumukedima
+                      </h6>
+
+                      <p class="" style="color: green"></p>
+                    </div>
+                    <div class="card-read-more">
+                      <a
+                        href="/Events"
+                        class="btn btn-link btn-block"
+                        style="float: left"
+                      >
+                        More Info
+                      </a>
+                      <a
+                        href="/register"
+                        class="btn btn-link btn-block"
+                        style="float: right"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-------------------------------------------------------------------->
+
+                <div class="col-xs-12 col-sm-4">
+                  <div class="card">
+                    <div class="datetime" style="color: rgb(243, 243, 243)">
+                      <div class="day">09</div>
+                      <div
+                        style="
+                          line-height: 20px;
+                          text-align: center;
+                          vertical-align: middle;
+                          padding-top: 25px;
+                        "
+                      >
+                        <div class="month" style="">Mar.</div>
+                        <div class="date">Friday</div>
+                      </div>
+                    </div>
+                    <img class="img-card" src="./danceb.webp" />
+
+                    <div class="card-content">
+                      <h4 style="color: #fffefe">Dance Battle</h4>
+                      <h6
+                        style="font-size: 10px; color: #fffcfc"
+                        class="card-title"
+                      >
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        NIT Nagaland,Chumukedima
+                      </h6>
+                    </div>
+                    <div class="card-read-more">
+                      <a
+                        href="/Events"
+                        class="btn btn-link btn-block"
+                        style="float: left"
+                      >
+                        More Info
+                      </a>
+                      <a
+                        href="/register"
+                        class="btn btn-link btn-block"
+                        style="float: right"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="card">
+                    <div class="datetime" style="color: rgb(243, 243, 243)">
+                      <div class="day">25</div>
+                      <div
+                        style="
+                          line-height: 20px;
+                          text-align: center;
+                          vertical-align: middle;
+                          padding-top: 25px;
+                        "
+                      >
+                        <div class="month" style="">Oct.</div>
+                        <div class="date">Friday</div>
+                      </div>
+                    </div>
+
+                    <img src="./images.jpeg" class="img-card" />
+
+                    <div class="card-content">
+                      <h4 style="color: #fffefe">Penality Shootout</h4>
+                      <h6
+                        style="font-size: 10px; color: #fffcfc"
+                        class="card-title"
+                      >
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        NIT Nagaland,Chumukedima
+                      </h6>
+                    </div>
+                    <div class="card-read-more">
+                      <a
+                        href="/Events"
+                        class="btn btn-link btn-block"
+                        style="float: left"
+                      >
+                        More Info
+                      </a>
+                      <a
+                        href="/register"
+                        class="btn btn-link btn-block"
+                        style="float: right"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

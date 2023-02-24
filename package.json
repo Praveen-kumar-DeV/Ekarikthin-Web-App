@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Backend/index",
-    "dev": " export NODE_ENV=DEVELOPMENT& nodemon index",
-    "prod": "export NODE_ENV=PRODUCTION& nodemon index"
+    "start": "node index",
+    "dev": "  nodemon index",
+    "prod": " nodemon index"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "axios": "^1.2.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
+    "cloudinary": "^1.34.0",
     "cors": "^2.8.5",
     "csv-express": "^1.2.2",
     "dotenv": "^16.0.3",

@@ -195,7 +195,16 @@ exports.print=async (req,res)=>{
 
   try {
     const details = await eventReg.findOne({ tokenId });
-    let ser=await count.findOne({ serial:"InvoiceNumber" },{paid:true});
+    console.log(details)
+    if(!details.paid){
+      return res.status(400).json({
+        success: false,
+        code: "NOT PAID",
+        message: "INCOMPLETE PAYMENT",
+      });
+
+    }
+    let ser=await count.findOne({ serial:"InvoiceNumber" });
     if (!details) {
       return res.status(400).json({
         success: false,

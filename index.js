@@ -8,7 +8,10 @@ const bodyparser=require('body-parser');
 const admin = require('./routes/admin');
 const PORT = process.env.PORT;
 const cors = require('cors');
+const cloudinary = require("cloudinary").v2;
 const event = require('./routes/eventReg');
+const gallery = require('./routes/gallery');
+
 app.use(cors());
 app.use(express.urlencoded({
   extended: true
@@ -22,10 +25,18 @@ app.use(bodyparser.json());
 
 connectDb();
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
+}); 
+
 //route handlers
 
 app.use('/',event);
 app.use('/admin', admin);
+app.use('/gallery',gallery);
 
 
 

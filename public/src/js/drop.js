@@ -15,7 +15,7 @@ window.onload = function menu () {
       "Voice of Ekarikthin": "CULT_VOE",
       "Dance - Solo": "CULT_DTGS",
       "Dance - Crew": "CULT_DTGC",
-      "Beatbox":"CULT_BB",
+      "BeatBox":"CULT_BB",
      
     },
     technical: {
@@ -38,7 +38,7 @@ window.onload = function menu () {
     sports: {
       "Table Tennis": "SPT_TT",
           Volleyball: "SPT_VOL",
-     "Penalty Shoot out":"SPT_PS",
+     "Penalty Shootout":"SPT_PS",
       "Gully Cricket": "SPT_GC",
       Badminton: "SPT_BD",
       "Mountain Biking": "SPT_MB",
@@ -63,10 +63,10 @@ window.onload = function menu () {
     CULT_DTGS: 300,
     CULT_DTGC: 600,
     CULT_BB: 300,
-    TEC_RR: 300,
+    TEC_RR: 400,
     TEC_TM:50,
     TEC_CC: 500,
-    TEC_WD: 300,
+    TEC_WD: 400,
     TEC_LD: 50,
     TEC_CWC: 100,
     TEC_AI: 150,
@@ -77,14 +77,14 @@ window.onload = function menu () {
     ESP_ML: 600,
     SPT_TT: 500,
     SPT_VOL: 800,
-    SPT_GC: 800,
+    SPT_GC: 500,
     SPT_PS: 600,
     SPT_BD: 400,
     SPT_MB: 500,
-    MNE_TH: 0,
+    MNE_TH: 50,
     MNE_WP: 50,
-    MNE_RG: 0,
-    MNE_SV: 0,
+    MNE_RG: 50,
+    MNE_SV: 150,
     MNE_IGLC: 0,
   };
   
@@ -133,12 +133,12 @@ window.onload = function menu () {
     ],
     Sports: [
       "Select Event",
-      "Table Tennis",
+      
       "Volleyball",
       "Gully Cricket",
       "Penalty Shootout",
       "Badminton",
-      "Mountain Biking",
+  
     ],
     MiniEvents: [
       "Select Event",

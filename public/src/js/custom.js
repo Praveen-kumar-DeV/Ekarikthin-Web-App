@@ -62,9 +62,9 @@ let appHeader = `
                             <li class="nav-item">
                                 <a class="nav-link" href="/Organisers">Organizers</a>
                             </li>
-                            <li class="nav-item">
+                         <!--   <li class="nav-item">
                                 <a class="nav-link" href="Magazine.pdf" download>E-magazine</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a href="/register" class=" nav-link">Register</a>
                             </li>

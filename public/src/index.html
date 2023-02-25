@@ -332,6 +332,38 @@ h1.heading {
 #headEvent{
     font-weight: bold; color: #fff; font-size: 50px;
 }
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(204, 51, 191) 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
         </style>
     </head>   
     <body>
@@ -900,7 +932,47 @@ h1.heading {
           </div>
         </div>
       </section>
-                <section class="about-section section-padding" id="nitnagaland">
+
+      <section style="padding-bottom: 10px;">
+        <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+        <div class="sponsor">
+            Sponsors
+        </div>
+        <div class="latespon">
+            <!-- heading text -->
+            <ul class="image-gallery" style="list-style: none;">
+              <li>
+                <img src="1.jpg" alt="" />
+                <div class="overlay"><span>Image title</span></div>
+              </li>
+              <li>
+                <img src="1.jpg" alt="" />
+                <div class="overlay"><span>Image title</span></div>
+              </li>
+              <li>
+                <img src="2.jpg" alt="" />
+                <div class="overlay"><span>Image title</span></div>
+              </li>
+              <li>
+                <img src="3.jpg" alt="" />
+                <div class="overlay"><span>Image title</span></div>
+              </li>
+              <li>
+                <img src="4.jpg" alt="" />
+                <div class="overlay"><span>Image title</span></div>
+              </li>
+              <li>
+                <img src="5.jpg" alt="" />
+                <div class="overlay"><span>Image title</span></div>
+              </li>
+           
+              <!-- other items here -->
+            </ul>
+          </div>
+    </section>
+       <section class="about-section section-padding" id="nitnagaland">
                     <div class="container">
                         <div class="row">
     

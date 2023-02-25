@@ -3,15 +3,15 @@ const express=require('express');
 const router=express.Router();
 const cors=require('cors');
 const controller=require('../controllers/controller');
-const bodyparser=require('body-parser');
+
 
 const eventReg = require("../models/registermodel");
-const { isLoggedIn } = require('../middlewares/user');
+const { isLoggedIn,isTime} = require('../middlewares/user');
 
 
 
 
-router.route('/register').post(controller.register).get((req,res)=>{
+router.route('/register').post(isTime ,controller.register).get(isTime,(req,res)=>{
     res.render('reg');
 });
 router.route('/otp').post(controller.sendOtp);

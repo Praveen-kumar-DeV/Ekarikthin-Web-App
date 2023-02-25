@@ -198,12 +198,39 @@
 
  animation: example1 15s linear infinite;
 }
-@media screen and (max-width:417px)
+@media screen and (max-width:427px)
 {
   .example1 h3
   {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
+  .example1
+  {
+      height: 95px;
+      padding-bottom: 20px;
+      margin-bottom: 10PX;
+  }
+}
+@media screen and (max-width:1352px)
+{
+.example1
+{
+    height: 65px;
+}
+.example1 h3{
+font-size: 1.4em;
+}
+}
+@media screen and (max-width:693px)
+{
+    .example1
+    {
+        height: 80px;
+    }
+    .example1 h3{
+        font-size: 1.3em;
+        }
+
 }
 
 @keyframes example1 {

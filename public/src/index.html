@@ -134,36 +134,47 @@ animation: wave 1s linear infinite,rain 2s infinite ease-in-out;
     transform: scale(0);
   }
 }
+
 .about-venue
 {
-    display: flex;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 50px;
-    justify-content: center;
-    column-gap: 70px;
-    flex-wrap: wrap;
+  display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  background: transparent;
+  column-gap: 2em;
+  row-gap: 1em;
 }
 .about-venue p{
-    color: white;
+  line-height: 135%;
+  margin-top: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
 }
 .info2
 {
-color: black;
-text-align: left;
-width: 300px;
-font-weight: 300;
-font-size: 20px;
+  font-size: 80%;
+  margin: 1%;
+  min-width: 350px;
+  padding-top:0rem;
+  text-align: left;
+  width: 22%;
+  position: relative;
 }
 .info1
 {
 
-    text-align: left;
-    width:350px;
-    color: black;
-    font-weight: 300;
-font-size: 20px;
-
+  font-size: 80%;
+  margin: 1%;
+  min-width: 350px;
+  padding-top: 3rem;
+  text-align: left;
+  width: 22%;
+  position: relative;
 }
 
 @keyframes rain { 
@@ -178,26 +189,6 @@ font-size: 20px;
   90%{background:  #dd00f3 ;}
   100%{background: #ff2400;}
 }
-
-.datetime {
-        margin: 10px;
-        width: 1230px;
-        display: flex;
-        justify-content: flex-start;
-        overflow: hidden;
-        position: relative;
-        top: -15px;
-        left: 15px;
-        background-color: transparent;
-        height: 120px;
-      }
-
-      .day {
-        
-        font-size: 64px;
-      }
-
-
       @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 
 
@@ -312,11 +303,23 @@ h1.heading {
 
 .datetime {
   margin: 10px;
-  width: 1230px;
+  width: 180px;
   display: flex;
   justify-content: flex-start;
   overflow: hidden;
   position: absolute;
+  top: -15px;
+  left: 15px;
+  background-color: transparent;
+  color: black;
+}
+.venue{
+  margin: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
   top: -15px;
   left: 15px;
   background-color: transparent;
@@ -901,7 +904,7 @@ h1.heading {
                     <div class="container">
                         <div class="row">
     
-                            <div class="datetime" style="color: rgb(243, 243, 243)">
+                            <div class="venue" style="color: rgb(243, 243, 243);">
                                 <div class="day"></div>
                                 <div
                                   style="
@@ -948,17 +951,15 @@ h1.heading {
 
                         <ul class="site-footer-links">
                             <li>
-                                <a href="events.html" class="site-footer-link">Events</a>
+                                <a href="/Events" class="site-footer-link">Events</a>
                             </li>
                             <li >
-                                <a href="gallerypage.html" class="site-footer-link">Gallery</a>
+                                <a href="/Gallery" class="site-footer-link">Gallery</a>
                             </li>
                             <li >
-                                <a href="practice.html" class="site-footer-link">Organizers</a>
+                                <a href="/Organisers" class="site-footer-link">Organizers</a>
                             </li>
-                            <li >
-                                <a href="Magazine.pdf" download class="site-footer-link">E-magazine</a>
-                            </li>
+                           
                             <li>
                                 <a href="/register" id="change-link" class="site-footer-link">Register</a>
                             </li>

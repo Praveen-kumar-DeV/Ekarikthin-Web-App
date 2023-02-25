@@ -98,15 +98,11 @@ let appFooter = `
                   <li >
                       <a href="/Organisers" class="site-footer-link">Organizers</a>
                   </li>
-                  <li >
-                      <a class="site-footer-link" href="Magazine.pdf" download>E-magazine</a>
-                  </li>
+                  
                   <li>
                       <a href="/register" class="site-footer-link">Register</a>
                   </li>
-                  <li>
-                      <a href="/admin/login" class="site-footer-link">Admin Login</a>
-                  </li>
+                
               </ul>
           </div>
   

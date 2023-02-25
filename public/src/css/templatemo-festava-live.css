@@ -35,7 +35,16 @@
 body {
   background-color: var(--white-color);
   font-family: var(--body-font-family); 
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
 
 h2,
 h3,
@@ -701,7 +710,7 @@ hr {
 	position: relative;
 	width: 300px;
 	height: 400px;
-  background: url('/src/lines.svg');
+  background: url('../lines.svg');
   background-size: cover;
   background-repeat: no-repeat;
 	display: inline-block;
@@ -1267,6 +1276,18 @@ border-radius: 50%;
 
 }
 @media screen and (max-width: 480px) {
+  body {
+   
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+  body::-webkit-scrollbar {
+   display: none;
+  }
+  
   h1 {
     font-size: 52px;
   }
@@ -1299,6 +1320,18 @@ border-radius: 50%;
   }
 }
 @media screen and (max-width: 372px) {
+  body {
+   
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+  body::-webkit-scrollbar {
+   display: none;
+  }
+  
   .maintitle .mainlogo
   {
 

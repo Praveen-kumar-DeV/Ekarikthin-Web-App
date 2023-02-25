@@ -39,7 +39,7 @@ exports.login = async (req, res) => {
 exports.signup = async (req, res) => {
  
   const { username, password ,event ,role} = req.body;
-  console.log(req.body);
+  console.log(req.body,"........");
   if (!(username && password)) {
     return res.status(400).json({
       message: "Please provide username and password",

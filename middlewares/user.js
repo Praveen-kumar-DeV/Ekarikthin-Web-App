@@ -79,3 +79,25 @@ exports.isAdmin = async (req, res, next) => {
   }
 };
 
+
+
+exports.isTime = async (req, res, next) => {
+  
+  
+  const currentDate = new Date();
+const setDate = new Date('2023-03-08');
+
+if (currentDate < setDate) {
+  console.log("valid");
+  next();
+} else if (currentDate > setDate) {
+  console.log("not valid");
+  res.render('closed');
+} 
+   
+   
+ 
+  
+};
+
+

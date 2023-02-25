@@ -39,7 +39,7 @@ exports.login = async (req, res) => {
 exports.signup = async (req, res) => {
  
   const { username, password ,event ,role} = req.body;
-  console.log(req.body,"........");
+
   if (!(username && password)) {
     return res.status(400).json({
       message: "Please provide username and password",
@@ -52,7 +52,7 @@ exports.signup = async (req, res) => {
       event,
       role,
     });
-    console.log(" account ceated...!");
+    
     cookieToken(user, res, 201);
    
   } catch (err) {
@@ -129,7 +129,7 @@ exports.updatePay = async (req, res) => {
     }
 
     if (details.paid) {
-      console.log('hello there...alredy checked id')
+     
       return res.status(400).json({
         success: false,
         message: "Already paid for the token",
@@ -175,7 +175,7 @@ exports.getAllRegistrations = async (req, res) => {
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Something went wrong....",
+      message: "Something went wrong..!",
     });
   }
 };

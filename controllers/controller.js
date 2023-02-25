@@ -168,7 +168,7 @@ exports.getRegistrations = async (req, res) => {
 
 exports.sendOtp = async (req, res,next) => {
   const { email } = req.body;
-  console.log("send otp route....");
+ 
 
   if (!email) {
     return res.status(400).json({
@@ -271,7 +271,7 @@ exports.sendOtp = async (req, res,next) => {
   };
 
   sendMail(options);
-  console.log("send otp route....bye...!");
+  
 
   res.status(200).json({
     success: true,

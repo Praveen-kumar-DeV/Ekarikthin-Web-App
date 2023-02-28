@@ -57,7 +57,7 @@ h2 {
       <div class="sidebar">
         <a class="active" onclick= "history.go(-1);">Admin Dashboard</a>
      
-        <a href="">Details</a>
+        
         <a onclick="erase()" href="/admin/logout">Logout</a>
         
       </div>
@@ -74,16 +74,10 @@ h2 {
       
       <select type="search" class="select-table-filter" data-table="order-table" oninput="they(this.value)" id="filter" onchange="down(this.value)">
         <option value="">Reset</option>  
-        <option value="Doe">Doe</option>  
-        <option value="Gully Cricket">Gully Cricket</option> 
-        <option value="Voice of Ekarikthin">Voice of Ekarikthin</option>  
-        <option value="BGMI">BGMI</option>   
+       
       <select>
     
-        <form id="myForm" action="/admin/exporttocsv" method="post">
-          <input type="hidden" name="event" >
-          <button>Download</button>
-      </form>
+      
         <table class="order-table">
             <thead><tr>
                 <th><span id="sno" class="w3-button table-column">S.NO</span></th>
@@ -105,10 +99,10 @@ h2 {
 
 function down(val){
   const Down=document.getElementById('filter');
-  console.log(Down.value,"llll")
+ 
  
   document.getElementById("myForm").elements[0].value=val;
-  console.log(document.getElementById("myForm").elements[0].value)
+  
 }
 
 

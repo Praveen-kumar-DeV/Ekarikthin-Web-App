@@ -58,7 +58,7 @@ window.onload = function menu () {
     CULT_CT: 1000,
     CULT_CG: 1300,
     CULT_RITZY: 600,
-    CULT_RV: 3000,
+    CULT_RV: 2500,
     CULT_VOE: 400,
     CULT_DTGS: 300,
     CULT_DTGC: 600,

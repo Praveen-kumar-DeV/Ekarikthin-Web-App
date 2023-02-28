@@ -336,7 +336,7 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-  background-color: var(--dark-color);
+  background-color: transparent;
 }
 
 
@@ -725,6 +725,7 @@ hr {
             0 0 2.8rem #ef6dd5,
             inset 0 0 0.3rem #ee59c4; 
 	overflow: hidden;
+  opacity: 0;
 }
 .contain .profile .imgbx
 {

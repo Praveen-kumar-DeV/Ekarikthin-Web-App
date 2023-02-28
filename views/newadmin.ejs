@@ -249,9 +249,7 @@
             };
             localStorage.setItem("user", JSON.stringify(userDetails));
 
-            console.log("test token...", userDetails.role);
             if (userDetails.role === "admin") {
-              console.log(userDetails.role);
               window.location.href =
                 "/admin/DashBoard?valid=" + userDetails.token;
             } else if (userDetails.role === "head") {

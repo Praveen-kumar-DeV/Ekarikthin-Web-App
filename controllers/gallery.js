@@ -38,7 +38,7 @@ cloudinary.search
       const j = Math.floor(Math.random() * (i + 1));
       [imageUrls[i], imageUrls[j]] = [imageUrls[j], imageUrls[i]];
     }
-   console.log(imageUrls)
+   
     res.json(imageUrls);
   })
   .catch(error => {

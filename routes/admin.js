@@ -5,7 +5,7 @@ const controller=require('../controllers/adminCon');
 const { isLoggedIn ,isAdmin} = require("../middlewares/user");
 
 const csv   = require('csv-express');
-const bodyParser = require("body-parser");
+
 
 
 router.route('/update').get((req,res)=>{
@@ -44,7 +44,10 @@ router.route('/headData').get( (req,res)=>{
     res.render('alldata');
    
 });
-
+router.route('/download').get( (req,res)=>{
+    res.render('down');
+   
+});
 router.route('/login').post(controller.login).get((req,res)=>{
     res.render('newadmin');
    });
@@ -54,7 +57,7 @@ router.route('/signup').post(isLoggedIn,isAdmin,controller.signup).get((req,res)
 });
 
 router.route("/print").post(isLoggedIn,controller.print);
-router.route('/exporttocsv').post(isLoggedIn,controller.CSVdownload);
+router.route('/exporttocsv').post(controller.CSVdownload);
 router.route('/offlineRegister').get((req,res)=>{
     res.render('offregister');
 });

@@ -75,7 +75,7 @@ exports.logout = async (req, res) => {
 
 exports.getRegDetails = async (req, res) => {
   const { tokenId } = req.query;
-  console.log("in details...!")
+ 
   if (!tokenId) {
     return res.status(400).json({
       success: false,
@@ -109,7 +109,7 @@ exports.getRegDetails = async (req, res) => {
 exports.updatePay = async (req, res) => {
   
   const { tokenId } = req.query;
-  console.log('hello there...! pay',req.user);
+ 
   if (!tokenId) {
     return res.status(400).json({
       success: false,
@@ -142,7 +142,7 @@ exports.updatePay = async (req, res) => {
       time: new Date().getTime(),
     });
     const result=await details.save();
-       console.log(result);
+     
     res.status(200).json({
       success: true,
       message: "Updated successfully",
@@ -195,7 +195,7 @@ exports.print=async (req,res)=>{
 
   try {
     const details = await eventReg.findOne({ tokenId });
-    console.log(details)
+    
     if(!details.paid){
       return res.status(400).json({
         success: false,
@@ -258,7 +258,7 @@ exports.dashData= async(req,res)=>{
 }
 exports.CSVdownload=async(req, res) =>{
   const event=req.body;
- console.log(event)
+ 
   var filename   =JSON.stringify(event.event);
 
 

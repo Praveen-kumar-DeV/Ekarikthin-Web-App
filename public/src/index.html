@@ -42,6 +42,8 @@
                 document.querySelector("body").style.visibility = "visible";
                 }
             };
+
+           
         </script>
         <style>
           
@@ -247,6 +249,7 @@ h1.heading {
   }
 }
 .card {
+  opacity: 0;
   display: block;
   margin-bottom: 20px;
   line-height: 1.42857143;
@@ -324,6 +327,7 @@ h1.heading {
   left: 15px;
   background-color: transparent;
   color: black;
+  
 }
 
 .day {
@@ -362,9 +366,174 @@ h1.heading {
     transform:translateX(25%);
   }
 }
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both; opacity: 1;
+}
 
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-        </style>
+.tilt-in-tr {
+	-webkit-animation: tilt-in-tr 0.65s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-tr 0.65s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes tilt-in-tr {
+  0% {
+    -webkit-transform: rotateY(-35deg) rotateX(20deg) translate(250px, -250px) skew(-12deg, -15deg);
+            transform: rotateY(-35deg) rotateX(20deg) translate(250px, -250px) skew(-12deg, -15deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+  }
+}
+@keyframes tilt-in-tr {
+  0% {
+    -webkit-transform: rotateY(-35deg) rotateX(20deg) translate(250px, -250px) skew(-12deg, -15deg);
+            transform: rotateY(-35deg) rotateX(20deg) translate(250px, -250px) skew(-12deg, -15deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+  }
+}
+
+.slide-in-elliptic-top-bck {
+	-webkit-animation: slide-in-elliptic-top-bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-elliptic-top-bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; opacity: 1;
+}
+@-webkit-keyframes slide-in-elliptic-top-bck {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(30deg) scale(6.5);
+            transform: translateY(-600px) rotateX(30deg) scale(6.5);
+    -webkit-transform-origin: 50% 200%;
+            transform-origin: 50% 200%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+            transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% -500px;
+            transform-origin: 50% -500px;
+    opacity: 1;
+  }
+}
+@keyframes slide-in-elliptic-top-bck {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(30deg) scale(6.5);
+            transform: translateY(-600px) rotateX(30deg) scale(6.5);
+    -webkit-transform-origin: 50% 200%;
+            transform-origin: 50% 200%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+            transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% -500px;
+            transform-origin: 50% -500px;
+    opacity: 1;
+  }
+}
+.excit{
+  opacity: 0;
+}
+.head{
+  opacity: 0;
+}
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+.ekspon{
+  opacity: 0;
+}
+.yt{
+  opacity: 0;
+}
+.slide-in-right {
+	-webkit-animation: slide-in-right 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: slide-in-right 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both; opacity: 1;
+}
+
+ @-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+     </style>
     </head>   
     <body>
         <div id="loader">
@@ -418,7 +587,7 @@ h1.heading {
                                 <a class="nav-link" href="/Organisers">Organizers</a>
                             </li>
                        <!--   <li class="nav-item">
-                                <a class="nav-link" href="Magazine.pdf" download>E-magazine</a>
+                                <a class="nav-link" href="Magazine.pdf" download ="Magazine">E-magazine</a>
                             </li> -->   
                             <li class="nav-item">
                                 <a href="/register" class=" nav-link">Register</a>
@@ -429,6 +598,7 @@ h1.heading {
                     </div>
                 </div>
             </nav>
+            
             <section class="hero-section" id="section_1">
                 <div class="section-overlay"></div>
 
@@ -493,36 +663,42 @@ h1.heading {
                     </video>
                 </div>
             </section>
+
+<!-- about section-->
             <section class="about-section section-padding" id="section_2">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex">
                             <div class="services-info  my-div">
-                                <h2 class="text-white mb-4">About Ekarithin 2023</h2>
+                                <h2 class=" mb-4 head" style="color:#000 ;">About Ekarikthin 2023</h2>
+                                
                                  
-                                <p class="text-white" style="Font-family: Copperplate, Copperplate Gothic Light, fantasy">Ekarikthin is an annual techno-cultural festival hosted by National Institute of Technology Nagaland, in north-east India,  Lasting three days, Ekarikthin is the largest techno-cultural festival in Nagalandand provides a platform for talented youths in various cultural and technical events. Students from all over Nagaland participate.</p>
-                                <p class="text-white" style="Font-family: Copperplate, Copperplate Gothic Light, fantasy">It provides a platform to young nurturing,talented youths to showcase their talents in various events related to cultural , technical and sports.</p>
+                                <p class="text-white" style="font-weight: 400;">Ekarikthin is an annual techno-cultural festival hosted by National Institute of Technology Nagaland, in north-east India,  Lasting three days, Ekarikthin is the largest techno-cultural festival in Nagalandand provides a platform for talented youths in various cultural and technical events. Students from all over Nagaland participate.</p>
+                                <p class="text-white" style="font-weight: 400;" >It provides a platform to young nurturing,talented youths to showcase their talents in various events related to cultural , technical and sports.</p>
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-12">
-                            <div class="video-container">
-                                <iframe class="video" src="https://www.youtube.com/embed/3MBBvfT8EPQ" title="Ekarikthin" allowfullscreen></iframe>
+                            <div class="video-container yt" >
+                                <iframe class="video" src="https://www.youtube.com/embed/BFsl2joObr8" title="Ekarikthin" allowfullscreen></iframe>
+                               
                             </div>   
                         </div>
 
                     </div>
                 </div>
             </section>
+
+            <!-- Extra data-->
             <section class="extra-section">
                 <div class="activities">
-                    <h3 style="text-align: center;">EXCITING EVENTS FOR EVERYONE</h3>
+                    <h3 style="text-align: center;" class="excit">EXCITING EVENTS FOR EVERYONE</h3>
                 <p>The events and competitions at Ekarikthin belong to a variety of cultural categories such as Music, Dance, Literary, Quiz, Drama, Fine Arts, Film, and many more. Here participants get to showcase their talents and win laurels for their respective colleges.</p>
                 </div>
-                <div class="extra-container">
+                <div class="extra-container ">
                     
-                <div class="item">
+                <div class="item ekspon">
                     <div  style="display: flex;justify-content: center;line-height: 2px;">
                         <div class="circ">
                             <p> 30+ </p>
@@ -531,7 +707,7 @@ h1.heading {
                     </div>
                    <p>Ekarikthin includes various technical and cultural activities. It is a platform for everyone to showcase their talent and creativity</p>
                 </div>
-                <div class="item"  id="special">
+                <div class="item ekspon"  id="special">
                     <div   style="display: flex;justify-content: center;">
                         <div class="circ">
                             <p> 4 LAKH+ </p>
@@ -541,7 +717,7 @@ h1.heading {
 
                     <p>Mesmerizing prize money worth more than 4 lakh rupees including all the events</p>
                 </div>
-                <div class="item">
+                <div class="item ekspon">
                     <div style="display: flex;justify-content: center;">
                         <div class="circ">
                             <p> Annual </p>
@@ -554,6 +730,7 @@ h1.heading {
                 </div>
                 </div>
             </section>
+            <!-- GAllERY-->
             
                 <section>
                    
@@ -624,9 +801,13 @@ h1.heading {
                     </div>	
                 </section>
 
+
+                <!-- Popular events-->
+
       <section class="wrapper" id="backCard" >
         <div class="container-fostrap">
-          <h2>Popular <b id="headEvent">Events</b></h2>
+          <div class="head" ><h2>Popular <b id="headEvent">Events</b></h2></div>
+          
 
           <div class="content">
             <div class="container">
@@ -634,7 +815,7 @@ h1.heading {
                 <!----------------------------------------------------------------->
 
                 <div class="col-xs-12 col-sm-4">
-                  <div class="card">
+                  <div class="card til">
                     <div class="datetime" style="color: rgb(243, 243, 243)">
                       <div class="day">09</div>
                       <div
@@ -686,7 +867,7 @@ h1.heading {
                 <!-------------------------------------------------------------------->
 
                 <div class="col-xs-12 col-sm-4">
-                  <div class="card">
+                  <div class="card til">
                     <div class="datetime" style="color: rgb(243, 243, 243)">
                       <div class="day">11</div>
                       <div
@@ -701,7 +882,7 @@ h1.heading {
                         <div class="date">Saturday</div>
                       </div>
                     </div>
-                    <img class="img-card" src="./rockville.png" />
+                    <img class="img-card" src="./rockville.webp" />
 
                     <div class="card-content">
                       <h4 style="color: #fffefe">Rockville</h4>
@@ -732,7 +913,7 @@ h1.heading {
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                  <div class="card">
+                  <div class="card til">
                     <div class="datetime" style="color: rgb(243, 243, 243)">
                       <div class="day">09</div>
                       <div
@@ -747,7 +928,7 @@ h1.heading {
                         <div class="date">Thursday</div>
                       </div>
                     </div>
-                    <img src="./ritzy.jpg" class="img-card" />
+                    <img src="./ritzy.webp" class="img-card" />
 
                     <div class="card-content">
                       <h4 style="color: #fffefe">Ritzy</h4>
@@ -783,7 +964,7 @@ h1.heading {
                 <!----------------------------------------------------------------->
 
                 <div class="col-xs-12 col-sm-4">
-                  <div class="card">
+                  <div class="card til">
                     <div class="datetime" style="color: rgb(243, 243, 243)">
                       <div class="day">10</div>
                       <div
@@ -799,7 +980,7 @@ h1.heading {
                       </div>
                     </div>
 
-                    <img src="./cosplay.jpg" class="img-card" />
+                    <img src="./cosplay.webp" class="img-card" />
 
                     <div class="card-content">
                       <h4 style="color: #fffefe">Cosplay</h4>
@@ -835,7 +1016,7 @@ h1.heading {
                 <!-------------------------------------------------------------------->
 
                 <div class="col-xs-12 col-sm-4">
-                  <div class="card">
+                  <div class="card til">
                     <div class="datetime" style="color: rgb(243, 243, 243)">
                       <div class="day">11</div>
                       <div
@@ -881,7 +1062,7 @@ h1.heading {
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                  <div class="card">
+                  <div class="card til">
                     <div class="datetime" style="color: rgb(243, 243, 243)">
                       <div class="day">10</div>
                       <div
@@ -897,7 +1078,7 @@ h1.heading {
                       </div>
                     </div>
 
-                    <img src="./beat.jpg" class="img-card" />
+                    <img src="./beat.webp" class="img-card" />
 
                     <div class="card-content">
                       <h4 style="color: #fffefe">BeatBox</h4>
@@ -934,50 +1115,57 @@ h1.heading {
       </section>
 
       
-    <!--  <section style="padding-bottom: 10px;">
+  <!--
+       <section style="padding-bottom: 10px;">
         <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
         <div class="sponsor">
-            Sponsors
+           <b> Sponsors</b>
         </div>
         <div class="latespon">
             
-            <ul class="image-gallery" style="list-style: none;">
+            <ul class="image-gallery ekspon" style="list-style: none;">
               <li>
                 <img src="sponsers/1.webp" alt="" />
-                <div class="overlay"><span>Image title</span></div>
+                <div class="overlay"><span></span></div>
               </li>
               <li>
                 <img src="sponsers/2.webp" alt="" />
-                <div class="overlay"><span>Image title</span></div>
+                <div class="overlay"><span></span></div>
               </li>
               <li>
                 <img src="sponsers/3.webp" alt="" />
-                <div class="overlay"><span>Image title</span></div>
+                <div class="overlay"><span></span></div>
               </li>
               <li>
                 <img src="sponsers/4.webp" alt="" />
-                <div class="overlay"><span>Image title</span></div>
+                <div class="overlay"><span></span></div>
               </li>
               <li>
                 <img src="sponsers/5.webp" alt="" />
-                <div class="overlay"><span>Image title</span></div>
+                <div class="overlay"><span></span></div>
               </li>
               <li>
                 <img src="sponsers/6.webp" alt="" />
-                <div class="overlay"><span>Image title</span></div>
+                <div class="overlay"><span></span></div>
               </li>
            
              
             </ul>
           </div>
-    </section>   -->
+    </section> 
+  -->  
+
+
+
+
+    <!--    Maps        -->
        <section class="about-section section-padding" id="nitnagaland">
                     <div class="container">
                         <div class="row">
     
-                            <div class="venue" style="color: rgb(243, 243, 243);">
+                            <div class="venue head" style="color: rgb(243, 243, 243);">
                                 <div class="day"></div>
                                 <div
                                   style="
@@ -988,18 +1176,19 @@ h1.heading {
                                      padding-left: 8px;
                                   "
                                 >
-                                  <div class="month" style="font-size: 60px;">The</div>
-                                  <div class="date" style="font-size: 60px;">Venue</div>
+                                  <div class="month" style="font-size: 60px;
+                                  font-weight: bolder;">The</div>
+                                  <div class="date" style="font-size: 60px; font-weight: bolder;">Venue</div>
                                 </div>
                               </div>
-                          <div class="about-venue" >
+                          <div class="about-venue " >
                             <div class="info1">
                               <h4>ABOUT THIS VENUE</h4>
                               <p> National Institute of Technology Nagaland is a higher education technology institute located in Chümoukedima, Nagaland, India. It is one of the 31 National Institutes of Technology in India. </p>
                             </div>
-                            <div class="info2">
+                            <div class="info2 head">
                                 <h4>FULL ADDRESS</h4>
-                             <p>NIT NAGALAND.</p> 
+                             <p>NIT NAGALAND</p> 
                                 <p>Chumukedima, Dimapur</p>
                                 <p>797103</p>
                             </div>
@@ -1089,12 +1278,66 @@ h1.heading {
                 <p class="copyright-text">Designed by students of Nit Nagaland</p>
             </div>
 </div>
+
+<script >
+
+     const elements = document.querySelectorAll('.head');
+     const ele =document.querySelectorAll('.til');
+     const elem =document.querySelectorAll('.excit');
+     const elemspon =document.querySelectorAll('.ekspon');
+     const elemyt = document.querySelectorAll('.yt');
+const options = {
+  rootMargin: '0px',
+  threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const element = entry.target;
+    
+     
+      element.classList.add('tracking-in-expand');
+      if (element.classList.contains('excit')) {
+              element.classList.add('slide-in-elliptic-top-bck');
+            }else if (element.classList.contains('yt')) {
+              element.classList.add('slide-in-right');
+            }  
+            else if (element.classList.contains('card')) {
+              element.classList.add('tilt-in-tr');
+            } else if (element.classList.contains('ekspon')) {
+              element.classList.add('scale-in-center');
+            } 
+      observer.unobserve(element);
+    }
+  });
+}, options);
+
+elements.forEach(element => {
+  observer.observe(element);
+});
+ele.forEach(element => {
+  observer.observe(element);
+});
+elemyt.forEach(element => {
+  observer.observe(element);
+});
+elem.forEach(element => {
+  observer.observe(element);
+});
+elemspon.forEach(element => {
+  observer.observe(element);
+});
+
+
+</script>
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
-        <script src="js/custom.js"></script>
-
+        <script src="js/custom.js">
+       </script>
+    
     </body>
    
 </html>

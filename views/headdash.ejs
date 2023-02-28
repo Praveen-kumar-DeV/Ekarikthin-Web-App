@@ -48,12 +48,12 @@ font-weight:bold ;
 
 <div class="content">
   <div class="details-table">
-  <h2>REGISTRATION DASHBOARD</h2>
+  <h2> DASHBOARD</h2>
  
   
   <div>
   
-    <p>Key in your input to filter the table:</p>
+    <p>Key in your DATA to Search the table:</p>
 
     <input type="text" id="myinput" placeholder="Search..." title="Type in something">
     <button onClick="history.go(0);" style="float:right; padding: 6px;
@@ -97,7 +97,7 @@ const user= JSON.parse(ch);
 
 they(user);
   async function they(user){
-    console.log(user);
+    
 const data = await axios.get('/admin/data',{
           headers: {
             "Content-Type": "application/json",

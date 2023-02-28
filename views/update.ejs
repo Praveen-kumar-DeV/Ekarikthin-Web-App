@@ -1,158 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="adminstyle.css">
+    <link rel="stylesheet" href="adminstyle.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
     <title>Update</title>
     <style>
+      input[type="text"] {
+        padding: 6px;
+        border: 1px solid black;
+        margin-top: 8px;
+        font-size: 21px;
+        height: 26px;
+        border-radius: 3px;
+      }
+      #contain {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      @media screen and (max-width: 600px) {
+        button {
+          display: block;
+          margin-top: 20px;
+        }
+        input {
+          margin-left: 15px;
+          margin-right: 25px;
+          padding-left: 0px;
+          padding-right: 0px;
+          width: 80%;
+        }
+      }
 
-input[type=text]{
-  padding: 6px;
-  border: 1px solid black;
-  margin-top: 8px;
-  font-size: 21px;
-  height: 26px;
-  border-radius: 3px;
+      /* Set a style for all buttons */
+      button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 13px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+        display: inline-block;
+        border-radius: 5px;
+      }
 
-}
-#contain
-{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
-} 
-@media screen and (max-width:600px) {
-button
-{
-  display: block;
-  margin-top: 20px;
-}
-input
-{
-  margin-left: 15px;
-  margin-right: 25px;
-  padding-left: 0px;
-  padding-right: 0px;
-  width: 80%;
-}
-  
-}
+      button:hover {
+        opacity: 1;
+      }
 
-/* Set a style for all buttons */ 
-button {
-   
-  background-color: #04AA6D;
-  color: white;
-  padding: 13px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.9;
-   display: inline-block;
-   border-radius: 5px;
-}
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+      }
+      #card {
+        border-radius: 10px;
+        padding-left: 20px;
+        width: 300px;
+        line-height: 30px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      }
 
-button:hover {
-  opacity:1;
-}
-
-#container{
-     display: flex;
-     justify-content: center;
-     align-items:center ;
-     margin-top: 40px;
-
-    
-  }
-  #card{
-      border-radius: 10px;
-      padding-left: 20px;
-      width: 300px;
-      line-height: 30px;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-  }
-
-
-
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+      /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a class="active" href="/admin/DashBoard">Admin Dashboard</a>
+      <a href="/admin/update ">Update</a>
+      <a href="/admin/receipt">Receipt</a>
+      <a href="/admin/alldata">Details</a>
+      <a onclick="erase()" href="/admin/logout">Logout</a>
+    </div>
 
-<div class="sidebar">
-  <a class="active" href="/admin/DashBoard">Admin Dashboard</a>
-  <a href="/admin/update ">Update</a>
-  <a href="/admin/receipt">Receipt</a>
-  <a href="/admin/alldata">Details</a>
-  <a onclick="erase()" href="/admin/logout">Logout</a>
-  
-</div>
+    <h4 style="text-align: center">
+      Enter the TOKEN ID to UPDATE THE PAYMENT STATUS
+    </h4>
 
-  
-
-    <h4 style="text-align: center;">Enter the TOKEN ID to UPDATE THE PAYMENT STATUS</h4>
-
-    <div id="contain" style="text-align: center;">
-        <input id="passId" type="text" name="tokenId" placeholder="Enter TokenId......">
-        <button onclick="myfunc()">Update</button>
-  
-
-  </div>
+    <div id="contain" style="text-align: center">
+      <input
+        id="passId"
+        type="text"
+        name="tokenId"
+        placeholder="Enter TokenId......"
+      />
+      <button onclick="myfunc()">Update</button>
+    </div>
 
     <div id="updated"></div>
-</body>
+  </body>
 
-<script>
-const show =document.getElementById('updated');
-    
-    var ch=localStorage.getItem('user');
-let details= JSON.parse(ch);
-if(!details){
-  details={token:'pora puka'}
-}
+  <script>
+    const show = document.getElementById("updated");
 
-    async function myfunc(){
-        try {
-           
-            var token = document.getElementById("passId").value;
-      const { data } = await axios.get(`/admin/pay?tokenId=${token}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${details.token}`,
-        },
-      }).then((response) => {       
-        console.log(response,"response....");
-        var meg=response.data.message;
-        var details=response.data.data;
-      Toastify({
-  text:meg,
-  duration: 3000,
-  
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "right", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to right, 3FCE06, #ff4122)",
-  },
-  onClick: function(){
-    var st=document.getElementById('status');
-    st.innerHTML='Updated Successfully...'
-  } // Callback after click
-}).showToast();
+    var ch = localStorage.getItem("user");
+    let details = JSON.parse(ch);
+    if (!details) {
+      details = { token: "pora puka" };
+    }
 
-const temp=`
+    async function myfunc() {
+      try {
+        var token = document.getElementById("passId").value;
+        const { data } = await axios
+          .get(`/admin/pay?tokenId=${token}`, {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${details.token}`,
+            },
+          })
+          .then((response) => {
+            console.log(response);
+            var meg = response.data.message;
+            var details = response.data.data;
+            Toastify({
+              text: meg,
+              duration: 3000,
+
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "right", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to right, 3FCE06, #ff4122)",
+              },
+              onClick: function () {
+                var st = document.getElementById("status");
+                st.innerHTML = "Updated Successfully...";
+              }, // Callback after click
+            }).showToast();
+
+            const temp = `
 <p>the updated Details :</p><div id="container">
   
       <div id="card" >
@@ -166,35 +165,26 @@ const temp=`
           <p>PAYMENT MODE : ${details.paymentMode}</p>
           <p>Payment :${details.paid}</p>
       </div>
-  </div>`
-      show.innerHTML=temp;
-      });
+  </div>`;
+            show.innerHTML = temp;
+          });
+      } catch (response) {
+        var meg = response.response.data.message;
+        Toastify({
+          text: meg,
+          duration: 3000,
 
-     
-      
-    } catch (response) {
-     console.log(response);
-      var meg=response.response.data.message;
-      Toastify({
-  text:meg,
-  duration: 3000,
-  
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "right", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to right, #D22B2B, #ff4122)",
-  },
-  onClick: function(){} // Callback after click
-}).showToast();
-    
-      
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #D22B2B, #ff4122)",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      }
     }
-  
-       
-    }
-</script>
-
+  </script>
 </html>

@@ -16,123 +16,33 @@
   <link href="css/templatemo-festava-live.css" rel="stylesheet">
   <link href="css/swiper.css" rel="stylesheet">
   <script>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
-            document.querySelector(
-            "body").style.visibility = "hidden";
-            document.querySelector(
-            "#loader").style.visibility = "visible";
-        } else {
-            document.querySelector(
-            "#loader").style.display = "none";
-            document.querySelector(
-            "body").style.visibility = "visible";
-        }
+    document.onreadystatechange = function () {
+      if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        $("body").css({
+          overflow: "hidden",
+          margin: "0",
+          padding: "0",
+        });
+
+        document.querySelector("#loader").style.visibility = "visible";
+        $("body").css({
+          overflow: "hidden",
+        });
+
+      } else {
+        document.querySelector("#loader").style.display = "none";
+        $("body").css({
+          overflow: "auto",
+          margin: "",
+          padding: "",
+        });
+        document.querySelector("body").style.visibility = "visible";
+      }
     };
-</script>
+  </script>
  
-  <style>
-          
-    #loader{
-    
-      margin : 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color:black;
-      height: 100vh;
-    }
-    
-    
-      
-     .con{
-        position: relative;
-        top: 0;
-        bottom: 0;
-      height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-     
-    
-     }
-    
-    
-    .wave{
-      width: 5px;
-      height: 100px;
-    
-      margin: 10px;
-      box-shadow: rgba(32, 13, 209, 0.45) 0px 0 px 0px -20px;
-     
-    animation: wave 1s linear infinite,rain 2s infinite ease-in-out;
-     border-radius: 20px; 
-    }
-    
-    
-    .wave:nth-child(2)
-    {
-      animation-delay: 0.1s;
-    }
-    .wave:nth-child(3)
-    {
-      animation-delay: 0.2s;
-    }
-    .wave:nth-child(4)
-    {
-      animation-delay: 0.3s;
-    }
-    .wave:nth-child(5)
-    {
-      animation-delay: 0.4s;
-    }
-    .wave:nth-child(6)
-    {
-      animation-delay: 0.5s;
-    }
-    .wave:nth-child(7)
-    {
-      animation-delay: 0.6s;
-    }
-    .wave:nth-child(8)
-    {
-      animation-delay: 0.7s;
-    }
-    .wave:nth-child(9)
-    {
-      animation-delay: 0.8s;
-    }
-    .wave:nth-child(10)
-    {
-      animation-delay: 0.9s;
-    }
-    
-    @keyframes wave {
-      0%{
-        transform: scale(0);
-        color: rain;
-      }
-      50% {
-        transform: scale(1);
-      }
-      100%{
-        transform: scale(0);
-      }
-    }
-    
-    
-    @keyframes rain { 
-      10%{background: #ff2400; }
-      20%{background:  #e81d1d; }
-      30%{background: #e8b71d;}
-      40%{background: #e3e81d ;}
-      50%{background: #1de840 ; }
-      60%{background:  #1ddde8;  }
-      70%{background:  #2b1de8; }
-      80%{background:  #dd00f3; }
-      90%{background:  #dd00f3 ;}
-      100%{background: #ff2400;}
-    }
-            </style>
+
 </head>
 
 <body >
@@ -1938,7 +1848,7 @@
                                     <div class="block">
                                         <span class="text">11th March | 04:00 PM</span>
                                         <br>
-                                        <b class="text">Entry Fee : 3000 Rs.</b>
+                                        <b class="text">Entry Fee : 2500 Rs.</b>
                                     </div>
 
                                     <div class="block">

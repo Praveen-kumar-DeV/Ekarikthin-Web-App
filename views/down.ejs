@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +82,11 @@ font-weight:bold ;
         <option value="">Reset</option>  
         
       <select>
+        <form id="myForm" action="/admin/exporttocsv" method="post">
+            <input type="hidden" name="event" >
+            <button>Download</button>
+        </form> 
+        
     
         <table class="order-table">
             <thead><tr>
@@ -230,82 +236,7 @@ const data = await axios.get('/admin/details',{
 
 
     </script>
-    <!--<script>
-        (function(document) {
-	'use strict';
-
-	var LightTableFilter = (function(Arr) {
-
-		var _input;
-    var _select;
-
-		function _onInputEvent(e) {
-			_input = e.target;
-			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
-			Arr.forEach.call(tables, function(table) {
-				Arr.forEach.call(table.tBodies, function(tbody) {
-					Arr.forEach.call(tbody.rows, _filter);
-				});
-			});
-		}
-    
-		function _onSelectEvent(e) {
-			_select = e.target;
-			var tables = document.getElementsByClassName(_select.getAttribute('data-table'));
-      they(_select);
-      console.log(_select);
-			Arr.forEach.call(tables, function(table) {
-				Arr.forEach.call(table.tBodies, function(tbody) {
-					Arr.forEach.call(tbody.rows, _filterSelect);
-				});
-			});
-		}
-
-		function _filter(row) {
-      
-			var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
-			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-
-		}
-    
-		function _filterSelect(row) {
-         var i=0;
-			var text_select = row.textContent.toLowerCase(), val_select = _select.options[_select.selectedIndex].value.toLowerCase();
-			if( text_select.indexOf(val_select) === -1)
-            {
-                row.style.display ='none' ;
-            }
-            else{
-            row.style.display ='table-row';
-           // console.log( row.textContent)
-        }
-           
-           // document.getElementById("mytable").rows[0].cells.item(0).innerHTML= ++i;
-            
-		}
-
-		return {
-			init: function() {
-				var inputs = document.getElementsByClassName('light-table-filter');
-				var selects = document.getElementsByClassName('select-table-filter');
-				Arr.forEach.call(inputs, function(input) {
-					input.oninput = _onInputEvent;
-				});
-				Arr.forEach.call(selects, function(select) {
-         select.onchange  = _onSelectEvent;
-				});
-			}
-		};
-	})(Array.prototype);
-
-	document.addEventListener('readystatechange', function() {
-		if (document.readyState === 'complete') {
-			LightTableFilter.init();
-		}
-	});
-
-})(document);
-    </script>-->
+   
     
     </body>
 </html>

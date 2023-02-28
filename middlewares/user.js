@@ -74,7 +74,7 @@ exports.isAdmin = async (req, res, next) => {
   } catch (err) {
     return res.status(401).json({
       success: false,
-      message: "UNAUTHORIZED ACCESS...!",
+      message: "UNAUTHORIZED ACCESS.!",
     });
   }
 };
@@ -88,11 +88,11 @@ exports.isTime = async (req, res, next) => {
 const setDate = new Date('2023-03-08');
 
 if (currentDate < setDate) {
-  console.log("valid");
+  
   next();
 } else if (currentDate > setDate) {
-  console.log("not valid");
-  res.render('closed');
+  
+ return res.render('closed');
 } 
    
    

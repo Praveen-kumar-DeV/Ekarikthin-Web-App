@@ -22,7 +22,7 @@ nextBtn.forEach((button) => {
     else{
       k=vali2date();
       if(k){
-        console.log("stage 2")
+        
         changeStep("next");
         state=0;
       }
@@ -143,7 +143,7 @@ async function Sendata(){
       }).showToast();
 
     
-        console.log("here goes the problem....");
+        
         window.location.href ='/onlinePayment?tokenId='+user.tokenId;
          
       
@@ -161,7 +161,7 @@ async function Sendata(){
     
 
  catch (err) {
-        console.log(err,"error.....code...")
+        console.log(err)
      const errCode = err.response.data.message;
         Toastify({
           text:errCode,
@@ -232,7 +232,7 @@ let engine = (id, serial, message) => {
       else if (id.name==="name")
       {  if (!(id.value.match(nameformat)))
         {
-        console.log(id.name);
+        
           errorMsg[serial].innerHTML = 'INVALID NAME';
      
  return false;
@@ -249,7 +249,7 @@ let engine = (id, serial, message) => {
       else if (id.name==="email")
       {  if (!(id.value.match(mailformat)))
         {
-        console.log(id.name);
+       
           errorMsg[serial].innerHTML = 'INVALID EMAIL ADDRESS';
      
  return false;
@@ -266,7 +266,7 @@ let engine = (id, serial, message) => {
      else if (id.name==="phone")
           {  if (!(id.value.match(phoneno)))
             {
-            console.log(id.name);
+           
               errorMsg[serial].innerHTML = 'INCORRECT PHONE NUMBER';
             //id.style.border = "2px solid red";
     return false;

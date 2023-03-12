@@ -383,6 +383,14 @@
   }
 }
 
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.lazy.loaded {
+  opacity: 1;
+}
+
   </style>
   <body>
     <div id="loader">
@@ -437,6 +445,8 @@
         imageUrls.forEach((imageUrl) => {
           const outElement = document.createElement("div");
           outElement.classList.add("clock");
+          outElement.classList.add("lazy");  
+          outElement.classList.add("loaded");  
           outElement.setAttribute("data-name","cosplay");
           const imgElement = document.createElement("img");
          
@@ -449,7 +459,7 @@
         });
 
         // Tell lazysizes to process the newly added images
-      // window.lazySizes && window.lazySizes.init();
+      window.lazySizes && window.lazySizes.init();
       })
       .catch((error) => {
         console.error(error);

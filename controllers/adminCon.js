@@ -182,8 +182,13 @@ exports.getAllRegistrations = async (req, res) => {
 
 exports.print=async (req,res)=>{
 
-   
-  const { tokenId } = req.body;
+    if(!req.body){
+      const { tokenId } = req.query.valid;
+    }
+    else{
+      const { tokenId } = req.body;
+    }
+ 
  
   if (!tokenId) {
     return res.status(400).json({
@@ -235,20 +240,44 @@ exports.dashData= async(req,res)=>{
   const user=req.user;
   
   let result;
-   if(user.role==='admin'||user.role==='head'){
+   if(user.role==='admin'||user.role==='head'||user.role==='admin_main'){
    result = await eventReg.find({},{
        createdAt:false,
        updatedAt:false,
        _id:false,
   });}
-  else{
-       result = await eventReg.find({event:user.event},{
+ else if(user.role==='leader'){
+   
+    result = await eventReg.find({category: user.event},{
+        createdAt:false,
+        updatedAt:false,
+        _id:false,
+   });}
+  else if(user.event=="Cosplay - Solo"||user.event=='Cosplay - Trio'||user.event=='Cosplay - Duo'||user.event=='Cosplay - Group'){
+       result = await eventReg.find({event:{ $in: ["Cosplay - Solo","Cosplay - Duo","Cosplay - Trio","Cosplay - Group"] }},{
           createdAt:false,
           updatedAt:false,
           _id:false,
      });
+    }
+
+   else if(user.event=="Dance - Solo"||user.event=='Dance - Crew'){
+      result = await eventReg.find({event:{ $in: ["Dance - Solo","Dance - Crew"] }},{
+         createdAt:false,
+         updatedAt:false,
+         _id:false,
+    });
+
 
   }
+  else{
+    result = await eventReg.find({event:user.event},{
+       createdAt:false,
+       updatedAt:false,
+       _id:false,
+  });
+
+}
  
  
  res.status(201).json({

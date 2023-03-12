@@ -87,6 +87,9 @@ h2 {
                 <th><span id="expiry" class="w3-button table-column" >TokenID </span></th>
                 <th><span id="paid" class="w3-button table-column">Payment Status </span></th>
                 <th><span id="phone" class="w3-button table-column">Phone </span></th>
+                <th><span id="phone" class="w3-button table-column">Cost </span></th>
+               <th><span id="phone" class="w3-button table-column">College</span></th>
+
               </tr></thead>
               <tbody id="mytable" style="width: 100%"  border="1"></tbody>
            
@@ -219,6 +222,14 @@ const data = await axios.get('/admin/details',{
 
      let phone = row.insertCell(6);
      phone.innerHTML = data.phone;
+
+
+     let Ecost = row.insertCell(7);
+     Ecost.innerHTML = data.cost;
+
+     let Ecoll = row.insertCell(8);
+     Ecoll.innerHTML = data.college;
+
    }
   }
 

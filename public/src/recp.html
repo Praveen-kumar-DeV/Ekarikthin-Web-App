@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Receipt Page</title>
+    <style>
+      .receipt-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .receipt-container h1 {
+        text-align: center;
+        margin: 0 0 20px;
+      }
+
+      .receipt-details {
+        margin: 0 0 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 10px;
+        text-align: left;
+      }
+
+      thead th {
+        background: transparent;
+      }
+
+      tbody tr:last-child td {
+        font-weight: bold;
+      }
+
+      .print-button-container {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .maintitle {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-top: 20px;
+        margin-right: auto;
+      }
+      .pos {
+        position: relative;
+      }
+      .maintitle .logotext p {
+        font-size: 30px;
+        color: black;
+        font-family: "Outfit", sans-serif;
+        font-weight: bold;
+        margin-top: 18px;
+        margin-bottom: 0;
+      }
+
+      .maintitle .mainlogo {
+        width: 90px;
+        object-fit: fill;
+        position: absolute;
+        right: -30px;
+        top: -28px;
+      }
+      .watermark {
+        margin: 0;
+        position: relative;
+      }
+
+      .watermark::before {
+        content: "";
+        background-image: url("favicon.ico");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.2;
+      }
+
+      @media print {
+        #printPageButton {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0px">
+    <div class="watermark">
+      <div class="maintitle">
+        <div class="pos">
+          <img
+            src="favicon.ico"
+            alt="your-image-description"
+            class="mainlogo"
+          />
+        </div>
+        <div class="logotext">
+          <p>karikthin 2023</p>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin-top: 5px; margin-bottom: 0px">
+        National Institue Of Technology,Nagaland
+      </h3>
+      <h4 style="text-align: center; margin-top: 4px; margin-bottom: 0px">
+        Dimapur
+      </h4>
+      <hr style="width: 50%; height: 3px; background-color: #000" />
+      <div class="receipt-container">
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          "
+        >
+          <p style="text-align: left"></p>
+          <h1 style="text-align: center"><strong>Receipt</strong></h1>
+          <p style="text-align: right">
+            <strong>Date:</strong> <span id="current-date"></span>
+          </p>
+        </div>
+        <div class="receipt-details"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Token Id</th>
+              <th>Event Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;&nbsp;</td>
+              <td>&nbsp;&nbsp;</td>
+              <td>&nbsp;&nbsp;</td>
+              <td>₹&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="3">Total Amount:</td>
+              <td>₹&nbsp;&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="text-align: right; margin-top: 45px">
+          <h3>Finance Section</h3>
+        </div>
+      </div>
+    </div>
+    <hr style="border: 2px dashed" />
+    <div class="watermark">
+      <div class="maintitle">
+        <div class="pos">
+          <img
+            src="favicon.ico"
+            alt="your-image-description"
+            class="mainlogo"
+          />
+        </div>
+        <div class="logotext">
+          <p>karikthin 2023</p>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin-top: 5px; margin-bottom: 0px">
+        National Institue Of Technology,Nagaland
+      </h3>
+      <h4 style="text-align: center; margin-top: 4px; margin-bottom: 0px">
+        Dimapur
+      </h4>
+      <hr style="width: 50%; height: 3px; background-color: #000" />
+      <div class="receipt-container">
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          "
+        >
+          <p style="text-align: left"></p>
+          <h1 style="text-align: center"><strong>Receipt</strong></h1>
+          <p style="text-align: right">
+            <strong>Date:</strong> <span id="current-dat"></span>
+          </p>
+        </div>
+        <div class="receipt-details"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Token Id</th>
+              <th>Event Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;&nbsp;</td>
+              <td>&nbsp;&nbsp;</td>
+              <td>₹&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="3">Total Amount:</td>
+              <td>₹&nbsp;&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="text-align: right; margin-top: 45px">
+          <h3>Finance Section</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const currentDate = new Date();
+    document.getElementById("current-date").innerHTML =
+      currentDate.toLocaleDateString();
+    document.getElementById("current-dat").innerHTML =
+      currentDate.toLocaleDateString();
+  </script>
+  <script>
+    window.print();
+  </script>
+</html>

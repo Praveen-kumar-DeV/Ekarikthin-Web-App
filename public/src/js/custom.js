@@ -137,7 +137,7 @@ let appFooter = `
           <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
               <h5 class="site-footer-title mb-3">Location</h5>
               <p class="text-white d-flex mt-3 mb-2">
-                  National Insitute of Technology, Nagaland</p>
+                  National Institute of Technology, Nagaland</p>
                   <p class="text-white d-flex mt-3 mb-2">
                       Chumukedima, Dimapur 797103</p>
                       <p class="text-white d-flex mt-3 mb-2">
@@ -150,7 +150,7 @@ let appFooter = `
   </footer>
   <div class="site-footer-bottom">
   <div class="col-12  text-center">
-      <p class="copyright-text"> ©Copyright Ekarithin'23 .All Rights Reserved</p>
+      <p class="copyright-text"> ©Copyright Ekarikthin'23 .All Rights Reserved</p>
       <p class="copyright-text">Designed by students of Nit Nagaland</p>
   </div>
 </div>

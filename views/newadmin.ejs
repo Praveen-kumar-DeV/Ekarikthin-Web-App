@@ -237,6 +237,8 @@
         let username = $("#username").val();
         let password = $("#password").val();
 
+        const currentDate = new Date();
+        const setDate = new Date("2023-03-11");
         const regForm = { username: username, password: password };
         try {
           const { data } = await axios.post("/admin/login", regForm);
@@ -249,15 +251,26 @@
             };
             localStorage.setItem("user", JSON.stringify(userDetails));
 
-            if (userDetails.role === "admin") {
+            if (
+              userDetails.role === "admin" ||
+              userDetails.role === "admin_main"
+            ) {
               window.location.href =
                 "/admin/DashBoard?valid=" + userDetails.token;
             } else if (userDetails.role === "head") {
-              window.location.href =
-                "/admin/headUserDash?valid=" + userDetails.token;
+              if (currentDate < setDate) {
+                window.location.href =
+                  "/admin/headUserDash?valid=" + userDetails.token;
+              } else if (currentDate >= setDate) {
+                window.location.href = "/admin/closed";
+              }
             } else {
-              window.location.href =
-                "/admin/UserDash?valid=" + userDetails.token;
+              if (currentDate < setDate) {
+                window.location.href =
+                  "/admin/UserDash?valid=" + userDetails.token;
+              } else if (currentDate >= setDate) {
+                window.location.href = "/admin/closed";
+              }
             }
           }
         } catch (err) {

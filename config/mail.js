@@ -36,7 +36,7 @@ const mailOptionsFunc = (
     html:` <body>
     <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
       <div style="margin:50px auto;width:70%;padding:20px 0">
-        <a  href="index.html" style="text-decoration: none;">
+        <a  href="https://10.14.105.133" style="text-decoration: none;">
             <div class="mailtitle">
              
             <div  class="maillogotext">

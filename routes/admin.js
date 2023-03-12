@@ -2,7 +2,7 @@
 const express=require('express');
 const router=express.Router();
 const controller=require('../controllers/adminCon');
-const { isLoggedIn ,isAdmin} = require("../middlewares/user");
+const { isLoggedIn ,isAdmin,isMain} = require("../middlewares/user");
 
 const csv   = require('csv-express');
 
@@ -20,6 +20,11 @@ router.route('/alldata').get( (req,res)=>{
 router.route('/receipt').get( (req,res)=>{
    
     res.render('print');
+    
+});
+router.route('/closed').get( (req,res)=>{
+   
+    res.render('closed');
     
 });
 
@@ -52,7 +57,7 @@ router.route('/login').post(controller.login).get((req,res)=>{
     res.render('newadmin');
    });
 
-router.route('/signup').post(isLoggedIn,isAdmin,controller.signup).get((req,res)=>{
+router.route('/signup').post(isLoggedIn,isMain,controller.signup).get((req,res)=>{
     res.render('signup');
 });
 

@@ -65,7 +65,7 @@ function changeStep(btn) {
 
     if(index===2){
      //alert("OTP was sent to your mail....!");
-     motp.innerHTML=`<p style="color:red;"> 6 DIGIT OTP sent to :</p>`+email;
+     motp.innerHTML=`<p style="color:red;"> 6 DIGIT OTP sent to :</p>`+email+`<p style="color:white;">Please check your spam folder if you have not received the OTP.</p>`;
      const eventCode=codeInput.value;
      
    

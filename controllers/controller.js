@@ -296,15 +296,14 @@ exports.offregister = async (req, res) => {
     
     
   } = req.body;
-  console.log(req)
-  console.log(req.body,"start of register..");
+ 
 
 
   const isReg = await eventReg.findOne({
     eventCode,
     email,
   });
-    //console.log("reg check.....",isReg)
+  
   if (isReg) { 
     return res.status(400).json({
       success: false,
@@ -331,7 +330,7 @@ exports.offregister = async (req, res) => {
   try {
         const data =await newEventReg.save();
 
-         console.log(" saving.......");
+       
           const mailOptions = mailOptionsFunc(
                  				  name,
           				          category,
@@ -341,13 +340,9 @@ exports.offregister = async (req, res) => {
          					paymentMode,
                    email
   					  );
-
  
- res.status(201).json({
-  success:true,
-   message:"Registered Successfully"
- });
-    
+              sendMail(mailOptions);
+ res.render('suc',{user:data});
 
       }
     

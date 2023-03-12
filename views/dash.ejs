@@ -5,7 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.0/axios.min.js" 
     integrity="sha512-A6BG70odTHAJYENyMrDN6Rq+Zezdk+dFiFFN6jH1sB+uJT3SYMV4zDSVR+7VawJzvq7/IrT/2K3YWVKRqOyN0Q=="
      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+ <title>Dashboard</title>
  <link rel="stylesheet" href="adminstyle.css">
 <style>
   
@@ -90,6 +90,8 @@ myLink.addEventListener('click', function(event) {
       <th><span id="expiry" class="w3-button table-column" >Payment Status <i class="caret"></i></span></th>
       <th><span id="paid" class="w3-button table-column">Pay Mode <i class="caret"></i></span></th>
       <th><span id="phone" class="w3-button table-column">Phone <i class="caret"></i></span></th>
+      <th><span id="phone" class="w3-button table-column">Cost </span></th>
+      <th><span id="phone" class="w3-button table-column">College</span></th>
     </tr></thead>
     <tbody id="mytable"></tbody>
   </table>
@@ -213,6 +215,13 @@ var table = document.getElementById('mytable');
 
      let phone = row.insertCell(6);
      phone.innerHTML = data.phone;
+
+     let Ecost = row.insertCell(7);
+     Ecost.innerHTML = data.cost;
+
+     let Ecoll = row.insertCell(8);
+     Ecoll.innerHTML = data.college;
+
    }
  
    filterTable();
